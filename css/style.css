@@ -32,12 +32,12 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  letter-spacing: 0.05em;
-  font-weight: 200;
   font-size: 22px;
-  line-height: 50px;
-  letter-spacing: 2px;
+  line-height: 26px;
   color: #FFFFFF;
+  line-height: 50px;
+  font-weight: 200;
+  letter-spacing: 2px;
   text-decoration: none;
 }
 
@@ -51,7 +51,6 @@
   font-weight: normal;
   font-size: 80px;
   line-height: 90px;
-  letter-spacing: 5px;
   color: #000000;
   text-transform: uppercase;
   margin: 0;
@@ -105,7 +104,6 @@
   font-weight: normal;
   font-size: 80px;
   line-height: 90px;
-  letter-spacing: 5px;
   color: #9D8665;
 }
 
@@ -132,20 +130,22 @@
 .contacts .description-title {
   font-family: Roboto;
   font-style: normal;
-  font-weight: 500;
+  font-weight: normal;
   font-size: 28px;
   line-height: 33px;
   color: #000000;
+  font-weight: 500;
   margin-bottom: 50px;
 }
 
 .contacts .description-item {
   font-family: Roboto;
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
   font-size: 22px;
   line-height: 26px;
   color: #000000;
+  font-weight: 300;
   margin-bottom: 25px;
 }
 
@@ -263,7 +263,6 @@
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    letter-spacing: 5px;
     color: #000000;
     font-size: 50px;
     line-height: 75px;
@@ -292,19 +291,26 @@
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    letter-spacing: 5px;
     color: #9D8665;
     font-size: 40px;
     line-height: 60px;
   }
   .contacts .description-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     font-size: 24px;
     line-height: 28px;
+    color: #000000;
     margin-bottom: 30px;
   }
   .contacts .description-item {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     font-size: 20px;
     line-height: 23px;
+    color: #000000;
     margin-bottom: 15px;
   }
   .contacts .map {
@@ -328,13 +334,22 @@
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    letter-spacing: 5px;
     color: #000000;
     font-size: 40px;
     line-height: 60px;
   }
   .section-title-wrapper {
     margin-bottom: 40px;
+  }
+  .nav__item > a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    font-weight: 200;
+    line-height: 50px;
   }
   .contacts__container {
     padding-top: 40px;
@@ -349,7 +364,6 @@
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    letter-spacing: 5px;
     color: #9D8665;
     font-size: 40px;
     line-height: 40px;
@@ -358,13 +372,22 @@
     margin-bottom: 30px;
   }
   .contacts .description-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     font-size: 20px;
     line-height: 23px;
+    color: #000000;
     margin-bottom: 40px;
   }
   .contacts .description-item {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     font-size: 18px;
     line-height: 21px;
+    color: #000000;
+    margin-bottom: 15px;
   }
   .contacts .map {
     width: 100%;
@@ -410,7 +433,6 @@
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    letter-spacing: 5px;
     color: #000000;
     font-size: 28px;
     line-height: 40px;
@@ -418,24 +440,41 @@
   .section-title-wrapper {
     margin-bottom: 40px;
   }
+  .nav__item > a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    font-weight: 200;
+    line-height: 50px;
+  }
   .contacts__section-title {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    letter-spacing: 5px;
     color: #9D8665;
     font-size: 28px;
     line-height: 40px;
   }
   .contacts .description-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     font-size: 16px;
     line-height: 19px;
+    color: #000000;
   }
   .contacts .description-item {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
     font-size: 16px;
     line-height: 19px;
+    color: #000000;
   }
   .footer__container {
     flex-direction: column;

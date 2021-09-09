@@ -20,13 +20,11 @@
         &__section-title
             @include forum_50_hover
         & .description
-            &-title
-                font-size: 24px
-                line-height: 28px
+            &-title 
+                @include roboto_24_dark
                 margin-bottom: 30px
             &-item
-                font-size: 20px
-                line-height: 23px
+                @include roboto_20_dark
                 margin-bottom: 15px
         & .map
             width: 695px
@@ -44,6 +42,11 @@
         @include forum_40_dark
         &-wrapper
             margin-bottom: 40px
+    .nav
+        &__item > a
+            @include roboto_18_light
+            font-weight: 200
+            line-height: 50px
     .contacts
         &__container
             padding-top: 40px
@@ -54,13 +57,12 @@
             @include forum_40_hover
         & .description
             margin-bottom: 30px
-            &-title
-                font-size: 20px
-                line-height: 23px
+            &-title 
+                @include roboto_20_dark
                 margin-bottom: 40px
             &-item
-                font-size: 18px
-                line-height: 21px
+                @include roboto_18_dark
+                margin-bottom: 15px
         & .map
             width: 100%
             height: auto
@@ -93,16 +95,19 @@
         @include forum_28_dark
         &-wrapper
             margin-bottom: 40px
+    .nav
+        &__item > a
+            @include roboto_16_light
+            font-weight: 200
+            line-height: 50px
     .contacts
         &__section-title
             @include forum_28_hover
         & .description
             &-title
-                font-size: 16px
-                line-height: 19px
+                @include roboto_16_dark
             &-item
-                font-size: 16px
-                line-height: 19px
+                @include roboto_16_dark
     .footer
         &__container
             flex-direction: column
