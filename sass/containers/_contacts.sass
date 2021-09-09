@@ -1,0 +1,34 @@
+.contacts
+    &__container
+        padding: 75px 0
+    &__section-title
+        @include forum_80_hover
+    &__content
+        display: flex
+        justify-content: space-between
+        & .description
+            display: flex
+            flex-direction: column
+        & .map
+            width: 960px
+            height: 620px
+            & > img
+                width: inherit
+                height: inherit
+    & .description
+        &-title
+            font-family: Roboto
+            font-style: normal
+            font-weight: 500
+            font-size: 28px
+            line-height: 33px
+            color: $dark
+            margin-bottom: 50px
+        &-item
+            font-family: Roboto
+            font-style: normal
+            font-weight: 300
+            font-size: 22px
+            line-height: 26px
+            color: $dark
+            margin-bottom: 25px

@@ -1,0 +1,20 @@
+.header
+    background-color: $bg-dark
+    &__container
+        padding: 75px 0
+        display: flex
+        justify-content: space-between
+    &__nav
+        & .nav__list
+        & .nav__item
+            &:not(:last-child)
+                margin-right: 75px
+.burger-menu
+    &__icon
+        background-image: url('../assets/icons/burger-menu.svg')
+        border: none
+        outline: none
+        padding: 0
+        background-color: transparent
+        width: 32px
+        height: 18px

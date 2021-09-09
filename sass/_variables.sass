@@ -8,8 +8,8 @@ $dark-red: #710707
     font-style: normal
     font-weight: normal
     font-size: 80px
-    line-height: 88px
-    letter-spacing: 0.05em
+    line-height: 90px
+    letter-spacing: 5px
 @mixin forum_80_dark
     @include forum_80
     color: $dark
@@ -19,6 +19,42 @@ $dark-red: #710707
 @mixin forum_80_hover
     @include forum_80
     color: $gold
+@mixin forum_50_dark
+    @include forum_80_dark
+    font-size: 50px
+    line-height: 75px
+@mixin forum_50_light
+    @include forum_80_light
+    font-size: 40px
+    line-height: 60px
+@mixin forum_50_hover
+    @include forum_80_hover
+    font-size: 40px
+    line-height: 60px
+@mixin forum_40_dark
+    @include forum_80_dark
+    font-size: 40px
+    line-height: 60px
+@mixin forum_40_light
+    @include forum_80_light
+    font-size: 40px
+    line-height: 60px
+@mixin forum_40_hover
+    @include forum_80_hover
+    font-size: 40px
+    line-height: 40px
+@mixin forum_28_dark
+    @include forum_80_dark
+    font-size: 28px
+    line-height: 40px
+@mixin forum_28_light
+    @include forum_80_light
+    font-size: 28px
+    line-height: 40px
+@mixin forum_28_hover
+    @include forum_80_hover
+    font-size: 28px
+    line-height: 40px
 @mixin roboto
     font-family: Roboto
     font-style: normal

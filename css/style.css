@@ -15,13 +15,19 @@
   height: 50px;
 }
 
+.logo > a {
+  width: inherit;
+  height: inherit;
+  display: flex;
+}
+
 .nav__list {
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-.nav__item {
+.nav__item > a {
   list-style: none;
   font-family: Roboto;
   font-style: normal;
@@ -32,6 +38,115 @@
   line-height: 50px;
   letter-spacing: 2px;
   color: #FFFFFF;
+  text-decoration: none;
+}
+
+.nav__item > a:hover {
+  color: #9D8665;
+}
+
+.section-title {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 5px;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.section-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 75px;
+}
+
+.section-title-delimiter {
+  width: 100%;
+  height: 3px;
+  background-color: #710707;
+  border-radius: 0px;
+}
+
+.header {
+  background-color: #030303;
+}
+
+.header__container {
+  padding: 75px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__nav .nav__item:not(:last-child) {
+  margin-right: 75px;
+}
+
+.burger-menu__icon {
+  background-image: url("../assets/icons/burger-menu.svg");
+  border: none;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  width: 32px;
+  height: 18px;
+}
+
+.contacts__container {
+  padding: 75px 0;
+}
+
+.contacts__section-title {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 5px;
+  color: #9D8665;
+}
+
+.contacts__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts__content .description {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__content .map {
+  width: 960px;
+  height: 620px;
+}
+
+.contacts__content .map > img {
+  width: inherit;
+  height: inherit;
+}
+
+.contacts .description-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.contacts .description-item {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  margin-bottom: 25px;
 }
 
 .footer {
@@ -115,6 +230,12 @@
   margin-right: 24px;
 }
 
+.footer__social-links .social-link > a {
+  width: inherit;
+  height: inherit;
+  display: flex;
+}
+
 .social-link_youtube {
   background-image: url(../assets/icons/youtube.svg);
 }
@@ -136,9 +257,59 @@
 }
 
 @media (max-width: 1024px) {
+  .section-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    color: #000000;
+    font-size: 50px;
+    line-height: 75px;
+    margin-bottom: 20px;
+  }
+  .section-title-wrapper {
+    margin-bottom: 60px;
+  }
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__burger-menu {
+    display: flex;
+  }
+  .contacts__container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .contacts__section-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    color: #9D8665;
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .contacts .description-title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+  .contacts .description-item {
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 15px;
+  }
+  .contacts .map {
+    width: 695px;
+    height: 455px;
   }
   .footer__container {
     padding-top: 60px;
@@ -151,6 +322,54 @@
 }
 
 @media (max-width: 768px) {
+  .section-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    color: #000000;
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .section-title-wrapper {
+    margin-bottom: 40px;
+  }
+  .contacts__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .contacts__content {
+    flex-direction: column;
+  }
+  .contacts__section-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    color: #9D8665;
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .contacts .description {
+    margin-bottom: 30px;
+  }
+  .contacts .description-title {
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 40px;
+  }
+  .contacts .description-item {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .contacts .map {
+    width: 100%;
+    height: auto;
+  }
   .footer__container {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -185,6 +404,39 @@
 }
 
 @media (max-width: 420px) {
+  .section-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    color: #000000;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .section-title-wrapper {
+    margin-bottom: 40px;
+  }
+  .contacts__section-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    color: #9D8665;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .contacts .description-title {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .contacts .description-item {
+    font-size: 16px;
+    line-height: 19px;
+  }
   .footer__container {
     flex-direction: column;
   }
