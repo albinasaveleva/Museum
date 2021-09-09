@@ -1,0 +1,132 @@
+$dark: #000000
+$light: #FFFFFF
+$gold: #9D8665
+$bg-dark: #030303
+$dark-red: #710707
+@mixin forum_80
+    font-family: Forum
+    font-style: normal
+    font-weight: normal
+    font-size: 80px
+    line-height: 88px
+    letter-spacing: 0.05em
+@mixin forum_80_dark
+    @include forum_80
+    color: $dark
+@mixin forum_80_light
+    @include forum_80
+    color: $light
+@mixin forum_80_hover
+    @include forum_80
+    color: $gold
+@mixin roboto
+    font-family: Roboto
+    font-style: normal
+    font-weight: normal
+    letter-spacing: 0.05em
+@mixin roboto_32_dark
+    @include roboto
+    font-size: 32px
+    line-height: 37px
+    color: $dark
+@mixin roboto_28_dark
+    @include roboto
+    font-size: 28px
+    line-height: 33px
+    color: $dark
+@mixin roboto_22_dark
+    @include roboto
+    font-size: 22px
+    line-height: 26px
+    color: $dark
+@mixin roboto_18_dark
+    @include roboto
+    font-size: 18px
+    line-height: 21px
+    color: $dark
+@mixin roboto_32_light
+    @include roboto
+    font-size: 32px
+    line-height: 37px
+    color: $light
+@mixin roboto_28_light
+    @include roboto
+    font-size: 28px
+    line-height: 33px
+    color: $light
+@mixin roboto_22_light
+    @include roboto
+    font-size: 22px
+    line-height: 26px
+    color: $light
+@mixin roboto_18_light
+    @include roboto
+    font-size: 18px
+    line-height: 21px
+    color: $light
+@mixin roboto_32_hover
+    @include roboto
+    font-size: 32px
+    line-height: 37px
+    color: $gold
+@mixin roboto_28_hover
+    @include roboto
+    font-size: 28px
+    line-height: 33px
+    color: $gold
+@mixin roboto_22_hover
+    @include roboto
+    font-size: 22px
+    line-height: 26px
+    color: $gold
+@mixin roboto_18_hover
+    @include roboto
+    font-size: 18px
+    line-height: 21px
+    color: $gold
+@mixin link
+    @include roboto
+    font-size: 22px
+    line-height: 26px
+    letter-spacing: 0.03em
+    color: $light
+@mixin link_dark
+    @include link
+    color: $dark
+@mixin link_hover
+    @include link
+    color: $gold
+@mixin link_active
+    @include link
+    color: $gold
+@mixin button-non-rounded
+    @include roboto
+    // width: 185px
+    // height: 50px
+    background-color: $light
+    color: $dark
+    font-size: 28px
+    line-height: 20px
+    cursor: pointer
+    border: none
+    outline: none
+@mixin button-non-rounded_hover
+    @include button-non-rounded
+    background-color: $gold
+@mixin button-rounded
+    // width: 360px
+    // height: 75px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $dark-red
+    color: $light
+    font-size: 24px
+    line-height: 28px
+    border-radius: 10px
+    cursor: pointer
+    border: none
+    outline: none
+@mixin button-rounded_hover
+    @include button-rounded
+    background-color: $gold

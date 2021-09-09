@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.logo {
+  background-image: url("../assets/icons/logo.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 195px;
+  height: 50px;
+}
+
+.nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  list-style: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 50px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+
+.footer {
+  background-color: #030303;
+}
+
+.footer__container {
+  padding: 75px 0;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer__logo {
+  margin-right: 145px;
+}
+
+.footer__content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.footer__nav .nav__list {
+  flex-wrap: wrap;
+}
+
+.footer__nav .nav__list li {
+  flex-basis: 50%;
+}
+
+.footer__nav .nav__list li:nth-child(1) {
+  order: 0;
+}
+
+.footer__nav .nav__list li:nth-child(4) {
+  order: 1;
+}
+
+.footer__nav .nav__list li:nth-child(2) {
+  order: 2;
+}
+
+.footer__nav .nav__list li:nth-child(5) {
+  order: 3;
+}
+
+.footer__nav .nav__list li:nth-child(3) {
+  order: 4;
+}
+
+.footer__nav .nav__list li:nth-child(6) {
+  order: 5;
+}
+
+.footer__social-links {
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.footer__social-links .social-links__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 13px;
+}
+
+.footer__social-links .social-link {
+  list-style: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #FFFFFF;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.footer__social-links .social-link:not(:last-child) {
+  margin-right: 24px;
+}
+
+.social-link_youtube {
+  background-image: url(../assets/icons/youtube.svg);
+}
+
+.social-link_insta {
+  background-image: url(../assets/icons/insta.svg);
+}
+
+.social-link_facebook {
+  background-image: url(../assets/icons/facebook.svg);
+}
+
+.social-link_twitter {
+  background-image: url(../assets/icons/twitter.svg);
+}
+
+.social-link_pinterest {
+  background-image: url(../assets/icons/pinterest.svg);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footer__container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex-wrap: nowrap;
+  }
+  .footer__logo {
+    margin-right: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .footer__logo {
+    margin-right: 80px;
+  }
+  .footer__content-wrapper {
+    flex-direction: column;
+    padding-left: 23px;
+  }
+  .footer__nav {
+    margin-bottom: 30px;
+  }
+  .footer__nav .nav__list {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .footer__nav .nav__list li {
+    flex-basis: 41%;
+  }
+  .footer__social-links {
+    flex-basis: auto;
+    align-self: flex-start;
+  }
+  .footer__social-links .social-links__list {
+    margin-bottom: 0;
+  }
+  .nav__item {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer__container {
+    flex-direction: column;
+  }
+  .footer__logo {
+    margin-right: auto;
+    margin-bottom: 25px;
+  }
+  .footer__content-wrapper {
+    padding-left: 0;
+  }
+  .footer__nav {
+    margin-bottom: 25px;
+  }
+  .footer__nav .nav__list li {
+    flex-basis: 26%;
+    display: flex;
+  }
+  .footer__nav .nav__list li:nth-child(1) {
+    order: 0;
+  }
+  .footer__nav .nav__list li:nth-child(3) {
+    order: 1;
+  }
+  .footer__nav .nav__list li:nth-child(5) {
+    order: 2;
+  }
+  .footer__nav .nav__list li:nth-child(2) {
+    order: 3;
+  }
+  .footer__nav .nav__list li:nth-child(4) {
+    order: 4;
+  }
+  .footer__nav .nav__list li:nth-child(6) {
+    order: 5;
+  }
+  .footer__social-links {
+    align-self: center;
+  }
+  .footer__social-links .social-link:not(:last-child) {
+    margin-right: 5px;
+  }
+  .logo {
+    background-image: url("../assets/icons/logo_mini.svg");
+    width: 130px;
+    height: 20px;
+  }
+  .nav__item {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

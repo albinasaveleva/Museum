@@ -1,0 +1,75 @@
+@media (max-width: 1024px)
+    .container
+        padding-left: 20px
+        padding-right: 20px
+    .footer
+        &__container
+            padding-top: 60px
+            padding-bottom: 60px
+            flex-wrap: nowrap
+        &__logo
+            margin-right: 45px
+@media (max-width: 768px)
+    .footer
+        &__container
+            padding-top: 40px
+            padding-bottom: 40px
+        &__logo
+            margin-right: 80px
+        &__content-wrapper
+            flex-direction: column
+            padding-left: 23px
+        &__nav
+            margin-bottom: 30px
+            & .nav__list  
+                flex-wrap: wrap
+                justify-content: space-between
+                & li
+                    flex-basis: 41%
+        &__social-links
+            flex-basis: auto
+            align-self: flex-start
+            & .social-links__list
+                margin-bottom: 0
+    .nav
+        &__item
+            font-size: 18px
+@media (max-width: 420px)
+    .footer
+        &__container
+            flex-direction: column
+        &__logo
+            margin-right: auto
+            margin-bottom: 25px
+        &__content-wrapper
+            padding-left: 0
+        &__nav
+            margin-bottom: 25px
+            & .nav__list  
+                & li
+                    flex-basis: 26%
+                    display: flex
+                    &:nth-child(1)
+                        order: 0
+                    &:nth-child(3)
+                        order: 1
+                    &:nth-child(5)
+                        order: 2
+                    &:nth-child(2)
+                        order: 3
+                    &:nth-child(4)
+                        order: 4
+                    &:nth-child(6)
+                        order: 5
+        &__social-links
+            align-self: center
+            & .social-link
+                &:not(:last-child)
+                    margin-right: 5px
+    .logo
+        background-image: url('../assets/icons/logo_mini.svg')
+        width: 130px
+        height: 20px
+    .nav
+        &__item
+            font-size: 16px
