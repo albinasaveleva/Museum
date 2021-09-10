@@ -3,7 +3,7 @@ const parallax = () => {
 
     let moveCount = 50,
         oldScroll = scrollY;
-        
+
     const moveImage = (count) => {
         moveCount += count;
         parallaxImage.style.objectPosition = `50% ${moveCount}%`;
@@ -27,13 +27,13 @@ const parallax = () => {
             targetPosition.bottom > windowPosition.bottom &&
             targetPosition.top < windowPosition.bottom)) {
                 if (scrollY > oldScroll) {
-                    if (moveCount <= 99.8) {
-                        moveImage(.2);
+                    if (moveCount <= 99.5) {
+                        moveImage(.5);
                         oldScroll = scrollY;
                     }
                 } else { 
-                    if (moveCount >= .2) {
-                        moveImage(-.2);
+                    if (moveCount >= .5) {
+                        moveImage(-.5);
                         oldScroll = scrollY;
                     }
                 }

@@ -268,7 +268,7 @@
   background-image: url(../assets/icons/pinterest.svg);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1919px) {
   .section-title {
     font-family: Forum;
     font-style: normal;
@@ -339,7 +339,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .section-title {
     font-family: Forum;
     font-style: normal;
@@ -362,6 +362,9 @@
     color: #FFFFFF;
     font-weight: 200;
     line-height: 50px;
+  }
+  .parallax {
+    height: 300px;
   }
   .contacts__container {
     padding-top: 40px;
@@ -438,7 +441,12 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 767px) {
+  .logo {
+    background-image: url("../assets/icons/logo_mini.svg");
+    width: 130px;
+    height: 20px;
+  }
   .section-title {
     font-family: Forum;
     font-style: normal;
@@ -497,6 +505,7 @@
   }
   .footer__content-wrapper {
     padding-left: 0;
+    align-self: center;
   }
   .footer__nav {
     margin-bottom: 25px;
@@ -528,14 +537,6 @@
   }
   .footer__social-links .social-link:not(:last-child) {
     margin-right: 5px;
-  }
-  .logo {
-    background-image: url("../assets/icons/logo_mini.svg");
-    width: 130px;
-    height: 20px;
-  }
-  .nav__item {
-    font-size: 16px;
   }
 }
 /*# sourceMappingURL=style.css.map */
