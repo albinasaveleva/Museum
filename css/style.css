@@ -94,6 +94,18 @@
   height: 18px;
 }
 
+.parallax {
+  height: 400px;
+  width: 100%;
+}
+
+.parallax img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 .contacts__container {
   padding: 75px 0;
 }
