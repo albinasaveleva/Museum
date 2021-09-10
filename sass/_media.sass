@@ -94,7 +94,7 @@
             font-size: 18px
 @media ( max-width:  767px)
     .logo
-        background-image: url('../assets/icons/logo_mini.svg')
+        -webkit-mask-image: url(../assets/icons/logo_mini.svg)
         width: 130px
         height: 20px
     .section-title
@@ -106,6 +106,9 @@
             @include roboto_16_light
             font-weight: 200
             line-height: 50px
+    .parallax
+        & img
+            // object-fit: none
     .contacts
         &__section-title
             @include forum_28_hover

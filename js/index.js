@@ -1,3 +1,3 @@
-import parallax from './modules/parallax.js';
+// import parallax from './modules/parallax.js';
 
-parallax();
+// parallax();
