@@ -1,7 +1,14 @@
-const parallaxImage = document.querySelector('.parallax img');
 const parallax = () => {
-    let oldScroll = scrollY;
-    let moveCount = 0;
+    const parallaxImage = document.querySelector('.parallax img');
+
+    let moveCount = 50,
+        oldScroll = scrollY;
+        
+    const moveImage = (count) => {
+        moveCount += count;
+        parallaxImage.style.objectPosition = `50% ${moveCount}%`;
+        return moveCount;
+    }
 
     document.addEventListener('scroll', () => {
         let targetPosition = {
@@ -12,9 +19,6 @@ const parallax = () => {
             top: window.pageYOffset,
             bottom: window.pageYOffset + document.documentElement.clientHeight
         };
-        const moveImage = () => {
-            parallaxImage.style.objectPosition = `50% ${50 + moveCount}%`;
-        };
         if ((targetPosition.top >= windowPosition.top && 
             targetPosition.bottom <= windowPosition.bottom) ||
             (targetPosition.top < windowPosition.top && 
@@ -23,15 +27,13 @@ const parallax = () => {
             targetPosition.bottom > windowPosition.bottom &&
             targetPosition.top < windowPosition.bottom)) {
                 if (scrollY > oldScroll) {
-                    if (moveCount >= -49.5) {
-                        moveCount -= .5;
-                        moveImage();
+                    if (moveCount <= 99.8) {
+                        moveImage(.2);
                         oldScroll = scrollY;
                     }
                 } else { 
-                    if (moveCount <= 49.5) {
-                        moveCount += .5;
-                        moveImage();
+                    if (moveCount >= .2) {
+                        moveImage(-.2);
                         oldScroll = scrollY;
                     }
                 }
