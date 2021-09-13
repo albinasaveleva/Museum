@@ -3,18 +3,26 @@
   transition: 1.5s;
 }
 
+body {
+  background-color: #FFFFFF;
+  position: relative;
+}
+
 .container {
   max-width: 1440px;
+  padding: 75px 0;
   margin: 0 auto;
 }
 
 .logo {
   background-color: #FFFFFF;
   -webkit-mask-image: url(../assets/icons/logo.svg);
-  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
+  -webkit-mask-size: auto;
+  -webkit-mask-repeat: no-repeat;
   transition: 1.5s;
-  width: 195px;
-  height: 50px;
+  width: 200px;
+  height: 30px;
 }
 
 .logo:hover {
@@ -25,6 +33,11 @@
   width: inherit;
   height: inherit;
   display: flex;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav__list {
@@ -41,7 +54,7 @@
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-  line-height: 50px;
+  text-align: center;
   font-weight: 200;
   letter-spacing: 2px;
   text-decoration: none;
@@ -57,10 +70,19 @@
   font-weight: normal;
   font-size: 80px;
   line-height: 90px;
-  color: #000000;
+  color: #FFFFFF;
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 25px;
+}
+
+.section-title_hover {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  color: #9D8665;
 }
 
 .section-title-wrapper {
@@ -76,18 +98,37 @@
   border-radius: 0px;
 }
 
+.section-subtitle {
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+}
+
 .header {
-  background-color: #030303;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
 }
 
 .header__container {
-  padding: 75px 0;
+  padding: 60px 0;
   display: flex;
   justify-content: space-between;
 }
 
 .header__nav .nav__item:not(:last-child) {
-  margin-right: 75px;
+  margin-right: 55px;
+}
+
+.burger-menu {
+  display: none;
 }
 
 .burger-menu__icon {
@@ -98,6 +139,95 @@
   background-color: transparent;
   width: 32px;
   height: 18px;
+}
+
+.welcome {
+  background-color: #030303;
+  padding-top: 150px;
+}
+
+.welcome__container {
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.welcome__content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.welcome__section-title {
+  margin-bottom: 25px;
+}
+
+.welcome__section-subtitle {
+  margin-bottom: 75px;
+}
+
+.welcome__button {
+  width: 360px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #710707;
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.welcome__button:hover {
+  width: 360px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #710707;
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #9D8665;
+}
+
+.welcome__slider {
+  width: 70%;
+  height: 810px;
+  background-color: #030303;
+  margin-left: auto;
+}
+
+.welcome__slider .slides {
+  width: 100%;
+  height: inherit;
+  background-color: #030303;
+}
+
+.welcome__slider .slide {
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/image/welcome-slider.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.explore {
+  background-color: #030303;
+}
+
+.gallery {
+  background-color: #030303;
 }
 
 .parallax {
@@ -112,15 +242,6 @@
 
 .contacts__container {
   padding: 75px 0;
-}
-
-.contacts__section-title {
-  font-family: Forum;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 80px;
-  line-height: 90px;
-  color: #9D8665;
 }
 
 .contacts__content {
@@ -305,17 +426,30 @@
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    color: #000000;
+    color: #FFFFFF;
     font-size: 50px;
     line-height: 75px;
     margin-bottom: 20px;
+  }
+  .section-title_hover {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    color: #9D8665;
+    font-size: 50px;
+    line-height: 75px;
   }
   .section-title-wrapper {
     margin-bottom: 60px;
   }
   .container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 60px 20px;
+  }
+  .header__container {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   .header__nav {
     display: none;
@@ -323,19 +457,37 @@
   .header__burger-menu {
     display: flex;
   }
-  .contacts__container {
-    padding-top: 60px;
-    padding-bottom: 60px;
+  .welcome {
+    padding-top: 130px;
   }
-  .contacts__section-title {
+  .welcome__container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .welcome__slider {
+    height: 585px;
+  }
+  .welcome__content {
+    left: 20px;
+  }
+  .welcome__section-title {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    color: #9D8665;
-    font-size: 40px;
-    line-height: 60px;
+    color: #FFFFFF;
+    font-size: 50px;
+    line-height: 75px;
+  }
+  .welcome__section-subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin-bottom: 50px;
   }
   .contacts .description-title {
     font-family: Roboto;
@@ -360,8 +512,6 @@
     height: 455px;
   }
   .footer__container {
-    padding-top: 60px;
-    padding-bottom: 60px;
     flex-wrap: nowrap;
   }
   .footer__logo {
@@ -370,15 +520,28 @@
 }
 
 @media (max-width: 1023px) {
+  .container {
+    padding: 40px 20px;
+  }
   .section-title {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    color: #000000;
+    color: #FFFFFF;
     font-size: 40px;
     line-height: 60px;
+  }
+  .section-title_hover {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    color: #9D8665;
+    font-size: 40px;
+    line-height: 40px;
   }
   .section-title-wrapper {
     margin-bottom: 40px;
@@ -393,12 +556,48 @@
     font-weight: 200;
     line-height: 50px;
   }
+  .welcome {
+    padding-top: 110px;
+  }
+  .welcome__container {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .welcome__content {
+    position: relative;
+    transform: translate(0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+  }
+  .welcome__section-title {
+    text-align: center;
+  }
+  .welcome__section-subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    margin-bottom: 0;
+  }
+  .welcome__button {
+    display: none;
+  }
+  .welcome__slider {
+    width: 100%;
+    height: 645px;
+  }
+  .welcome .slide {
+    background: url(../assets/image/welcome-slider.png);
+  }
   .parallax {
     height: 300px;
-  }
-  .contacts__container {
-    padding-top: 40px;
-    padding-bottom: 40px;
   }
   .contacts__content {
     flex-direction: column;
@@ -437,10 +636,6 @@
   .contacts .map {
     width: 100%;
     height: auto;
-  }
-  .footer__container {
-    padding-top: 40px;
-    padding-bottom: 40px;
   }
   .footer__logo {
     margin-right: 80px;
@@ -483,12 +678,26 @@
     font-weight: normal;
     font-size: 80px;
     line-height: 90px;
-    color: #000000;
+    color: #FFFFFF;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .section-title_hover {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    color: #9D8665;
     font-size: 28px;
     line-height: 40px;
   }
   .section-title-wrapper {
     margin-bottom: 40px;
+  }
+  .header__container {
+    padding-top: 35px;
+    padding-bottom: 35px;
   }
   .nav__item > a {
     font-family: Roboto;
@@ -499,6 +708,20 @@
     color: #FFFFFF;
     font-weight: 200;
     line-height: 50px;
+  }
+  .welcome {
+    padding-top: 90px;
+  }
+  .welcome__section-subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+  }
+  .welcome__slider {
+    height: 365px;
   }
   .contacts__section-title {
     font-family: Forum;

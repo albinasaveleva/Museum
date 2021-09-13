@@ -1,0 +1,40 @@
+.welcome
+    background-color: $bg-dark
+    padding-top: 150px
+    &__container
+        padding-top: 0
+        padding-bottom: 0
+        position: relative
+    &__content
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+    &__section-title
+        margin-bottom: 25px
+    &__section-subtitle
+        margin-bottom: 75px
+    &__button
+        @include button-rounded
+        text-decoration: none
+        &:hover
+            @include button-rounded_hover
+    &__slider
+        width: 70%
+
+        height: 810px
+        background-color: $bg-dark
+        margin-left: auto
+        & .slides
+            width: 100%
+            height: inherit
+            background-color: $bg-dark
+
+        & .slide
+            width: inherit
+            height: inherit
+            background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/image/welcome-slider.png)
+            background-repeat: no-repeat
+            background-size: cover
+
+       
