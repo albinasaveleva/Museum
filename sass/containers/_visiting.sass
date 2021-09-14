@@ -1,0 +1,39 @@
+.visiting
+    &__container
+    &__content
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        grid-gap: 75px 60px 
+        & .tour
+            display: flex
+            text-decoration: none
+            &-inner
+                display: flex
+                flex-direction: column
+                cursor: pointer
+                width: 440px
+            &-image
+                width: 100%
+                height: 285px
+                object-fit: cover
+                margin-bottom: 25px
+            &-title
+                @include forum_32_dark
+                letter-spacing: 5px
+                margin: 0
+                &-delimiter
+                    width: 300px
+                    height: 2px
+                    background-color: $dark-red
+                    margin: 10px 0
+            &-subtitle
+                @include roboto_22_dark
+                font-weight: 200
+                display: block
+                margin-bottom: 10px
+                &_small
+                    display: block
+                    @include roboto_18_dark
+                    font-weight: 200
+

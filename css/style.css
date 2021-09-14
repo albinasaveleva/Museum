@@ -108,6 +108,11 @@ body {
   letter-spacing: 2px;
 }
 
+iframe {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -339,6 +344,75 @@ body {
   to {
     transform: translateX(-100%);
   }
+}
+
+.visiting__content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-gap: 75px 60px;
+}
+
+.visiting__content .tour {
+  display: flex;
+  text-decoration: none;
+}
+
+.visiting__content .tour-inner {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 440px;
+}
+
+.visiting__content .tour-image {
+  width: 100%;
+  height: 285px;
+  object-fit: cover;
+  margin-bottom: 25px;
+}
+
+.visiting__content .tour-title {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  color: #000000;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.visiting__content .tour-title-delimiter {
+  width: 300px;
+  height: 2px;
+  background-color: #710707;
+  margin: 10px 0;
+}
+
+.visiting__content .tour-subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  font-weight: 200;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.visiting__content .tour-subtitle_small {
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  font-weight: 200;
 }
 
 .explore {
@@ -614,6 +688,53 @@ body {
     color: #FFFFFF;
     margin-bottom: 50px;
   }
+  .visiting__content {
+    grid-gap: 60px 110px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .visiting__content .tour {
+    flex-basis: calc((100% - 110px) / 2);
+    justify-content: flex-end;
+  }
+  .visiting__content .tour:nth-child(2n) {
+    justify-content: flex-start;
+  }
+  .visiting__content .tour-inner {
+    width: 330px;
+  }
+  .visiting__content .tour-image {
+    height: 215px;
+  }
+  .visiting__content .tour-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    color: #000000;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .visiting__content .tour-title-delimiter {
+    width: 150px;
+  }
+  .visiting__content .tour-subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    font-weight: 200;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    font-weight: 200;
+  }
   .contacts .description-title {
     font-family: Roboto;
     font-style: normal;
@@ -728,6 +849,45 @@ body {
   }
   .welcome .slide {
     background: url(../assets/image/welcome-slider.png);
+  }
+  .visiting__content {
+    grid-gap: 40px 55px;
+  }
+  .visiting__content .tour {
+    flex-basis: calc((100% - 55px) / 2);
+  }
+  .visiting__content .tour-inner {
+    width: 280px;
+  }
+  .visiting__content .tour-image {
+    height: 180px;
+  }
+  .visiting__content .tour-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    color: #000000;
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: 3px;
+  }
+  .visiting__content .tour-subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    font-weight: 200;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    font-weight: 200;
   }
   .parallax {
     height: 300px;
@@ -860,6 +1020,44 @@ body {
   .welcome__slider .slider-footer {
     bottom: -60px;
     width: 230px;
+  }
+  .visiting__content {
+    grid-gap: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .visiting__content .tour {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  .visiting__content .tour:nth-child(2n) {
+    justify-content: center;
+  }
+  .visiting__content .tour-inner {
+    width: 280px;
+  }
+  .visiting__content .tour-image {
+    height: 180px;
+  }
+  .visiting__content .tour-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 90px;
+    color: #000000;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 5px;
+  }
+  .visiting__content .tour-subtitle {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    font-weight: 200;
   }
   .contacts__section-title {
     font-family: Forum;

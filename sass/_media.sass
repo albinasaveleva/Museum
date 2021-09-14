@@ -35,6 +35,32 @@
         &__section-subtitle
             @include roboto_24_light
             margin-bottom: 50px
+    .visiting
+        &__content
+            grid-gap: 60px 110px
+            justify-content: center
+            margin: 0 auto
+            & .tour
+                flex-basis: calc((100% - 110px) / 2)
+                justify-content: flex-end
+                &:nth-child(2n)
+                    justify-content: flex-start
+                &-inner
+                    width: 330px
+                &-image
+                    height: 215px
+                &-title
+                    @include forum_28_dark
+                    &-delimiter
+                        width: 150px
+                &-subtitle
+                    @include roboto_20_dark
+                    font-weight: 200
+                    &_small
+                    @include roboto_16_dark
+                    font-weight: 200
+
+
     .contacts
         &__content
         & .description
@@ -100,7 +126,25 @@
                 height: 40px
         & .slide
             background: url(../assets/image/welcome-slider.png)
-            
+    .visiting
+        &__content
+            grid-gap: 40px 55px
+
+            & .tour
+                flex-basis: calc((100% - 55px) / 2)
+                &-inner
+                    width: 280px
+                &-image
+                    height: 180px
+                &-title
+                    @include forum_22_dark
+                    letter-spacing: 3px
+                &-subtitle
+                    @include roboto_18_dark
+                    font-weight: 200
+                    &_small
+                    @include roboto_16_dark
+                    font-weight: 200        
     .parallax
         height: 300px
     .contacts
@@ -170,6 +214,26 @@
             & .slider-footer
                 bottom: -60px
                 width: 230px
+    .visiting
+        &__content
+            grid-gap: 40px
+            padding-left: 50px
+            padding-right: 50px
+            & .tour
+                flex-basis: 100%
+                justify-content: center
+                &:nth-child(2n)
+                    justify-content: center
+                &-inner
+                    width: 280px
+                &-image
+                    height: 180px
+                &-title
+                    @include forum_18_dark
+                    letter-spacing: 5px
+                &-subtitle
+                    @include roboto_16_dark
+                    font-weight: 200
     .parallax
         & img
             // object-fit: none
