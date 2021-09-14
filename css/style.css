@@ -20,7 +20,6 @@ body {
   -webkit-mask-position: center;
   -webkit-mask-size: auto;
   -webkit-mask-repeat: no-repeat;
-  transition: 1.5s;
   width: 200px;
   height: 30px;
 }
@@ -144,6 +143,7 @@ body {
 .welcome {
   background-color: #030303;
   padding-top: 150px;
+  padding-bottom: 60px;
 }
 
 .welcome__container {
@@ -157,6 +157,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   left: 0;
+  z-index: 10;
 }
 
 .welcome__section-title {
@@ -202,6 +203,7 @@ body {
 }
 
 .welcome__slider {
+  position: relative;
   width: 70%;
   height: 810px;
   background-color: #030303;
@@ -212,14 +214,131 @@ body {
   width: 100%;
   height: inherit;
   background-color: #030303;
+  overflow: hidden;
 }
 
 .welcome__slider .slide {
+  display: none;
   width: inherit;
   height: inherit;
   background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/image/welcome-slider.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.welcome__slider .slide_active {
+  display: flex;
+}
+
+.welcome__slider .slider-footer {
+  width: 600px;
+  height: 120px;
+  background-color: #030303;
+  position: absolute;
+  bottom: -60px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome__slider .slider-footer .slider-counts {
+  display: flex;
+  align-items: center;
+  margin-right: 45px;
+}
+
+.welcome__slider .slider-footer .slider-counts > span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFFFFF;
+  line-height: 40px;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.welcome__slider .slider-footer .slider-counts .count-delimiter {
+  height: 20px;
+  width: 2px;
+  background-color: #FFFFFF;
+  margin: 0 10px;
+}
+
+.welcome__slider .slider-footer .slider-pagination {
+  display: flex;
+  align-items: center;
+  margin-right: 45px;
+}
+
+.welcome__slider .slider-footer .slider-pagination .slider-pagination-item {
+  width: 12px;
+  height: 12px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+.welcome__slider .slider-footer .slider-pagination .slider-pagination-item:not(:last-child) {
+  margin-right: 25px;
+}
+
+.welcome__slider .slider-footer .slider-pagination .slider-pagination-item_active {
+  background-color: #9D8665;
+}
+
+.welcome__slider .slider-footer .slider-pagination .slider-pagination-item:hover {
+  background-color: #9D8665;
+}
+
+.welcome__slider .slider-footer .slider-arrows {
+  display: flex;
+  align-items: center;
+}
+
+.welcome__slider .slider-footer .slider-arrows .slider-arrow {
+  width: 30px;
+  height: 8px;
+  border: none;
+  outline: none;
+  background-color: #FFFFFF;
+  -webkit-mask-position: center;
+  -webkit-mask-size: auto;
+  -webkit-mask-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.welcome__slider .slider-footer .slider-arrows .slider-arrow:hover {
+  background-color: #9D8665;
+}
+
+.welcome__slider .slider-footer .slider-arrows .slider-arrow_left {
+  -webkit-mask-image: url(../assets/icons/slider-arrow.svg);
+  margin-right: 20px;
+}
+
+.welcome__slider .slider-footer .slider-arrows .slider-arrow_right {
+  -webkit-mask-image: url(../assets/icons/slider-arrow.svg);
+  transform: rotate(-180deg);
+}
+
+@keyframes toRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes toLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .explore {
@@ -459,6 +578,7 @@ body {
   }
   .welcome {
     padding-top: 130px;
+    padding-bottom: 120px;
   }
   .welcome__container {
     padding-top: 0;
@@ -466,6 +586,11 @@ body {
   }
   .welcome__slider {
     height: 585px;
+  }
+  .welcome__slider .slider-footer {
+    left: 0;
+    bottom: -120px;
+    width: 100%;
   }
   .welcome__content {
     left: 20px;
@@ -558,6 +683,7 @@ body {
   }
   .welcome {
     padding-top: 110px;
+    padding-bottom: 100px;
   }
   .welcome__container {
     padding-top: 0;
@@ -592,6 +718,13 @@ body {
   .welcome__slider {
     width: 100%;
     height: 645px;
+  }
+  .welcome__slider .slider-footer {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -70px;
+    width: 400px;
+    height: 40px;
   }
   .welcome .slide {
     background: url(../assets/image/welcome-slider.png);
@@ -711,6 +844,7 @@ body {
   }
   .welcome {
     padding-top: 90px;
+    padding-bottom: 80px;
   }
   .welcome__section-subtitle {
     font-family: Roboto;
@@ -722,6 +856,10 @@ body {
   }
   .welcome__slider {
     height: 365px;
+  }
+  .welcome__slider .slider-footer {
+    bottom: -60px;
+    width: 230px;
   }
   .contacts__section-title {
     font-family: Forum;

@@ -1,6 +1,7 @@
 .welcome
     background-color: $bg-dark
     padding-top: 150px
+    padding-bottom: 60px
     &__container
         padding-top: 0
         padding-bottom: 0
@@ -10,6 +11,7 @@
         top: 50%
         transform: translateY(-50%)
         left: 0
+        z-index: 10
     &__section-title
         margin-bottom: 25px
     &__section-subtitle
@@ -20,8 +22,8 @@
         &:hover
             @include button-rounded_hover
     &__slider
+        position: relative
         width: 70%
-
         height: 810px
         background-color: $bg-dark
         margin-left: auto
@@ -29,12 +31,99 @@
             width: 100%
             height: inherit
             background-color: $bg-dark
-
+            overflow: hidden
         & .slide
+            display: none
             width: inherit
             height: inherit
             background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%), url(../assets/image/welcome-slider.png)
             background-repeat: no-repeat
             background-size: cover
+            // transform: translateX(0)
+            &_active
+                display: flex
+                // transform: translateX(0)
+            // &_to-right
+            //     transform: translateX(-100%)
+            // &_to-left
+            //     transform: translateX(100%)
+        & .slider-footer
+            width: 600px
+            height: 120px
+            background-color: $bg-dark
+            position: absolute
+            bottom: -60px
+            right: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            & .slider-counts    
+                display: flex
+                align-items: center
+                margin-right: 45px
+                & > span
+                    @include roboto_20_light
+                    line-height: 40px
+                    align-items: center
+                    text-transform: uppercase
+                & .count-delimiter
+                    height: 20px
+                    width: 2px
+                    background-color: $light
+                    margin: 0 10px
+            & .slider-pagination
+                display: flex
+                align-items: center
+                margin-right: 45px
+                & .slider-pagination-item
+                    width: 12px
+                    height: 12px
+                    background-color: $light
+                    cursor: pointer
+                    &:not(:last-child)
+                        margin-right: 25px
+                    &_active
+                        background-color: $gold
+                    &:hover
+                        background-color: $gold
+            & .slider-arrows
+                display: flex
+                align-items: center
+                & .slider-arrow
+                    width: 30px
+                    height: 8px
+                    border: none
+                    outline: none
+                    background-color: $light
+                    -webkit-mask-position: center
+                    -webkit-mask-size: auto
+                    -webkit-mask-repeat: no-repeat
+                    cursor: pointer
+                    &:hover
+                        background-color: $gold
+                    &_left
+                        -webkit-mask-image: url(../assets/icons/slider-arrow.svg)
+                        margin-right: 20px
+                    &_right
+                        -webkit-mask-image: url(../assets/icons/slider-arrow.svg)
+                        transform: rotate(-180deg)
+@keyframes toRight 
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(100%)
+
+@keyframes toLeft 
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-100%)
+
+                    
+
+
+
+
+                        
 
        
