@@ -59,7 +59,18 @@
                     &_small
                     @include roboto_16_dark
                     font-weight: 200
-
+    .explore
+        &__container
+            flex-direction: column
+        &__content
+            width: 100%
+            margin-right: 0
+            margin-bottom: 60px
+        &__description
+            & > p:nth-child(n+3)
+                display: none
+        &__slider
+            margin: 0 auto
 
     .contacts
         &__content
@@ -145,6 +156,15 @@
                     &_small
                     @include roboto_16_dark
                     font-weight: 200        
+    .explore
+        &__content
+            margin-bottom: 0
+        &__description
+            & > p
+                display: none
+        &__slider
+            width: 728px
+            height: 705px
     .parallax
         height: 300px
     .contacts
@@ -234,6 +254,10 @@
                 &-subtitle
                     @include roboto_16_dark
                     font-weight: 200
+    .explore
+        &__slider
+            width: 100%
+            height: 370px
     .parallax
         & img
             // object-fit: none
