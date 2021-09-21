@@ -1,2 +1,21 @@
 .gallery
     background-color: $bg-dark
+    &__container
+        position: relative
+        height: 2125px
+        overflow: hidden
+        &::after
+            position: absolute
+            content: ''
+            bottom: 0
+            left: 0
+            right: 0
+            height: 360px                
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)
+    &__content
+        column-count: 3
+        // column-width: 455px
+        column-gap: 36px
+        & > img
+            width: 456px
+            margin-bottom: 24px

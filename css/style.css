@@ -458,7 +458,7 @@ iframe {
   width: inherit;
   height: inherit;
   position: relative;
-  background-image: url("../assets/image/explore-slider_2.png");
+  background-image: url("../assets/image/explore/before.png");
   background-position: 0 center;
   background-repeat: no-repeat;
 }
@@ -470,7 +470,7 @@ iframe {
   top: 0;
   left: 2.5px;
   bottom: 0;
-  background-image: url("../assets/image/explore-slider_1.png");
+  background-image: url("../assets/image/explore/after.png");
 }
 
 .explore__slider .slider-range {
@@ -488,6 +488,32 @@ iframe {
 
 .gallery {
   background-color: #030303;
+}
+
+.gallery__container {
+  position: relative;
+  height: 2125px;
+  overflow: hidden;
+}
+
+.gallery__container::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 360px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
+.gallery__content {
+  column-count: 3;
+  column-gap: 36px;
+}
+
+.gallery__content > img {
+  width: 456px;
+  margin-bottom: 24px;
 }
 
 .parallax {
