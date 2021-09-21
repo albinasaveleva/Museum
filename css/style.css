@@ -419,6 +419,72 @@ iframe {
   background-color: #030303;
 }
 
+.explore__container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.explore__content {
+  display: flex;
+  flex-direction: column;
+  margin-right: 60px;
+}
+
+.explore__description > p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #FFFFFF;
+  font-weight: 300;
+  line-height: 38px;
+  margin: 0;
+}
+
+.explore__description > p:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.explore__slider {
+  width: 720px;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.explore__slider .slider-image {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  background-image: url("../assets/image/explore-slider_2.png");
+  object-fit: contain;
+}
+
+.explore__slider .slider-image_after {
+  transition: 0s;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 2.5px;
+  bottom: 0;
+  background-image: url("../assets/image/explore-slider_1.png");
+}
+
+.explore__slider .slider-range {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.explore .mark_yellow {
+  color: #9D8665;
+}
+
 .gallery {
   background-color: #030303;
 }

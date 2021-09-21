@@ -1,2 +1,46 @@
 .explore
     background-color: $bg-dark
+    &__container
+        display: flex
+        align-items: flex-start
+    &__content
+        display: flex
+        flex-direction: column
+        margin-right: 60px
+    &__description
+        & > p
+            @include roboto_22_light
+            font-weight: 300
+            line-height: 38px
+            margin: 0
+            &:not(:last-child)
+                margin-bottom: 25px
+    &__slider
+        width: 720px
+        height: 700px
+        position: relative
+        overflow: hidden
+        flex-shrink: 0
+        & .slider-image
+            width: inherit
+            height: inherit
+            position: relative
+            background-image: url('../assets/image/explore-slider_2.png')
+            object-fit: contain
+            &_after
+                transition: 0s
+                width: 100%
+                position: absolute
+                top: 0
+                left: 2.5px
+                bottom: 0
+                background-image: url('../assets/image/explore-slider_1.png')
+        & .slider-range
+            position: absolute
+            top: 50%
+            left: 0
+            right: 0
+            width: 100%
+            transform: translateY(-50%)
+    & .mark_yellow
+        color: $gold
