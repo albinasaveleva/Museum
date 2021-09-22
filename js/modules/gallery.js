@@ -37,37 +37,36 @@ const gallery = () => {
     getImages('../gallery/gallery.json');
     const gallerySlider = () => {
         document.addEventListener('mousemove', (e) => {
-            let coursorX = e.pageX,
-                coursorY = e.pageY,
+            let coursorPosition = {
+                x: e.pageX,
+                y: e.pageY
+                },
                 galleryContentPosition = {
                     top: window.pageYOffset + galleryContentWrapper.getBoundingClientRect().top,
                     bottom: window.pageYOffset + galleryContentWrapper.getBoundingClientRect().bottom,
                     left: window.pageXOffset + galleryContentWrapper.getBoundingClientRect().left,
                     right: window.pageXOffset + galleryContentWrapper.getBoundingClientRect().right
                 };
-            let moveCount = 50,
-                oldScroll = scrollY,
-                galleryContentWrapperHeight = window.getComputedStyle(galleryContent.parentNode).height.slice(0, -2),
-                galleryContentHeight = window.getComputedStyle(galleryContent).height.slice(0, -2),
-                maxMoveCount = galleryContentHeight - galleryContentWrapperHeight;   
+            let maxMoveCount = window.getComputedStyle(galleryContent).height.slice(0, -2) - 
+                window.getComputedStyle(galleryContent.parentNode).height.slice(0, -2);   
 
-            const moveContent = (count) => {
-                
+            const moveContent = () => {
+                if ( e.clientY < window.innerHeight / 2) {
+                    galleryContent.style.transition = `transform ${Math.floor(maxMoveCount / 100)}s linear`
+                    galleryContent.style.transform = `translateY(${0}px)`;
+                } else if (e.clientY > window.innerHeight / 2) {
+                    galleryContent.style.transform = `translateY(-${maxMoveCount}px)`;
+                }
             }
-            if ((coursorX > galleryContentPosition.left && 
-                coursorX < galleryContentPosition.right) && (
-                coursorY > galleryContentPosition.top &&
-                coursorY < galleryContentPosition.bottom)
+            if ((coursorPosition.x > galleryContentPosition.left && 
+                coursorPosition.x < galleryContentPosition.right) && (
+                coursorPosition.y > galleryContentPosition.top &&
+                coursorPosition.y < galleryContentPosition.bottom)
                 ) {
-                    document.body.style.overflowY = 'hidden';
-                    galleryContentWrapper.style.overflowY = 'scroll';
-
-                } else {
-                    document.body.style.overflowY = '';
-                    galleryContentWrapper.style.overflowY = '';
+                    moveContent();
                 }
         })
     }
-    // gallerySlider();
+    gallerySlider();
 };
 export default gallery;

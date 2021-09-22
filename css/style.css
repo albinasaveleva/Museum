@@ -513,6 +513,7 @@ iframe {
 
 .gallery__content-wrapper {
   height: 1960px;
+  overflow: hidden;
 }
 
 .gallery__content > img {
