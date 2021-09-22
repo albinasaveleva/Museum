@@ -1,9 +1,11 @@
 const exploreSlider = () => {
     const slider = document.querySelector('.explore__slider'),
         sliderRange = slider.querySelector('.slider-range'),
-        sliderImage = slider.querySelector('.slider-image_after');
+        sliderImage = slider.querySelector('.slider-image_after'),
+        sliderPseudoRange = slider.querySelector('.pseudo-range');
     const moveImage = () => {
         sliderImage.style.width = `${sliderRange.value}%`;
+        sliderPseudoRange.style.left = `${sliderRange.value}%`
     }
     moveImage();
     sliderRange.addEventListener('change', moveImage);

@@ -468,18 +468,60 @@ iframe {
   width: 100%;
   position: absolute;
   top: 0;
-  left: -1.5px;
+  left: 0;
   bottom: 0;
   background-image: url("../assets/image/explore/after.png");
 }
 
 .explore__slider .slider-range {
+  width: 100%;
+  z-index: 10;
+}
+
+.explore__slider .slider-range-wrapper {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
   width: 100%;
   transform: translateY(-50%);
+}
+
+.explore__slider .pseudo-range {
+  transition: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+  cursor: pointer;
+}
+
+.explore__slider .pseudo-range > div {
+  height: 350px;
+  width: 5px;
+  background-color: #ffffff;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.explore__slider .pseudo-range .pseudo-range_before {
+  bottom: 30px;
+}
+
+.explore__slider .pseudo-range .pseudo-range_after {
+  top: 30px;
+}
+
+.explore input[type=range] {
+  opacity: 0;
+  height: 40px;
 }
 
 .explore .mark_yellow {
