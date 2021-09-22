@@ -59,17 +59,15 @@ const gallery = () => {
                 coursorY > galleryContentPosition.top &&
                 coursorY < galleryContentPosition.bottom)
                 ) {
-                    document.addEventListener('scroll', () => {
-                        console.log(scrollY)
-                        // if (scrollY > oldScroll) {
-                        //     oldScroll = scrollY;
-                        // } else {
-                        //     oldScroll = scrollY;
-                        // }
-                    })
+                    document.body.style.overflowY = 'hidden';
+                    galleryContentWrapper.style.overflowY = 'scroll';
+
+                } else {
+                    document.body.style.overflowY = '';
+                    galleryContentWrapper.style.overflowY = '';
                 }
         })
     }
-    gallerySlider();
+    // gallerySlider();
 };
 export default gallery;

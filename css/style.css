@@ -493,6 +493,7 @@ iframe {
 .gallery__container {
   position: relative;
   overflow: hidden;
+  padding-bottom: 0;
 }
 
 .gallery__container::after {
@@ -845,6 +846,9 @@ iframe {
   .explore__slider {
     margin: 0 auto;
   }
+  .gallery__container {
+    padding-bottom: 0;
+  }
   .gallery__content-wrapper {
     height: 1265px;
   }
@@ -1011,6 +1015,9 @@ iframe {
   .explore__slider {
     width: 728px;
     height: 705px;
+  }
+  .gallery__container {
+    padding-bottom: 0;
   }
   .gallery__content {
     column-count: 2;
@@ -1192,6 +1199,9 @@ iframe {
   .explore__slider {
     width: 100%;
     height: 370px;
+  }
+  .gallery__container {
+    padding-bottom: 0;
   }
   .gallery__content-wrapper {
     height: 640px;
