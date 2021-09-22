@@ -1,6 +1,7 @@
 const gallery = () => {
     const gallery = document.querySelector('.gallery'),
-        galleryContent = gallery.querySelector('.gallery__content');
+        galleryContent = gallery.querySelector('.gallery__content'),
+        galleryContentWrapper = gallery.querySelector('.gallery__content-wrapper');
 
     let images = [],
         shuffleImages = [];
@@ -34,6 +35,41 @@ const gallery = () => {
             })
     };
     getImages('../gallery/gallery.json');
+    const gallerySlider = () => {
+        document.addEventListener('mousemove', (e) => {
+            let coursorX = e.pageX,
+                coursorY = e.pageY,
+                galleryContentPosition = {
+                    top: window.pageYOffset + galleryContentWrapper.getBoundingClientRect().top,
+                    bottom: window.pageYOffset + galleryContentWrapper.getBoundingClientRect().bottom,
+                    left: window.pageXOffset + galleryContentWrapper.getBoundingClientRect().left,
+                    right: window.pageXOffset + galleryContentWrapper.getBoundingClientRect().right
+                };
+            let moveCount = 50,
+                oldScroll = scrollY,
+                galleryContentWrapperHeight = window.getComputedStyle(galleryContent.parentNode).height.slice(0, -2),
+                galleryContentHeight = window.getComputedStyle(galleryContent).height.slice(0, -2),
+                maxMoveCount = galleryContentHeight - galleryContentWrapperHeight;   
 
+            const moveContent = (count) => {
+                
+            }
+            if ((coursorX > galleryContentPosition.left && 
+                coursorX < galleryContentPosition.right) && (
+                coursorY > galleryContentPosition.top &&
+                coursorY < galleryContentPosition.bottom)
+                ) {
+                    document.addEventListener('scroll', () => {
+                        console.log(scrollY)
+                        // if (scrollY > oldScroll) {
+                        //     oldScroll = scrollY;
+                        // } else {
+                        //     oldScroll = scrollY;
+                        // }
+                    })
+                }
+        })
+    }
+    gallerySlider();
 };
 export default gallery;
