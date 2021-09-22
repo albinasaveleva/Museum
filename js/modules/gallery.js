@@ -36,6 +36,8 @@ const gallery = () => {
     };
     getImages('../gallery/gallery.json');
     const gallerySlider = () => {
+        let moveCount = 0;
+
         document.addEventListener('mousemove', (e) => {
             let coursorPosition = {
                 x: e.pageX,
@@ -49,13 +51,24 @@ const gallery = () => {
                 };
             let maxMoveCount = window.getComputedStyle(galleryContent).height.slice(0, -2) - 
                 window.getComputedStyle(galleryContent.parentNode).height.slice(0, -2);   
-
+            const moveCounter = (value) => {
+                return moveCount += value;
+            }
             const moveContent = () => {
                 if ( e.clientY < window.innerHeight / 2) {
-                    galleryContent.style.transition = `transform ${Math.floor(maxMoveCount / 100)}s linear`
-                    galleryContent.style.transform = `translateY(${0}px)`;
+                    moveCounter(10);
+                    if (moveCount > 0) {
+                        moveCount = 0;
+                    }
+                    galleryContent.style.transition = `transform 2s linear`;
+                    galleryContent.style.transform = `translateY(${moveCount}px)`;
                 } else if (e.clientY > window.innerHeight / 2) {
-                    galleryContent.style.transform = `translateY(-${maxMoveCount}px)`;
+                    moveCounter(-10);
+                    if (Math.abs(moveCount) > maxMoveCount) {
+                        moveCount = -maxMoveCount;
+                    }
+                    galleryContent.style.transition = `transform 2s linear`;
+                    galleryContent.style.transform = `translateY(${moveCount}px)`;
                 }
             }
             if ((coursorPosition.x > galleryContentPosition.left && 
@@ -64,7 +77,7 @@ const gallery = () => {
                 coursorPosition.y < galleryContentPosition.bottom)
                 ) {
                     moveContent();
-                }
+                } 
         })
     }
     gallerySlider();
