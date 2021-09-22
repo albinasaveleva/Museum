@@ -2,6 +2,7 @@
 
 import exploreSlider from "./modules/exploreSlider.js";
 import gallery from "./modules/gallery.js";
+import scroll from "./modules/scroll.js";
 import visitingToursCards from "./modules/visitingToursCards.js";
 import welcomeSlider from "./modules/welcomeSlider.js";
 
@@ -10,3 +11,4 @@ welcomeSlider();
 visitingToursCards();
 exploreSlider();
 gallery();
+scroll();
