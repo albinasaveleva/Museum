@@ -14,11 +14,35 @@
             height: 360px                
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)
     &__content
-        column-count: 3
-        column-gap: 36px
+        display: grid
+        grid-row-gap: 24px
+        row-gap: 24px
+        grid-column-gap: 24px
+        column-gap: 24px
+        grid-template-columns: repeat(2, 1fr)
+        overflow: hidden
+        grid-auto-flow: dense
+        grid-auto-rows: 1fr
+        contain: layout paint
         &-wrapper
             height: 1960px
             overflow: hidden
         & > img
             width: 100%
-            margin-bottom: 24px
+            height: 100%
+            object-fit: cover
+            opacity: 0
+            transition: all .3s linear .1s
+            transform: translateY(30px) scale(.8)
+            &:nth-child(odd)
+                grid-column-start: 1
+                margin-top: 50px
+            &:nth-child(2n+2)
+                grid-column-start: 2
+
+        & .gallery__image_vertical
+            grid-row-end: span 5
+        & .gallery__image_horizontal
+            grid-row-end: span 3
+        & .gallery__image_square
+            grid-row-end: span 4

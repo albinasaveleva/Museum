@@ -5,7 +5,40 @@ const gallery = () => {
 
     let images = [],
         shuffleImages = [];
+    
+    const galleryAnimation = () => {
+            const images = gallery.querySelectorAll('img');
+            [...images].forEach(item => {
+                item.style.opacity = 1;
+                item.style.transform = 'none'; 
+            })
 
+            document.addEventListener('scroll', () => {
+                let windowPosition = {
+                    top: window.pageYOffset,
+                    bottom: window.pageYOffset + document.documentElement.clientHeight
+                };
+                [...images].forEach(item => {
+                    let itemPosition = {
+                        top: window.pageYOffset + item.getBoundingClientRect().top,
+                        bottom: window.pageYOffset + item.getBoundingClientRect().bottom
+                    };
+                    if ((itemPosition.top >= windowPosition.top && 
+                        itemPosition.bottom <= windowPosition.bottom) ||
+                        (itemPosition.top < windowPosition.top && 
+                        itemPosition.bottom > windowPosition.top) ||
+                        (itemPosition.top > windowPosition.top && 
+                        itemPosition.bottom > windowPosition.bottom &&
+                        itemPosition.top < windowPosition.bottom)) {
+                            item.style.opacity = 1;
+                            item.style.transform = 'none'; 
+                        } else {
+                            item.style.opacity = 0;
+                            item.style.transform = 'translateY(30px) scale(.8)'; 
+                        }
+                })
+            })
+        }
     const shuffle = () => {
         shuffleImages = [...images];
         let m = shuffleImages.length;
@@ -20,11 +53,13 @@ const gallery = () => {
         let fragment = new DocumentFragment();
         shuffleImages.forEach(item => {
             let img = document.createElement('img');
-            img.src = `gallery/images/${item}`;
-            img.alt = item;
+            img.classList.add(`gallery__image_${item.position}`)
+            img.src = `gallery/images/${item.link}`;
+            img.alt = item.link;
             fragment.append(img);
         })
         galleryContent.append(fragment);
+        setTimeout(galleryAnimation, 50)
     };
     const getImages = (url) => {
         fetch(url)
@@ -80,6 +115,6 @@ const gallery = () => {
                 } 
         })
     }
-    gallerySlider();
+
 };
 export default gallery;
