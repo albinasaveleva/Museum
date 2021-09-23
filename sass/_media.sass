@@ -36,24 +36,24 @@
             @include roboto_24_light
             margin-bottom: 50px
     .visiting
-        &__content
+        & .content
             grid-gap: 60px 110px
             justify-content: center
             margin: 0 auto
-            & .tour
+            & .card
                 flex-basis: calc((100% - 110px) / 2)
                 justify-content: flex-end
                 &:nth-child(2n)
                     justify-content: flex-start
-                &-inner
+                & .inner
                     width: 330px
-                &-image
+                & .image
                     height: 215px
-                &-title
+                & .title
                     @include forum_28_dark
                     &-delimiter
                         width: 150px
-                &-subtitle
+                & .subtitle
                     @include roboto_20_dark
                     font-weight: 200
                     &_small
@@ -62,20 +62,31 @@
     .explore
         &__container
             flex-direction: column
-        &__content
+        & .wrapper
             width: 100%
             margin-right: 0
             margin-bottom: 60px
-        &__description
+        & .content
             & > p:nth-child(n+3)
                 display: none
-        &__slider
+        & .slider
             margin: 0 auto
     .gallery
         &__container
             padding-bottom: 0
-        &__content-wrapper
+        & .wrapper
             height: 1265px
+    .tickets
+        & .wrapper
+            justify-content: space-between
+        & .image
+            margin-right: 80px
+            width: 700px
+            height: 440px
+        & .ticket-type
+            display: none
+        & .ticket-amount
+            margin-left: auto
     .contacts
         &__content
         & .description
@@ -93,6 +104,10 @@
             flex-wrap: nowrap
         &__logo
             margin-right: 45px
+    .modal_booking-tickets 
+        & .modal__container
+            padding: 30px
+            padding-top: 75px
 @media (max-width: 1023px)
     .container
         padding: 40px 20px
@@ -142,41 +157,44 @@
         & .slide
             background: url(../assets/image/welcome-slider.png)
     .visiting
-        &__content
+        & .content
             grid-gap: 40px 55px
-
-            & .tour
+            & .card
                 flex-basis: calc((100% - 55px) / 2)
-                &-inner
+                & .inner
                     width: 280px
-                &-image
+                & .image
                     height: 180px
-                &-title
+                & .title
                     @include forum_22_dark
                     letter-spacing: 3px
-                &-subtitle
+                & .subtitle
                     @include roboto_18_dark
                     font-weight: 200
                     &_small
                     @include roboto_16_dark
                     font-weight: 200        
     .explore
-        &__content
+        & .wrapper
             margin-bottom: 0
-        &__description
+        & .content
             & > p
                 display: none
-        &__slider
+        & .slider
             width: 728px
             height: 705px
     .gallery
         &__container
             padding-bottom: 0
-        &__content
-            &-wrapper
-                height: 1080px
+        & .wrapper
+            height: 1080px
     .parallax
         height: 300px
+    .tickets
+        &.image
+            width: 444px
+            height: 340px
+            margin-right: 60px
     .contacts
         &__content
             flex-direction: column
@@ -214,6 +232,18 @@
     .nav
         &__item
             font-size: 18px
+    .modal_booking-tickets 
+        & .modal__container
+            padding: 80px 30px 40px
+            flex-direction: column
+            & .booking
+                max-width: none
+                margin-right: 0
+                margin-bottom: 50px
+            & .payment 
+                padding: 25px 15px
+                max-width: none
+                width: 100%
 @media ( max-width:  767px)
     .logo
         -webkit-mask-image: url(../assets/icons/logo_mini.svg)
@@ -245,36 +275,44 @@
                 bottom: -60px
                 width: 230px
     .visiting
-        &__content
+        & .content
             grid-gap: 40px
             padding-left: 50px
             padding-right: 50px
-            & .tour
+            & .card
                 flex-basis: 100%
                 justify-content: center
                 &:nth-child(2n)
                     justify-content: center
-                &-inner
+                & .inner
                     width: 280px
-                &-image
+                & .image
                     height: 180px
-                &-title
+                & .title
                     @include forum_18_dark
                     letter-spacing: 5px
-                &-subtitle
+                & .subtitle
                     @include roboto_16_dark
                     font-weight: 200
     .explore
-        &__slider
+        & .slider
             width: 100%
             height: 370px
-    
-    
     .gallery
         &__container
             padding-bottom: 0
-        &__content-wrapper
+        & .wrapper
             height: 640px
+    .tickets
+        & .wrapper
+            flex-direction: column
+        & .image
+            width: 100%
+            height: 160px
+            margin-right: 0
+            margin-bottom: 40px
+        & .ticket-amount
+            margin: 0 auto
     .contacts
         &__section-title
             @include forum_28_hover
@@ -316,8 +354,10 @@
                 &:not(:last-child)
                     margin-right: 5px
 @media (min-width: 1024px)
+    .header
+        &__mobile-menu
     .gallery
-        &__content
+        & .content
             grid-template-columns: repeat(3, 1fr)
             grid-row-gap: 36px
             row-gap: 36px

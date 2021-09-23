@@ -31,7 +31,7 @@ body {
 .logo > a {
   width: inherit;
   height: inherit;
-  display: flex;
+  display: block;
 }
 
 .nav {
@@ -90,11 +90,15 @@ body {
   margin-bottom: 75px;
 }
 
-.section-title-delimiter {
+.delimiter {
   width: 100%;
   height: 3px;
   background-color: #710707;
   border-radius: 0px;
+}
+
+.delimiter_small {
+  height: 2px;
 }
 
 .section-subtitle {
@@ -346,33 +350,33 @@ iframe {
   }
 }
 
-.visiting__content {
+.visiting .content {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   grid-gap: 75px 60px;
 }
 
-.visiting__content .tour {
+.visiting .content .card {
   display: flex;
   text-decoration: none;
 }
 
-.visiting__content .tour-inner {
+.visiting .content .card .inner {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   width: 440px;
 }
 
-.visiting__content .tour-image {
+.visiting .content .card .image {
   width: 100%;
   height: 285px;
   object-fit: cover;
   margin-bottom: 25px;
 }
 
-.visiting__content .tour-title {
+.visiting .content .card .title {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
@@ -385,14 +389,11 @@ iframe {
   margin: 0;
 }
 
-.visiting__content .tour-title-delimiter {
-  width: 300px;
-  height: 2px;
-  background-color: #710707;
+.visiting .content .card .delimiter {
   margin: 10px 0;
 }
 
-.visiting__content .tour-subtitle {
+.visiting .content .card .subtitle {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -404,7 +405,7 @@ iframe {
   margin-bottom: 10px;
 }
 
-.visiting__content .tour-subtitle_small {
+.visiting .content .card .subtitle_small {
   display: block;
   font-family: Roboto;
   font-style: normal;
@@ -424,13 +425,13 @@ iframe {
   align-items: flex-start;
 }
 
-.explore__content {
+.explore .wrapper {
   display: flex;
   flex-direction: column;
   margin-right: 60px;
 }
 
-.explore__description > p {
+.explore .content > p {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -442,11 +443,11 @@ iframe {
   margin: 0;
 }
 
-.explore__description > p:not(:last-child) {
+.explore .content > p:not(:last-child) {
   margin-bottom: 25px;
 }
 
-.explore__slider {
+.explore .slider {
   width: 720px;
   height: 700px;
   position: relative;
@@ -454,7 +455,7 @@ iframe {
   flex-shrink: 0;
 }
 
-.explore__slider .slider-image {
+.explore .slider-image {
   width: inherit;
   height: inherit;
   position: relative;
@@ -463,7 +464,7 @@ iframe {
   background-repeat: no-repeat;
 }
 
-.explore__slider .slider-image_after {
+.explore .slider-image_after {
   transition: 0s;
   width: 100%;
   position: absolute;
@@ -473,12 +474,13 @@ iframe {
   background-image: url("../assets/image/explore/after.png");
 }
 
-.explore__slider .slider-range {
+.explore .slider-range {
   width: 100%;
   z-index: 10;
+  cursor: ew-resize;
 }
 
-.explore__slider .slider-range-wrapper {
+.explore .slider-range-wrapper {
   position: absolute;
   top: 50%;
   left: 0;
@@ -487,7 +489,7 @@ iframe {
   transform: translateY(-50%);
 }
 
-.explore__slider .pseudo-range {
+.explore .slider .pseudo-range {
   transition: none;
   position: absolute;
   top: 50%;
@@ -499,10 +501,10 @@ iframe {
   background: transparent;
   transform: translate(-50%, -50%);
   z-index: -5;
-  cursor: pointer;
+  cursor: ew-resize;
 }
 
-.explore__slider .pseudo-range > div {
+.explore .slider .pseudo-range > div {
   height: 350px;
   width: 5px;
   background-color: #ffffff;
@@ -511,17 +513,18 @@ iframe {
   left: 50%;
 }
 
-.explore__slider .pseudo-range .pseudo-range_before {
+.explore .slider .pseudo-range .pseudo-range_before {
   bottom: 30px;
 }
 
-.explore__slider .pseudo-range .pseudo-range_after {
+.explore .slider .pseudo-range .pseudo-range_after {
   top: 30px;
 }
 
 .explore input[type=range] {
   opacity: 0;
   height: 40px;
+  cursor: ew-resize;
 }
 
 .explore .mark_yellow {
@@ -548,7 +551,12 @@ iframe {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
 
-.gallery__content {
+.gallery .wrapper {
+  height: 1960px;
+  overflow: hidden;
+}
+
+.gallery .content {
   display: grid;
   grid-row-gap: 24px;
   row-gap: 24px;
@@ -561,12 +569,7 @@ iframe {
   contain: layout paint;
 }
 
-.gallery__content-wrapper {
-  height: 1960px;
-  overflow: hidden;
-}
-
-.gallery__content > img {
+.gallery .content > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -575,25 +578,153 @@ iframe {
   transform: translateY(30px) scale(0.8);
 }
 
-.gallery__content > img:nth-child(odd) {
+.gallery .content > img:nth-child(odd) {
   grid-column-start: 1;
   margin-top: 50px;
 }
 
-.gallery__content > img:nth-child(2n+2) {
+.gallery .content > img:nth-child(2n+2) {
   grid-column-start: 2;
 }
 
-.gallery__content .gallery__image_vertical {
+.gallery .content .image_vertical {
   grid-row-end: span 5;
 }
 
-.gallery__content .gallery__image_horizontal {
+.gallery .content .image_horizontal {
   grid-row-end: span 3;
 }
 
-.gallery__content .gallery__image_square {
+.gallery .content .image_square {
   grid-row-end: span 4;
+}
+
+.tickets .wrapper {
+  display: flex;
+}
+
+.tickets .content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tickets .image {
+  width: 720px;
+  height: 550px;
+  margin-right: 60px;
+}
+
+.tickets .image img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+.modal_booking-tickets {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.modal_booking-tickets .modal__container {
+  padding: 90px 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.modal_booking-tickets .modal__container .booking {
+  max-width: 400px;
+  width: 100%;
+  margin-right: 40px;
+}
+
+.modal_booking-tickets .modal__container .payment {
+  padding: 25px 30px;
+  background-color: #FFFFFF;
+  border: 1px solid #030303;
+  max-width: 530px;
+  width: 100%;
+}
+
+.booking__logo {
+  width: 85px;
+  height: 40px;
+  background-color: #9D8665;
+  -webkit-mask-image: url(../assets/icons/logo-image.svg);
+  -webkit-mask-position: center;
+  -webkit-mask-size: auto;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.booking__logo > a {
+  height: inherit;
+  width: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.booking__section-title {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  color: #9D8665;
+  font-size: 50px;
+  line-height: 75px;
+  line-height: 55px;
+  margin-bottom: 15px;
+}
+
+.booking__section-subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+  color: #710707;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.booking__title-wrapper {
+  margin-bottom: 60px;
+}
+
+.booking-tickets-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-tickets-form .date-inputs {
+  display: flex;
+}
+
+.booking-tickets-form__input {
+  border: 1px solid #030303;
+  outline: none;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.booking-tickets-form__input_small {
+  width: calc( (100% - 20px) / 2);
+}
+
+.booking-tickets-form__input_small:not(:last-child) {
+  margin-right: 20px;
+}
+
+.booking-tickets-form__input_large {
+  width: 100%;
+}
+
+.booking-tickets-form option {
+  width: inherit;
 }
 
 .parallax {
@@ -861,25 +992,25 @@ iframe {
     color: #FFFFFF;
     margin-bottom: 50px;
   }
-  .visiting__content {
+  .visiting .content {
     grid-gap: 60px 110px;
     justify-content: center;
     margin: 0 auto;
   }
-  .visiting__content .tour {
+  .visiting .content .card {
     flex-basis: calc((100% - 110px) / 2);
     justify-content: flex-end;
   }
-  .visiting__content .tour:nth-child(2n) {
+  .visiting .content .card:nth-child(2n) {
     justify-content: flex-start;
   }
-  .visiting__content .tour-inner {
+  .visiting .content .card .inner {
     width: 330px;
   }
-  .visiting__content .tour-image {
+  .visiting .content .card .image {
     height: 215px;
   }
-  .visiting__content .tour-title {
+  .visiting .content .card .title {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
@@ -889,10 +1020,10 @@ iframe {
     font-size: 28px;
     line-height: 40px;
   }
-  .visiting__content .tour-title-delimiter {
+  .visiting .content .card .title-delimiter {
     width: 150px;
   }
-  .visiting__content .tour-subtitle {
+  .visiting .content .card .subtitle {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -911,22 +1042,36 @@ iframe {
   .explore__container {
     flex-direction: column;
   }
-  .explore__content {
+  .explore .wrapper {
     width: 100%;
     margin-right: 0;
     margin-bottom: 60px;
   }
-  .explore__description > p:nth-child(n+3) {
+  .explore .content > p:nth-child(n+3) {
     display: none;
   }
-  .explore__slider {
+  .explore .slider {
     margin: 0 auto;
   }
   .gallery__container {
     padding-bottom: 0;
   }
-  .gallery__content-wrapper {
+  .gallery .wrapper {
     height: 1265px;
+  }
+  .tickets .wrapper {
+    justify-content: space-between;
+  }
+  .tickets .image {
+    margin-right: 80px;
+    width: 700px;
+    height: 440px;
+  }
+  .tickets .ticket-type {
+    display: none;
+  }
+  .tickets .ticket-amount {
+    margin-left: auto;
   }
   .contacts .description-title {
     font-family: Roboto;
@@ -955,6 +1100,10 @@ iframe {
   }
   .footer__logo {
     margin-right: 45px;
+  }
+  .modal_booking-tickets .modal__container {
+    padding: 30px;
+    padding-top: 75px;
   }
 }
 
@@ -1043,19 +1192,19 @@ iframe {
   .welcome .slide {
     background: url(../assets/image/welcome-slider.png);
   }
-  .visiting__content {
+  .visiting .content {
     grid-gap: 40px 55px;
   }
-  .visiting__content .tour {
+  .visiting .content .card {
     flex-basis: calc((100% - 55px) / 2);
   }
-  .visiting__content .tour-inner {
+  .visiting .content .card .inner {
     width: 280px;
   }
-  .visiting__content .tour-image {
+  .visiting .content .card .image {
     height: 180px;
   }
-  .visiting__content .tour-title {
+  .visiting .content .card .title {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
@@ -1066,7 +1215,7 @@ iframe {
     line-height: 24px;
     letter-spacing: 3px;
   }
-  .visiting__content .tour-subtitle {
+  .visiting .content .card .subtitle {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -1082,24 +1231,29 @@ iframe {
     color: #000000;
     font-weight: 200;
   }
-  .explore__content {
+  .explore .wrapper {
     margin-bottom: 0;
   }
-  .explore__description > p {
+  .explore .content > p {
     display: none;
   }
-  .explore__slider {
+  .explore .slider {
     width: 728px;
     height: 705px;
   }
   .gallery__container {
     padding-bottom: 0;
   }
-  .gallery__content-wrapper {
+  .gallery .wrapper {
     height: 1080px;
   }
   .parallax {
     height: 300px;
+  }
+  .tickets.image {
+    width: 444px;
+    height: 340px;
+    margin-right: 60px;
   }
   .contacts__content {
     flex-direction: column;
@@ -1166,6 +1320,20 @@ iframe {
   .nav__item {
     font-size: 18px;
   }
+  .modal_booking-tickets .modal__container {
+    padding: 80px 30px 40px;
+    flex-direction: column;
+  }
+  .modal_booking-tickets .modal__container .booking {
+    max-width: none;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+  .modal_booking-tickets .modal__container .payment {
+    padding: 25px 15px;
+    max-width: none;
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1230,25 +1398,25 @@ iframe {
     bottom: -60px;
     width: 230px;
   }
-  .visiting__content {
+  .visiting .content {
     grid-gap: 40px;
     padding-left: 50px;
     padding-right: 50px;
   }
-  .visiting__content .tour {
+  .visiting .content .card {
     flex-basis: 100%;
     justify-content: center;
   }
-  .visiting__content .tour:nth-child(2n) {
+  .visiting .content .card:nth-child(2n) {
     justify-content: center;
   }
-  .visiting__content .tour-inner {
+  .visiting .content .card .inner {
     width: 280px;
   }
-  .visiting__content .tour-image {
+  .visiting .content .card .image {
     height: 180px;
   }
-  .visiting__content .tour-title {
+  .visiting .content .card .title {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
@@ -1259,7 +1427,7 @@ iframe {
     line-height: 20px;
     letter-spacing: 5px;
   }
-  .visiting__content .tour-subtitle {
+  .visiting .content .card .subtitle {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -1268,15 +1436,27 @@ iframe {
     color: #000000;
     font-weight: 200;
   }
-  .explore__slider {
+  .explore .slider {
     width: 100%;
     height: 370px;
   }
   .gallery__container {
     padding-bottom: 0;
   }
-  .gallery__content-wrapper {
+  .gallery .wrapper {
     height: 640px;
+  }
+  .tickets .wrapper {
+    flex-direction: column;
+  }
+  .tickets .image {
+    width: 100%;
+    height: 160px;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .tickets .ticket-amount {
+    margin: 0 auto;
   }
   .contacts__section-title {
     font-family: Forum;
@@ -1349,24 +1529,24 @@ iframe {
 }
 
 @media (min-width: 1024px) {
-  .gallery__content {
+  .gallery .content {
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 36px;
     row-gap: 36px;
     grid-column-gap: 24px;
     column-gap: 24px;
   }
-  .gallery__content > img:nth-child(odd) {
+  .gallery .content > img:nth-child(odd) {
     margin-top: 0;
   }
-  .gallery__content > img:nth-child(3n+3) {
+  .gallery .content > img:nth-child(3n+3) {
     grid-column-start: 3;
     margin-top: 50px;
   }
-  .gallery__content > img:nth-child(3n+2) {
+  .gallery .content > img:nth-child(3n+2) {
     grid-column-start: 2;
   }
-  .gallery__content > img:nth-child(3n+1) {
+  .gallery .content > img:nth-child(3n+1) {
     margin-top: 50px;
     grid-column-start: 1;
   }

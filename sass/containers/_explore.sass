@@ -3,11 +3,11 @@
     &__container
         display: flex
         align-items: flex-start
-    &__content
+    & .wrapper
         display: flex
         flex-direction: column
         margin-right: 60px
-    &__description
+    & .content
         & > p
             @include roboto_22_light
             font-weight: 300
@@ -15,13 +15,13 @@
             margin: 0
             &:not(:last-child)
                 margin-bottom: 25px
-    &__slider
+    & .slider
         width: 720px
         height: 700px
         position: relative
         overflow: hidden
         flex-shrink: 0
-        & .slider-image
+        &-image
             width: inherit
             height: inherit
             position: relative
@@ -36,10 +36,10 @@
                 left: 0 //-1.5px
                 bottom: 0
                 background-image: url('../assets/image/explore/after.png')
-        & .slider-range
+        &-range
             width: 100%
             z-index: 10
-            // opacity: 0
+            cursor: ew-resize
             &-wrapper
                 position: absolute
                 top: 50%
@@ -59,7 +59,7 @@
             background: transparent
             transform: translate(-50%, -50%)
             z-index: -5
-            cursor: pointer
+            cursor: ew-resize
             & > div
                 height: 350px
                 width: 5px
@@ -71,39 +71,9 @@
                 bottom: 30px
             & .pseudo-range_after
                 top: 30px
-                
-    // & input[type=range]::-webkit-slider-thumb
-    //     border: 5px solid #ffffff
-    //     border-radius: 50%
-    //     height: 40px
-    //     width: 40px
-    //     background: transparent
-    // & input[type=range]::-moz-range-thumb
-    //     border: 5px solid #ffffff
-    //     border-radius: 50%
-    //     height: 40px
-    //     width: 40px
-    //     background: transparent
-    // & input[type=range]::-ms-thumb
-    //     border: 5px solid #ffffff
-    //     border-radius: 50%
-    //     height: 40px
-    //     width: 40px
-    //     background: transparent
-
     & input[type=range]
         opacity: 0
         height: 40px
-
-    // & input[type=range]::-webkit-slider-runnable-track 
-    //     background: transparent
-    //     border: none
-    // & input[type=range]::-moz-range-track 
-    //     background: transparent
-    //     border: none
-    // & input[type=range]::-ms-track 
-    //     background: transparent
-    //     border: none
-
+        cursor: ew-resize
     & .mark_yellow
         color: $gold

@@ -1,7 +1,7 @@
 const gallery = () => {
-    const gallery = document.querySelector('.gallery'),
-        galleryContent = gallery.querySelector('.gallery__content'),
-        galleryContentWrapper = gallery.querySelector('.gallery__content-wrapper');
+    const gallery = document.querySelector('#gallery'),
+        galleryContent = gallery.querySelector('.content'),
+        galleryContentWrapper = gallery.querySelector('.wrapper');
 
     let images = [],
         shuffleImages = [];
@@ -53,7 +53,7 @@ const gallery = () => {
         let fragment = new DocumentFragment();
         shuffleImages.forEach(item => {
             let img = document.createElement('img');
-            img.classList.add(`gallery__image_${item.position}`)
+            img.classList.add(`image_${item.position}`)
             img.src = `gallery/images/${item.link}`;
             img.alt = item.link;
             fragment.append(img);

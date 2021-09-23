@@ -1,0 +1,79 @@
+.tickets
+    & .wrapper
+        display: flex
+    & .content
+        display: flex
+        justify-content: space-between
+        width: 100%
+    & .image
+        width: 720px
+        height: 550px
+        margin-right: 60px
+        & img
+            width: inherit
+            height: inherit
+            object-fit: cover
+.modal
+    &_booking-tickets 
+        width: 100%
+        margin: 0 auto
+        & .modal__container
+            padding: 90px 0
+            max-width: 1440px
+            margin: 0 auto 
+            display: flex
+            justify-content: center
+            & .booking
+                max-width: 400px
+                width: 100%
+                margin-right: 40px
+            & .payment 
+                padding: 25px 30px
+                background-color: #FFFFFF
+                border: 1px solid #030303 
+                max-width: 530px
+                width: 100%
+.booking
+    &__logo
+        width: 85px
+        height: 40px
+        background-color: $gold
+        -webkit-mask-image: url(../assets/icons/logo-image.svg)
+        -webkit-mask-position: center
+        -webkit-mask-size: auto
+        -webkit-mask-repeat: no-repeat
+        & > a
+            height: inherit
+            width: inherit
+            display: block
+            cursor: pointer
+    &__section-title
+        @include forum_50_hover
+        line-height: 55px
+        margin-bottom: 15px
+    &__section-subtitle
+        @include roboto_18_light
+        color: $dark-red
+        margin-bottom: 10px
+        display: block
+    &__title-wrapper
+        margin-bottom: 60px
+    &-tickets-form
+        display: flex
+        flex-direction: column
+        & .date-inputs
+            display: flex
+        &__input
+            border: 1px solid $bg-dark
+            outline: none
+            height: 45px
+            display: flex
+            align-items: center
+            &_small
+                width: calc( (100% - 20px) / 2 )
+                &:not(:last-child)
+                    margin-right: 20px
+            &_large
+                width: 100%
+        & option
+            width: inherit

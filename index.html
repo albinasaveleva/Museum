@@ -30,6 +30,16 @@
             <div class="header__burger-menu burger-menu">
                 <button type="button" class="burger-menu__icon"></button>
             </div>
+            <div class="header__mobile-menu">
+                <ol class="nav__list">
+                    <li class="nav__item"><a href="#visiting">Visiting</a></li>
+                    <li class="nav__item"><a href="#explore">Explore</a></li>
+                    <li class="nav__item"><a href="#video">Video</a></li>
+                    <li class="nav__item"><a href="#gallery">Gallery</a></li>
+                    <li class="nav__item"><a href="#tickets">Tickets</a></li>
+                    <li class="nav__item"><a href="#contacts">Contacts</a></li>
+                </ol>
+            </div>
         </div>
     </header>
     <main class="main">
@@ -67,27 +77,27 @@
         <section class="visiting" id="visiting">
             <div class="visiting__container container">
                 <div class="section-title-wrapper">
-                    <h2 class="visiting__section-title section-title section-title_hover">Virtual tour</h2>
-                    <div class="section-title-delimiter"></div>
+                    <h2 class="section-title section-title_hover">Virtual tour</h2>
+                    <div class="delimiter"></div>
                 </div>
-                <div class="visiting__content">
+                <div class="content">
                 </div>
             </div>
         </section>
         <section class="explore" id="explore">
             <div class="explore__container container">
-                <div class="explore__content">
+                <div class="wrapper">
                     <div class="section-title-wrapper">
-                        <h2 class="explore__section-title section-title">Picture explore</h2>
-                        <div class="section-title-delimiter"></div>
+                        <h2 class="section-title">Picture explore</h2>
+                        <div class="delimiter"></div>
                     </div>
-                    <div class="explore__description">
+                    <div class="content">
                         <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
                         <p>It was cleaned in 1984 to remove a <span class="mark_yellow">"yellow veil"</span>  of dust that had gathered since the previous restoration in the 19th century.</p>
                         <p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                     </div>
                 </div>
-                <div class="explore__slider">
+                <div class="slider">
                     <div class="slider-image"></div>
                     <div class="slider-image slider-image_after"></div>
                     <div class="slider-range-wrapper">
@@ -118,8 +128,8 @@
                 <div class="section-title-wrapper">
                     <h2 class="gallery__section-title section-title">Art Gallery</h2>
                 </div>
-                <div class="gallery__content-wrapper">
-                    <div class="gallery__content">
+                <div class="wrapper">
+                    <div class="content">
                     </div>
                 </div>
             </div>
@@ -127,21 +137,115 @@
         <section class="tickets" id="tickets">
             <div class="tickets__container container">
                 <div class="section-title-wrapper">
-                    <h2 class="contacts__section-title section-title section-title_hover">BUY TICKETS</h2>
-                    <div class="section-title-delimiter"></div>
+                    <h2 class="section-title section-title_hover">BUY TICKETS</h2>
+                    <div class="delimiter"></div>
                 </div>
-                <div class="contacts__content">
-                    
+                <div class="wrapper">
+                    <div class="image">
+                        <img src="assets/image/tickets-img.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="ticket-type">
+                            <span class="ticket-title">Ticket Type</span>
+                            <div class="inputs">
+                                <div class="input-wrapper">
+                                    <input type="radio" name="type-ticket" id="permanent-exhibition" checked>
+                                    <label for="permanent-exhibition">Permanent exhibition</label>
+                                </div>
+                                <div class="input-wrapper">
+                                    <input type="radio" name="type-ticket" id="temporary-exhibition">
+                                    <label for="temporary-exhibition">Temporary exhibition</label>
+                                </div>
+                                <div class="input-wrapper">
+                                    <input type="radio" name="type-ticket" id="combined-exhibition">
+                                    <label for="combined-exhibition">Combined exhibition</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ticket-amount">
+                            <span class="ticket-title">Amount</span>
+                            <div class="inputs">
+                                <div class="input-wrapper">
+                                    <span>Basic 18+</span>
+                                    <div class="input-number">
+                                        <button>-</button>
+                                        <input type="number" value="0" id="basic-ticket-count">
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                                <div class="input-wrapper">
+                                    <span>Senior 65+</span>
+                                    <div class="input-number">
+                                        <button>-</button>
+                                        <input type="number" value="0" id="senior-ticket-count">
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="total-amount">Total € <span class="total-amount-count" id="total-amount-count">0</span></span>
+                            <button>Buy Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <div class="modal_booking-tickets">
+            <div class="modal__container">
+                <div class="booking">
+                    <div class="booking__title-wrapper">
+                        <div class="booking__logo">
+                            <a href="index.html"></a>
+                        </div>
+                        <h2 class="booking__section-title section-title section-title_hover">Booking tickets</h2>
+                        <span class="booking__section-subtitle">Tour to Louvre</span>
+                        <div class="delimiter"></div>
+                    </div>
+                    <form class="booking-tickets-form" name="booking-form" id="booking-form">
+                        <div class="date-inputs">
+                            <input class="booking-tickets-form__input booking-tickets-form__input_small" type="date" id="booking-date">
+                            <input class="booking-tickets-form__input booking-tickets-form__input_small" type="time" id="booking-time">
+                        </div>
+                        <input class="booking-tickets-form__input booking-tickets-form__input_large" type="text" placeholder="Name" name="booking-name" id="booking-name">
+                        <input class="booking-tickets-form__input booking-tickets-form__input_large" type="text" placeholder="E-mail" name="booking-email" id="booking-email">
+                        <input class="booking-tickets-form__input booking-tickets-form__input_large" type="text" placeholder="Phone" name="booking-phone" id="booking-phone">
+                        <select class="booking-tickets-form__input booking-tickets-form__input_large" name="booking-tickets-type" id="booking-tickets-type">
+                            <option>Ticket Type</option>
+                            <option value="permanent-exhibition">Permanent exhibition</option>
+                            <option value="temporary-exhibition">Temporary exhibition</option>
+                            <option value="combined-exhibition">Combined exhibition</option>
+                        </select>
+                        <div class="inputs">
+                            <div class="input-wrapper">
+                                <label for="basic-ticket">Basic 18+</label>
+                                <div class="input-number">
+                                    <button>-</button>
+                                    <input type="number" value="0" id="booking-basic-ticket-count">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="senior-ticket">Senior 65+</label>
+                                <div class="input-number">
+                                    <button>-</button>
+                                    <input type="number" value="0" id="booking-senior-ticket-count">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="payment">
+
+                </div>
+            </div>
+        </div>
         <section class="parallax">
         </section>
         <section class="contacts" id="contacts">
             <div class="contacts__container container">
                 <div class="section-title-wrapper">
                     <h2 class="contacts__section-title section-title section-title_hover">Contacts</h2>
-                    <div class="section-title-delimiter"></div>
+                    <div class="delimiter"></div>
                 </div>
                 <div class="contacts__content">
                     <div class="description">

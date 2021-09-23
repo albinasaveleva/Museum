@@ -1,14 +1,14 @@
 // import parallax from './modules/parallax.js';
 
-import exploreSlider from "./modules/exploreSlider.js";
+import explore from "./modules/explore.js";
 import gallery from "./modules/gallery.js";
 import scroll from "./modules/scroll.js";
-import visitingToursCards from "./modules/visitingToursCards.js";
+import visiting from "./modules/visiting.js";
 import welcomeSlider from "./modules/welcomeSlider.js";
 
 // parallax();
 welcomeSlider();
-visitingToursCards();
-exploreSlider();
+visiting();
+explore();
 gallery();
 scroll();
