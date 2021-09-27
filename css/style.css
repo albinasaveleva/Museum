@@ -621,6 +621,156 @@ iframe {
   object-fit: cover;
 }
 
+.tickets .ticket-type .block-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 50px;
+  display: block;
+}
+
+.tickets .ticket-type .inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tickets .ticket-type .input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.tickets .ticket-type .input-wrapper:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.tickets .ticket-type .input-wrapper input {
+  margin-right: 25px;
+}
+
+.tickets .ticket-type .input-wrapper label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  font-weight: 300;
+}
+
+.tickets .ticket-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.tickets .ticket-amount .block-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.tickets .ticket-amount .inputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.tickets .ticket-amount .input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.tickets .ticket-amount .input-wrapper:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.tickets .ticket-amount .input-wrapper span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.tickets .ticket-amount .input-number {
+  width: 150px;
+  height: 50px;
+  border: 3px solid #000000;
+}
+
+.tickets .ticket-amount .input-number input {
+  padding: 0 38px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  font-weight: 300;
+}
+
+.tickets .ticket-amount .input-number .operation {
+  background-color: transparent;
+  width: 38px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+}
+
+.tickets .ticket-amount .total-amount {
+  display: flex;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+  margin-bottom: 60px;
+}
+
+.tickets .ticket-amount .total-amount > span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+}
+
+.tickets .ticket-amount .tickets-button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  background-color: #FFFFFF;
+  color: #000000;
+  font-size: 28px;
+  line-height: 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #000000;
+  color: #FFFFFF;
+  height: 50px;
+  padding: 0 50px;
+}
+
 .modal_booking-tickets {
   width: 100%;
   margin: 0 auto;
@@ -634,13 +784,13 @@ iframe {
   justify-content: center;
 }
 
-.modal_booking-tickets .modal__container .booking {
+.modal_booking-tickets .booking {
   max-width: 400px;
   width: 100%;
   margin-right: 40px;
 }
 
-.modal_booking-tickets .modal__container .payment {
+.modal_booking-tickets .payment {
   padding: 25px 30px;
   background-color: #FFFFFF;
   border: 1px solid #030303;
@@ -665,7 +815,7 @@ iframe {
   cursor: pointer;
 }
 
-.booking__section-title {
+.booking .section-title {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
@@ -678,7 +828,7 @@ iframe {
   margin-bottom: 15px;
 }
 
-.booking__section-subtitle {
+.booking .section-subtitle {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -690,20 +840,24 @@ iframe {
   display: block;
 }
 
-.booking__title-wrapper {
+.booking .title-wrapper {
   margin-bottom: 60px;
 }
 
-.booking-tickets-form {
+.booking .form {
   display: flex;
   flex-direction: column;
 }
 
-.booking-tickets-form .date-inputs {
+.booking .form > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.booking .form .date-inputs {
   display: flex;
 }
 
-.booking-tickets-form__input {
+.booking .form__input {
   border: 1px solid #030303;
   outline: none;
   height: 45px;
@@ -711,20 +865,478 @@ iframe {
   align-items: center;
 }
 
-.booking-tickets-form__input_small {
+.booking .form__input_small {
   width: calc( (100% - 20px) / 2);
 }
 
-.booking-tickets-form__input_small:not(:last-child) {
+.booking .form__input_small:not(:last-child) {
   margin-right: 20px;
 }
 
-.booking-tickets-form__input_large {
+.booking .form__input_large {
   width: 100%;
 }
 
-.booking-tickets-form option {
+.booking .form option {
   width: inherit;
+}
+
+.booking .form .entry-ticket {
+  border: 1px solid #030303;
+  padding: 10px 15px 15px;
+}
+
+.booking .form .entry-ticket .section-title {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 90px;
+  color: #9D8665;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.booking .form .entry-ticket .section-title-wrapper {
+  margin-bottom: 15px;
+}
+
+.booking .form .entry-ticket .input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking .form .entry-ticket .input-wrapper:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.booking .form .entry-ticket .input-wrapper > span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.booking .form .entry-ticket .input-number {
+  width: 105px;
+  height: 25px;
+  border: 1px solid #030303;
+}
+
+.booking .form .entry-ticket .input-number .operation {
+  width: 35px;
+  background-color: #030303;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  color: #FFFFFF;
+}
+
+.booking .form .entry-ticket .input-number input {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  padding: 0 35px;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 30px 30px;
+  position: relative;
+}
+
+.payment__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+  font-weight: 500;
+  margin: 0;
+}
+
+.payment__subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  color: #710707;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.payment__image {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  width: 150px;
+  height: 120px;
+}
+
+.payment__ticket-info {
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.payment__ticket-info span {
+  display: flex;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  font-weight: 300;
+}
+
+.payment__ticket-info span:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.payment__ticket-info span::before {
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment__ticket-info .payment__ticket-date::before {
+  content: url("../assets/icons/date.svg");
+}
+
+.payment__ticket-info .payment__ticket-time::before {
+  content: url("../assets/icons/Time.svg");
+}
+
+.payment__ticket-info .payment__exhibition-type::before {
+  content: url("../assets/icons/exhibition.svg");
+}
+
+.payment__ticket-type {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.payment__ticket-type .payment__type-item {
+  display: flex;
+  align-items: center;
+}
+
+.payment__ticket-type .payment__type-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.payment__ticket-type .payment__type-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #030303;
+  margin-right: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  color: #A4A4A3;
+}
+
+.payment__ticket-type .payment__type {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.payment__ticket-type .payment__type-amount {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  margin-left: auto;
+}
+
+.payment__ticket-type .payment__type-amount span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.payment__delimiter {
+  margin-bottom: 10px;
+}
+
+.payment__total-amount {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.payment__total-amount span {
+  display: inline-block;
+  margin-left: auto;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+}
+
+.payment__card {
+  position: relative;
+}
+
+.payment__card > div {
+  width: 360px;
+  height: 211px;
+  padding: 15px 20px;
+  border-radius: 3px;
+}
+
+.payment__card .card_front {
+  background-color: #BCBCBC;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 29px;
+}
+
+.payment__card .card__field {
+  display: flex;
+  flex-direction: column;
+  width: 215px;
+  margin-bottom: 10px;
+}
+
+.payment__card .card__field_last {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.payment__card .card__field input {
+  height: 35px;
+  background-color: #FFFFFF;
+  border: 0.5px solid #A4A4A3;
+  outline: none;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #161615;
+}
+
+.payment__card .card__field .expiration-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment__card .card__field .expiration-date input {
+  width: calc( (100% - 15px) / 2);
+}
+
+.payment__card .card__field .field__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #161615;
+}
+
+.payment__card .card_back {
+  position: absolute;
+  top: 29px;
+  right: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #939393;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.payment__card .card_back .card__tape {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 45px;
+  background-color: #161615;
+}
+
+.payment__card .card_back .card__field {
+  max-width: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment__card .card_back .card__field .field__description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #161615;
+}
+
+.payment__card .card_back .card__field .field__title {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #161615;
+}
+
+.payment__card .card_back .card__field input {
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #161615;
+  outline: none;
+}
+
+.payment__card .card__icons {
+  position: absolute;
+  top: 34px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.payment__card .card__icons img:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.payment__card .card__icons .icon_visa {
+  width: 55px;
+  height: 16px;
+}
+
+.payment__card .card__icons .icon_mastercard {
+  width: 53px;
+  height: 32px;
+}
+
+.payment__button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 220px;
+  height: 45px;
+  background-color: #710707;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #FFFFFF;
+  opacity: .9;
+  margin-left: auto;
+}
+
+.input-number {
+  position: relative;
+}
+
+.input-number .operation {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.input-number .operation_minus {
+  left: -1px;
+}
+
+.input-number .operation_plus {
+  right: -1px;
+}
+
+.input-number input {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: center;
+}
+
+input[type=number]::-webkit-textfield-decoration-container {
+  -webkit-appearance: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .parallax {
@@ -1250,7 +1862,7 @@ iframe {
   .parallax {
     height: 300px;
   }
-  .tickets.image {
+  .tickets .image {
     width: 444px;
     height: 340px;
     margin-right: 60px;

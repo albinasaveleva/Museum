@@ -149,15 +149,15 @@
                             <span class="block-title">Ticket Type</span>
                             <div class="inputs">
                                 <div class="input-wrapper">
-                                    <input type="radio" name="type-ticket" id="permanent-exhibition" checked>
+                                    <input type="radio" name="type-ticket" class="input-ticket-type" data-type="permanent" checked>
                                     <label for="permanent-exhibition">Permanent exhibition</label>
                                 </div>
                                 <div class="input-wrapper">
-                                    <input type="radio" name="type-ticket" id="temporary-exhibition">
+                                    <input type="radio" name="type-ticket" class="input-ticket-type" data-type="temporary">
                                     <label for="temporary-exhibition">Temporary exhibition</label>
                                 </div>
                                 <div class="input-wrapper">
-                                    <input type="radio" name="type-ticket" id="combined-exhibition">
+                                    <input type="radio" name="type-ticket" class="input-ticket-type" data-type="combined">
                                     <label for="combined-exhibition">Combined exhibition</label>
                                 </div>
                             </div>
@@ -168,74 +168,143 @@
                                 <div class="input-wrapper">
                                     <span>Basic 18+</span>
                                     <div class="input-number">
-                                        <button>-</button>
-                                        <input type="number" value="0" id="basic-ticket-count">
-                                        <button>+</button>
+                                        <button type="button" class="operation operation_minus" data-type="minus">—</button>
+                                        <input type="number" min="0" max="99" value="0" class="input-ticket-count" readonly data-type="basic">
+                                        <button type="button" class="operation operation_plus" data-type="plus">+</button>
                                     </div>
                                 </div>
                                 <div class="input-wrapper">
                                     <span>Senior 65+</span>
                                     <div class="input-number">
-                                        <button>-</button>
-                                        <input type="number" value="0" id="senior-ticket-count">
-                                        <button>+</button>
+                                        <button type="button" class="operation operation_minus" data-type="minus">—</button>
+                                        <input type="number" min="0" max="99" value="0" class="input-ticket-count" readonly data-type="senior">
+                                        <button type="button" class="operation operation_plus" data-type="plus">+</button>
                                     </div>
                                 </div>
                             </div>
                             <span class="total-amount">Total € <span class="total-amount-count" id="total-amount-count">0</span></span>
-                            <button>Buy Now</button>
+                            <button type="button" class="tickets-button" id="tickets-button">Buy Now</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="modal_booking-tickets">
+        <div class="modal_booking-tickets" id="modal_booking-tickets">
             <div class="modal__container">
                 <div class="booking">
-                    <div class="booking__title-wrapper">
+                    <div class="title-wrapper">
                         <div class="booking__logo">
                             <a href="index.html"></a>
                         </div>
-                        <h2 class="booking__section-title section-title section-title_hover">Booking tickets</h2>
-                        <span class="booking__section-subtitle">Tour to Louvre</span>
+                        <h2 class="section-title section-title_hover">Booking tickets</h2>
+                        <span class="section-subtitle">Tour to Louvre</span>
                         <div class="delimiter"></div>
                     </div>
-                    <form class="booking-tickets-form" name="booking-form" id="booking-form">
+                    <form class="form" name="booking-form" id="booking-form">
                         <div class="date-inputs">
-                            <input class="booking-tickets-form__input booking-tickets-form__input_small" type="date" id="booking-date">
-                            <input class="booking-tickets-form__input booking-tickets-form__input_small" type="time" id="booking-time">
+                            <input class="form__input form__input_small" type="date" id="input-booking-date">
+                            <input class="form__input form__input_small" type="time" id="input-booking-time">
                         </div>
-                        <input class="booking-tickets-form__input booking-tickets-form__input_large" type="text" placeholder="Name" name="booking-name" id="booking-name">
-                        <input class="booking-tickets-form__input booking-tickets-form__input_large" type="text" placeholder="E-mail" name="booking-email" id="booking-email">
-                        <input class="booking-tickets-form__input booking-tickets-form__input_large" type="text" placeholder="Phone" name="booking-phone" id="booking-phone">
-                        <select class="booking-tickets-form__input booking-tickets-form__input_large" name="booking-tickets-type" id="booking-tickets-type">
+                        <input class="form__input form__input_large" type="text" placeholder="Name" name="input-booking-name" id="input-booking-name">
+                        <input class="form__input form__input_large" type="text" placeholder="E-mail" name="input-booking-email" id="input-booking-email">
+                        <input class="form__input form__input_large" type="text" placeholder="Phone" name="input-booking-phone" id="input-booking-phone">
+                        <select class="form__input form__input_large" name="booking-tickets-type" id="booking-tickets-type">
                             <option>Ticket Type</option>
-                            <option value="permanent-exhibition">Permanent exhibition</option>
-                            <option value="temporary-exhibition">Temporary exhibition</option>
-                            <option value="combined-exhibition">Combined exhibition</option>
+                            <option value="permanent-exhibition" data-type="permanent">Permanent exhibition</option>
+                            <option value="temporary-exhibition" data-type="temporary">Temporary exhibition</option>
+                            <option value="combined-exhibition" data-type="combined">Combined exhibition</option>
                         </select>
-                        <div class="inputs">
-                            <div class="input-wrapper">
-                                <label for="basic-ticket">Basic 18+</label>
-                                <div class="input-number">
-                                    <button>-</button>
-                                    <input type="number" value="0" id="booking-basic-ticket-count">
-                                    <button>+</button>
-                                </div>
+                        <div class="entry-ticket">
+                            <div class="section-title-wrapper">
+                                <h3 class="section-title section-title_hover">Entry ticket</h3>
+                                <div class="delimiter delimiter_small"></div>
                             </div>
-                            <div class="input-wrapper">
-                                <label for="senior-ticket">Senior 65+</label>
-                                <div class="input-number">
-                                    <button>-</button>
-                                    <input type="number" value="0" id="booking-senior-ticket-count">
-                                    <button>+</button>
+                            <div class="tickets-inputs">
+                                <div class="input-wrapper">
+                                    <span >Basic 18+ (20 €)</span>
+                                    <div class="input-number">
+                                        <button type="button" class="operation operation_minus" data-type="minus">—</button>
+                                        <input type="number" min="0" max="99" value="0" class="booking-ticket-count" readonly data-type="basic">
+                                        <button type="button" class="operation operation_plus" data-type="plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="input-wrapper">
+                                    <span >Senior 65+  (10 €)</span>
+                                    <div class="input-number">
+                                        <button type="button" class="operation operation_minus" data-type="minus">—</button>
+                                        <input type="number" min="0" max="99" value="0" class="booking-ticket-count" readonly data-type="senior">
+                                        <button type="button" class="operation operation_plus" data-type="plus">+</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="payment">
-
+                    <h3 class="payment__title">Overview</h3>
+                    <p class="payment__subtitle">Tour to Louvre</p>
+                    <img src="assets/image/payment-image.png" class="payment__image">
+                    <div class="payment__overview-info">
+                        <div class="payment__ticket-info">
+                            <span class="payment__ticket-date" id="payment__ticket-date">0</span>
+                            <span class="payment__ticket-time" id="payment__ticket-time">0</span>
+                            <span class="payment__exhibition-type" id="payment__exhibition-type">0</span>
+                        </div>
+                        <div class="payment__ticket-type">
+                            <div class="payment__type-item" data-type="basic"> 
+                                <span class="payment__type-count">0</span>
+                                <span class="payment__type">Basic (20 €)</span>
+                                <span class="payment__type-amount"><span class="payment__total-type-amount">0</span>  €</span>
+                            </div>
+                            <div class="payment__type-item" data-type="senior"> 
+                                <span class="payment__type-count">0</span>
+                                <span class="payment__type">Senior (10 €)</span>
+                                <span class="payment__type-amount"><span class="payment__total-type-amount">0</span>  €</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment__delimiter delimiter delimiter_small"></div>
+                    <span class="payment__total-amount">Total: <span class="payment__total-amount-count" id="payment__total-amount-count">0</span> €</span>
+                    <div class="payment__card">
+                        <div class="card_front">
+                            <div class="card__field">
+                                <span class="field__title">
+                                    Card number
+                                </span>
+                                <input type="text" name="card-number" id="card-number">
+                            </div>
+                            <div class="card__field">
+                                <span class="field__title">
+                                    Expiration date
+                                </span>
+                                <div class="expiration-date">
+                                    <input type="number" name="expiration-month" id="expiration-month">
+                                    <input type="number" name="expiration-year" id="expiration-year">
+                                </div>
+                            </div>
+                            <div class="card__field card__field_last">
+                                <span class="field__title">
+                                    Cardholder name
+                                </span>
+                                <input type="text" name="cardholder-name" id="cardholder-name">
+                            </div>
+                            <div class="card__icons">
+                                <img src="assets/icons/Visa.svg" alt="" class="icon_visa">
+                                <img src="assets/icons/Mastercard.svg" alt="" class="icon_mastercard">
+                            </div>
+                        </div>
+                        <div class="card_back">
+                            <div class="card__tape"></div>
+                            <div class="card__field">
+                                <span class="field__title">
+                                    CVC/CVV
+                                </span>
+                                <input type="text" min="3" max="3" name="card-cvc" id="card-cvc">
+                                <span class="field__description">The last<br>3 or 4 digits<br>on back<br>of the card</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="payment__button" id="payment__button" type="button">Book</button>
                 </div>
             </div>
         </div>

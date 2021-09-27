@@ -3,6 +3,8 @@ $light: #FFFFFF
 $gold: #9D8665
 $bg-dark: #030303
 $dark-red: #710707
+$light-grey: #BCBCBC
+$dark-grey: #939393
 @mixin forum_80
     font-family: Forum
     font-style: normal
@@ -214,6 +216,10 @@ $dark-red: #710707
 @mixin link_active
     @include link
     color: $gold
+@mixin button
+    cursor: pointer
+    border: none
+    outline: none
 @mixin button-non-rounded
     @include roboto
     // width: 185px
