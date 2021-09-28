@@ -117,6 +117,10 @@ iframe {
   height: 100vh !important;
 }
 
+button {
+  cursor: pointer;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -599,141 +603,34 @@ iframe {
   grid-row-end: span 4;
 }
 
-.tickets .wrapper {
+.tickets__wrapper {
   display: flex;
 }
 
-.tickets .content {
+.tickets__content {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
 }
 
-.tickets .image {
+.tickets__image {
   width: 720px;
   height: 550px;
   margin-right: 60px;
 }
 
-.tickets .image img {
+.tickets__image img {
   width: inherit;
   height: inherit;
   object-fit: cover;
 }
 
-.tickets .ticket-type .block-title {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 33px;
-  color: #000000;
-  font-weight: bold;
-  margin-bottom: 50px;
-  display: block;
-}
-
-.tickets .ticket-type .inputs {
+.tickets__blocks {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
-.tickets .ticket-type .input-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.tickets .ticket-type .input-wrapper:not(:last-child) {
-  margin-bottom: 25px;
-}
-
-.tickets .ticket-type .input-wrapper input {
-  margin-right: 25px;
-}
-
-.tickets .ticket-type .input-wrapper label {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 26px;
-  color: #000000;
-  font-weight: 300;
-}
-
-.tickets .ticket-amount {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.tickets .ticket-amount .block-title {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 33px;
-  color: #000000;
-  font-weight: bold;
-  margin-bottom: 25px;
-  display: block;
-}
-
-.tickets .ticket-amount .inputs {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 50px;
-}
-
-.tickets .ticket-amount .input-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.tickets .ticket-amount .input-wrapper:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.tickets .ticket-amount .input-wrapper span {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 26px;
-  color: #000000;
-  font-weight: 300;
-  margin-bottom: 15px;
-}
-
-.tickets .ticket-amount .input-number {
-  width: 150px;
-  height: 50px;
-  border: 3px solid #000000;
-}
-
-.tickets .ticket-amount .input-number input {
-  padding: 0 38px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 26px;
-  color: #000000;
-  font-weight: 300;
-}
-
-.tickets .ticket-amount .input-number .operation {
-  background-color: transparent;
-  width: 38px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 32px;
-  line-height: 37px;
-  color: #000000;
-}
-
-.tickets .ticket-amount .total-amount {
+.tickets__total-amount {
   display: flex;
   align-items: center;
   font-family: Roboto;
@@ -745,7 +642,7 @@ iframe {
   margin-bottom: 60px;
 }
 
-.tickets .ticket-amount .total-amount > span {
+.tickets__total-amount > span {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -754,7 +651,7 @@ iframe {
   color: #000000;
 }
 
-.tickets .ticket-amount .tickets-button {
+.tickets__button {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -769,6 +666,151 @@ iframe {
   color: #FFFFFF;
   height: 50px;
   padding: 0 50px;
+  margin-left: auto;
+}
+
+.tickets__ticket-type {
+  display: flex;
+  flex-direction: column;
+}
+
+.tickets__ticket-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.tickets .ticket-type__block-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 50px;
+  display: block;
+}
+
+.tickets .ticket-type__inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tickets .ticket-type__input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.tickets .ticket-type__input-wrapper:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.tickets .ticket-type__input-wrapper input {
+  margin-right: 25px;
+}
+
+.tickets .ticket-type__input-wrapper label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  font-weight: 300;
+}
+
+.tickets .ticket-amount__block-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.tickets .ticket-amount__items {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.tickets .ticket-amount__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tickets .ticket-amount__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.tickets .ticket-amount__item span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.tickets .ticket-amount__input-number {
+  width: 150px;
+  height: 50px;
+  border: 3px solid #000000;
+  position: relative;
+}
+
+.tickets .ticket-amount__input-number input {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 38px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  font-weight: 300;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.tickets .ticket-amount__input-number .operation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  background-color: transparent;
+  width: 38px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  color: #000000;
+  z-index: 10;
+  border: none;
+  outline: none;
+}
+
+.tickets .ticket-amount__input-number .operation_minus {
+  left: -1px;
+}
+
+.tickets .ticket-amount__input-number .operation_plus {
+  right: -1px;
 }
 
 .modal_booking-tickets {
@@ -776,7 +818,7 @@ iframe {
   margin: 0 auto;
 }
 
-.modal_booking-tickets .modal__container {
+.modal__container {
   padding: 90px 0;
   max-width: 1440px;
   margin: 0 auto;
@@ -784,18 +826,10 @@ iframe {
   justify-content: center;
 }
 
-.modal_booking-tickets .booking {
+.booking {
   max-width: 400px;
   width: 100%;
   margin-right: 40px;
-}
-
-.modal_booking-tickets .payment {
-  padding: 25px 30px;
-  background-color: #FFFFFF;
-  border: 1px solid #030303;
-  max-width: 530px;
-  width: 100%;
 }
 
 .booking__logo {
@@ -815,7 +849,7 @@ iframe {
   cursor: pointer;
 }
 
-.booking .section-title {
+.booking__section-title {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
@@ -828,7 +862,7 @@ iframe {
   margin-bottom: 15px;
 }
 
-.booking .section-subtitle {
+.booking__section-subtitle {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -840,24 +874,24 @@ iframe {
   display: block;
 }
 
-.booking .title-wrapper {
+.booking__title-wrapper {
   margin-bottom: 60px;
 }
 
-.booking .form {
+.booking__form {
   display: flex;
   flex-direction: column;
 }
 
-.booking .form > *:not(:last-child) {
+.booking__form > *:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.booking .form .date-inputs {
+.booking__inputs_date {
   display: flex;
 }
 
-.booking .form__input {
+.booking__input {
   border: 1px solid #030303;
   outline: none;
   height: 45px;
@@ -865,28 +899,28 @@ iframe {
   align-items: center;
 }
 
-.booking .form__input_small {
+.booking__input_small {
   width: calc( (100% - 20px) / 2);
 }
 
-.booking .form__input_small:not(:last-child) {
+.booking__input_small:not(:last-child) {
   margin-right: 20px;
 }
 
-.booking .form__input_large {
+.booking__input_large {
   width: 100%;
 }
 
-.booking .form option {
+.booking__input option {
   width: inherit;
 }
 
-.booking .form .entry-ticket {
+.booking__ticket-amount {
   border: 1px solid #030303;
   padding: 10px 15px 15px;
 }
 
-.booking .form .entry-ticket .section-title {
+.booking .ticket-amount__section-title {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
@@ -898,21 +932,26 @@ iframe {
   margin-bottom: 5px;
 }
 
-.booking .form .entry-ticket .section-title-wrapper {
+.booking .ticket-amount__section-title-wrapper {
   margin-bottom: 15px;
 }
 
-.booking .form .entry-ticket .input-wrapper {
+.booking .ticket-amount__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking .ticket-amount__item {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.booking .form .entry-ticket .input-wrapper:not(:last-child) {
+.booking .ticket-amount__item:not(:last-child) {
   margin-bottom: 18px;
 }
 
-.booking .form .entry-ticket .input-wrapper > span {
+.booking .ticket-amount__item > span {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -921,13 +960,39 @@ iframe {
   color: #000000;
 }
 
-.booking .form .entry-ticket .input-number {
+.booking .ticket-amount__input-number {
   width: 105px;
   height: 25px;
   border: 1px solid #030303;
+  position: relative;
 }
 
-.booking .form .entry-ticket .input-number .operation {
+.booking .ticket-amount__input-number input {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  padding: 0 35px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.booking .ticket-amount__input-number .operation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   width: 35px;
   background-color: #030303;
   font-family: Roboto;
@@ -936,19 +1001,24 @@ iframe {
   font-size: 32px;
   line-height: 37px;
   color: #FFFFFF;
+  z-index: 10;
+  border: none;
+  outline: none;
 }
 
-.booking .form .entry-ticket .input-number input {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  color: #000000;
-  padding: 0 35px;
+.booking .ticket-amount__input-number .operation_minus {
+  left: 0;
+}
+
+.booking .ticket-amount__input-number .operation_plus {
+  right: 0;
 }
 
 .payment {
+  background-color: #FFFFFF;
+  border: 1px solid #030303;
+  max-width: 530px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 25px 30px 30px;
@@ -995,6 +1065,7 @@ iframe {
 }
 
 .payment__ticket-info span {
+  height: 22px;
   display: flex;
   align-items: center;
   font-family: Roboto;
@@ -1027,26 +1098,26 @@ iframe {
   content: url("../assets/icons/Time.svg");
 }
 
-.payment__ticket-info .payment__exhibition-type::before {
+.payment__ticket-info .payment__ticket-type::before {
   content: url("../assets/icons/exhibition.svg");
 }
 
-.payment__ticket-type {
+.payment__ticket-amount-items {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
 
-.payment__ticket-type .payment__type-item {
+.payment__ticket-amount-items .payment__ticket-amount-item {
   display: flex;
   align-items: center;
 }
 
-.payment__ticket-type .payment__type-item:not(:last-child) {
+.payment__ticket-amount-items .payment__ticket-amount-item:not(:last-child) {
   margin-bottom: 5px;
 }
 
-.payment__ticket-type .payment__type-count {
+.payment__ticket-amount-items .payment__ticket-amount-count {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1064,7 +1135,7 @@ iframe {
   color: #A4A4A3;
 }
 
-.payment__ticket-type .payment__type {
+.payment__ticket-amount-items .payment__ticket-amount-title {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -1073,7 +1144,7 @@ iframe {
   color: #000000;
 }
 
-.payment__ticket-type .payment__type-amount {
+.payment__ticket-amount-items .payment__ticket-amount-wrapper {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -1083,7 +1154,7 @@ iframe {
   margin-left: auto;
 }
 
-.payment__ticket-type .payment__type-amount span {
+.payment__ticket-amount-items .payment__ticket-amount-wrapper span {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;

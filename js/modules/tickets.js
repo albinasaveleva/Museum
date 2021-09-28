@@ -1,30 +1,50 @@
 const tickets = () => {
     const tickets = document.querySelector('#tickets'),
-        inputsTicketType = tickets.querySelectorAll('.input-ticket-type'),
-        operation = document.querySelectorAll('.operation'),
-        totalAmount = tickets.querySelector("#total-amount-count"),
-        ticketsButton = tickets.querySelector('#tickets-button'),
-        modal = document.querySelector('#modal_booking-tickets'),
-        bookingTicketsType = modal.querySelector('#booking-tickets-type'),
-        bookingBasicTicketCount = modal.querySelector("#booking-basic-ticket-count"),
-        bookingSeniorTicketCount = modal.querySelector("#booking-senior-ticket-count"),
-        cardNumber = modal.querySelector('#card-number'),
-        cardExpirationMonth = modal.querySelector('#expiration-month'),
-        cardExpirationYear = modal.querySelector('#expiration-year'),
-        cardHolder = modal.querySelector('#cardholder-name'),
-        cardCVC = modal.querySelector('#card-cvc'),
-        paymentTotalAmount = modal.querySelector('#payment__total-amount-count'),
-        paymentButton = modal.querySelector('#payment__button');
+        //tickets
+        inputTicketTypeList = tickets.querySelectorAll('.ticket-type__input'),
+        inputTicketAmountList = tickets.querySelectorAll('.ticket-amount__input'),
+        ticketsTotalAmount = tickets.querySelector("#tickets__total-amount"),
 
+        modal = document.querySelector('#modal_booking-tickets'),
+
+        //booking
+        booking = modal.querySelector('.booking'),
+        bookingInputDate = booking.querySelector('#booking__input_date'),
+        bookingInputTime = booking.querySelector('#booking__input_time'),
+        bookingInputName = booking.querySelector('#booking__input_name'),
+        bookingInputEmail = booking.querySelector('#booking__input_email'),
+        bookingInputPhone = booking.querySelector('#booking__input_phone'),
+        bookingTicketType = booking.querySelector('#booking__ticket-type'),   
+        bookingInputTicketAmountList = booking.querySelectorAll('.ticket-amount__input'),
+
+        //payment
+        payment = modal.querySelector('.payment'),
+        paymentTicketTime = payment.querySelector('#payment__ticket-time'),
+        paymentTicketType = payment.querySelector('#payment__ticket-type'),
+        paymentTicketDate = payment.querySelector('#payment__ticket-date'),
+        paymentTicketAmountItemList = payment.querySelectorAll('.payment__ticket-amount-item'),
+        paymentTotalAmount = payment.querySelector('#payment__total-amount'),
+        
+        //card
+        cardNumber = payment.querySelector('#card-number'),
+        cardExpirationMonth = payment.querySelector('#expiration-month'),
+        cardExpirationYear = payment.querySelector('#expiration-year'),
+        cardHolder = payment.querySelector('#cardholder-name'),
+        cardCVC = payment.querySelector('#card-cvc');
 
     let ticketDate = '',
         ticketTime = '',
-        exhibitionType = '',
-        ticketCount = {
+        ticketType = '',
+        ticketName = '',
+        ticketEmail = '',
+        ticketPhone = '',
+        ticketAmount = {
             basic : 0,
             senior : 0
         },
-        totalAmountCount = 0,
+        basicAmountCount = 20,
+        seniorAmountCount = 10,
+        totalAmount = 0,
         cardInfo = {
             number: null,
             date: null,
@@ -32,95 +52,92 @@ const tickets = () => {
             cvc: null
         };
     
-    const  clearInfo = () => {
-        exhibitionType = '',
-        ticketCount = {
-            basic : 0,
-            senior : 0
-        },
-        totalAmountCount = 0;
-        changeTotalAmount();
-        clearPaymentInfo();
+    // const  clearInfo = () => {
+    //     ticketDate = '',
+    //     ticketTime = '',
+    //     exhibitionType = '',
+    //     ticketAmount = {
+    //         basic : 0,
+    //         senior : 0
+    //     },
+    //     totalAmountCount = 0;
+
+    //     changeTotalAmount();
+    //     clearPaymentInfo();
+    //     clearCardInfo();
+    //     clearBookingInfo();
         
-    };
+    // };
     const changeTotalAmount = () => {
-        for (let key in ticketCount) {
+        let basicAmount = 0,
+            seniorAmount = 0;
+
+        for (let key in ticketAmount) {
             if (key === 'basic') {
-                totalAmountCount += ticketCount[key] * 20;
+                basicAmount = ticketAmount[key] * basicAmountCount;
             } else if (key === 'senior') {
-                totalAmountCount += ticketCount[key] * 10;
+                seniorAmount += ticketAmount[key] * seniorAmountCount;
             }
         }
-        totalAmount.textContent = totalAmountCount;
+        totalAmount = basicAmount + seniorAmount;
     }
-    operation.forEach(item => {
-        item.addEventListener('click', () => {
-            let input = item.parentElement.querySelector('input');
-            if (item.dataset.type === 'minus') {
-                input.stepDown();
-                ticketCount[input.dataset.type] = +input.value;
-            } else if (item.dataset.type === 'plus') {
-                input.stepUp();
-                ticketCount[input.dataset.type] = +input.value;
+    const clearTicketsInfo = () => {
+        inputTicketTypeList.forEach(item => {
+            if (item.checked) {
+                item.checked = false;
             }
-            changeTotalAmount();
         })
-    })
-    inputsTicketType.forEach(item => {
-        item.addEventListener('change', () => {
-            ticketsType = item.dataset.type;
+        inputTicketAmountList.forEach(item => {
+            item.value = 0;
         })
-    })
+        ticketsTotalAmount.textContent = '0';
+    }
+
     const openModal = () => {
-        if (exhibitionType) {
-            bookingTicketsType.querySelectorAll('option').forEach(item => {
-                if (item.dataset && item.dataset.type === exhibitionType) {
+        clearTicketsInfo();
+        if (ticketType) {
+            bookingTicketType.querySelectorAll('option').forEach(item => {
+                if (item.dataset && item.dataset.type === ticketType) {
                     item.selected = true;
                 }
-            })
+            });
+            paymentTicketType.textContent = `${ticketType.slice(0, 1).toUpperCase()}${ticketType.slice(1)} exhibition`;
         }
-        if (totalAmountCount) {
+        if (totalAmount) {
             getBookingInfo();
             getPaymentInfo();
-            getCardInfo();
         }
     }
 
     const getBookingInfo = () => {
-        modal.querySelectorAll('.booking-ticket-count').forEach(item => {
+        bookingInputTicketAmountList.forEach(item => {
             if (item.dataset.type === 'basic') {
-                item.value = ticketCount.basic;
-                item.textContent = ticketCount.basic;
+                item.value = ticketAmount.basic;
+                item.textContent = ticketAmount.basic;
             } else if ( item.dataset.type === 'senior') {
-                item.value = ticketCount.senior;
-                item.textContent = ticketCount.senior;
+                item.value = ticketAmount.senior;
+                item.textContent = ticketAmount.senior;
             }
         })
     }
     const clearBookingInfo = () => {
 
     }
-
     const getPaymentInfo = () => {
-        modal.querySelectorAll('.payment__type-item').forEach(item => {
+        paymentTicketAmountItemList.forEach(item => {
             if (item.dataset.type === 'basic') {
-                item.querySelector('.payment__type-count').value = ticketCount.basic;
-                item.querySelector('.payment__type-count').textContent = ticketCount.basic;
-                item.querySelector('.payment__total-type-amount').value = ticketCount.basic * 20;
-                item.querySelector('.payment__total-type-amount').textContent = ticketCount.basic * 20;
+                item.querySelector('.payment__ticket-amount-count').textContent = ticketAmount.basic;
+                item.querySelector('.payment__ticket-amount').textContent = ticketAmount.basic * basicAmountCount;
             } else if ( item.dataset.type === 'senior') {
-                item.querySelector('.payment__type-count').value = ticketCount.senior;
-                item.querySelector('.payment__type-count').textContent = ticketCount.senior;
-                item.querySelector('.payment__total-type-amount').value = ticketCount.senior * 10;
-                item.querySelector('.payment__total-type-amount').textContent = ticketCount.senior * 10;
+                item.querySelector('.payment__ticket-amount-count').textContent = ticketAmount.senior;
+                item.querySelector('.payment__ticket-amount').textContent = ticketAmount.senior * seniorAmountCount;
             }
         })
-        paymentTotalAmount.textContent = totalAmountCount;
+        paymentTotalAmount.textContent = totalAmount;
 
     }
     const clearPaymentInfo = () => {
 
-        clearCardInfo();
     }
 
     const getCardInfo = () => {
@@ -129,30 +146,31 @@ const tickets = () => {
         cardInfo.cardholder= cardHolder.value;
         cardInfo.cvc = cardCVC.value;
     }
-    const clearCardInfo = () => {
-        for (let key in cardInfo) {
-            cardInfo[key] = null;
-        }
-        cardNumber.value = null;
-        cardExpirationMonth.value = null;
-        cardExpirationYear.value = null;
-        cardHolder.value = null;
-        cardCVC.value = null;
+    // const clearCardInfo = () => {
+    //     for (let key in cardInfo) {
+    //         cardInfo[key] = null;
+    //     }
+    //     cardNumber.value = null;
+    //     cardExpirationMonth.value = null;
+    //     cardExpirationYear.value = null;
+    //     cardHolder.value = null;
+    //     cardCVC.value = null;
 
-        cardNumber.textContent = "";
-        cardExpirationMonth.textContent = "";
-        cardExpirationYear.textContent = "";
-        cardHolder.textContent = "";
-        cardCVC.textContent = "";
-    }
+    //     cardNumber.textContent = "";
+    //     cardExpirationMonth.textContent = "";
+    //     cardExpirationYear.textContent = "";
+    //     cardHolder.textContent = "";
+    //     cardCVC.textContent = "";
+    // }
     const sendData = () => {
+        getCardInfo();
         let data = {
-            date: ticketDate,
-            time: ticketTime,
-            exhibition: exhibitionType,
-            basic: ticketCount.basic,
-            senior: ticketCount.senior,
-            total: totalAmountCount,
+            ticketDate: ticketDate,
+            ticketTime: ticketTime,
+            ticketType: ticketType,
+            basicAmount: ticketAmount.basic,
+            seniorAmount: ticketAmount.senior,
+            totalAmount: totalAmount,
             card: {
                 number: cardInfo.number,
                 date: cardInfo.date,
@@ -160,15 +178,62 @@ const tickets = () => {
                 cvc: cardInfo.cvc
             }
         }
-        // for (let key in data) {
-        //     if (!data[key]) {
+    //     // for (let key in data) {
+    //     //     if (!data[key]) {
                 
-        //     }
-        // }
+    //     //     }
+    //     // }
         console.log(data)
     }
-    ticketsButton.addEventListener('click', openModal);
-    paymentButton.addEventListener('click', sendData);
+
+    document.addEventListener('change', (e) => {
+        let target = e.target;
+        if (target.matches('.ticket-type__input')) {
+            ticketType = target.dataset.type;
+        } else if (target.matches('#booking__input_date')) {
+            ticketDate = target.value;
+            paymentTicketDate.textContent = target.value;
+        } else if (target.matches('#booking__input_time')) {
+            ticketTime = target.value;
+            paymentTicketTime.textContent = target.value;
+        } else if (target.matches('#booking__input_name')) {
+            ticketName = target.value;
+        } else if (target.matches('#booking__input_email')) {
+            ticketEmail = target.value;
+        } else if (target.matches('#booking__input_phone')) {
+            ticketPhone = target.value;
+        } else if (target.matches('#booking__ticket-type')) {
+            ticketType = target.value;
+            paymentTicketType.textContent = `${ticketType.slice(0, 1).toUpperCase()}${ticketType.slice(1)} exhibition`;
+        }
+    })
+    document.addEventListener('click', (e) => {
+        let target = e.target;
+        if (target.matches('#tickets__button')) {
+            openModal();
+        } else if (target.matches('#payment__button')) {
+            sendData();
+        } else if (target.matches('.operation')) {
+            let input = target.parentElement.querySelector('input');
+            if (target.dataset.type === 'minus') {
+                input.stepDown();
+                ticketAmount[input.dataset.type] = +input.value;
+                changeTotalAmount();
+            } else if (target.dataset.type === 'plus') {
+                input.stepUp();
+                ticketAmount[input.dataset.type] = +input.value;
+                changeTotalAmount();
+            }
+
+            if (input.dataset.section === 'tickets') {
+                ticketsTotalAmount.textContent = totalAmount;
+            } else if (input.dataset.section ===  'modal_booking-tickets') {
+                getPaymentInfo();
+                // paymentTotalAmount.textContent = totalAmount;
+            }
+               
+        }
+    })
 
 }
 export default tickets;
