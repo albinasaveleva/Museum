@@ -5,93 +5,116 @@ $bg-dark: #030303
 $dark-red: #710707
 $light-grey: #BCBCBC
 $dark-grey: #939393
-@mixin forum_80
+@mixin forum
     font-family: Forum
     font-style: normal
     font-weight: normal
+    margin: 0
+@mixin forum_80_dark
+    @include forum
     font-size: 80px
     line-height: 90px
-@mixin forum_80_dark
-    @include forum_80
     color: $dark
 @mixin forum_80_light
-    @include forum_80
+    @include forum
+    font-size: 80px
+    line-height: 90px
     color: $light
 @mixin forum_80_hover
-    @include forum_80
+    @include forum
+    font-size: 80px
+    line-height: 90px
     color: $gold
 @mixin forum_50_dark
-    @include forum_80_dark
+    @include forum
     font-size: 50px
     line-height: 75px
+    color: $dark
 @mixin forum_50_light
-    @include forum_80_light
+    @include forum
     font-size: 50px
     line-height: 75px
+    color: $light
 @mixin forum_50_hover
-    @include forum_80_hover
+    @include forum
     font-size: 50px
     line-height: 75px
+    color: $gold
 @mixin forum_40_dark
-    @include forum_80_dark
+    @include forum
     font-size: 40px
     line-height: 60px
+    color: $dark
 @mixin forum_40_light
-    @include forum_80_light
+    @include forum
     font-size: 40px
     line-height: 60px
+    color: $light
 @mixin forum_40_hover
-    @include forum_80_hover
+    @include forum
     font-size: 40px
     line-height: 40px
+    color: $gold
 @mixin forum_32_dark
-    @include forum_80_dark
+    @include forum
     font-size: 32px
     line-height: 35px
+    color: $dark
 @mixin forum_32_light
-    @include forum_80_light
+    @include forum
     font-size: 32px
     line-height: 35px
+    color: $light
 @mixin forum_32_hover
-    @include forum_80_hover
+    @include forum
     font-size: 32px
     line-height: 35px
+    color: $gold
 @mixin forum_28_dark
-    @include forum_80_dark
+    @include forum
     font-size: 28px
     line-height: 40px
+    color: $dark
 @mixin forum_28_light
-    @include forum_80_light
+    @include forum
     font-size: 28px
     line-height: 40px
+    color: $light
 @mixin forum_28_hover
-    @include forum_80_hover
+    @include forum
     font-size: 28px
     line-height: 40px
+    color: $gold
 @mixin forum_22_dark
-    @include forum_80_dark
+    @include forum
     font-size: 22px
     line-height: 24px
+    color: $dark
 @mixin forum_22_light
-    @include forum_80_light
+    @include forum
     font-size: 22px
     line-height: 24px
+    color: $light
 @mixin forum_22_hover
-    @include forum_80_hover
+    @include forum
     font-size: 22px
     line-height: 24px
+    color: $gold
 @mixin forum_18_dark
-    @include forum_80_dark
+    @include forum
     font-size: 18px
     line-height: 20px
+    color: $dark
 @mixin forum_18_light
-    @include forum_80_light
+    @include forum
     font-size: 18px
     line-height: 20px
+    color: $light
 @mixin forum_18_hover
-    @include forum_80_hover
+    @include forum
     font-size: 18px
     line-height: 20px
+    color: $gold
 @mixin roboto
     font-family: Roboto
     font-style: normal

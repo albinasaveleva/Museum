@@ -183,7 +183,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <span class="tickets__total-amount">Total € <span id="tickets__total-amount">0</span></span>
+                                <span class="tickets__total-amount">Total €&nbsp;<span id="tickets__total-amount">0</span></span>
                             </div>
                         </div>
                         <button type="button" class="tickets__button" id="tickets__button">Buy Now</button>
@@ -191,14 +191,14 @@
                 </div>
             </div>
         </section>
-        <div class="modal_booking-tickets" id="modal_booking-tickets">
+        <div class="modal modal_booking-tickets" id="modal_booking-tickets">
             <div class="modal__container">
                 <div class="booking">
                     <div class="booking__title-wrapper title-wrapper">
                         <div class="booking__logo">
                             <a href="index.html"></a>
                         </div>
-                        <h2 class="booking__section-title section-title section-title_hover">Booking tickets</h2>
+                        <h2 class="booking__section-title">Booking tickets</h2>
                         <span class="booking__section-subtitle section-subtitle">Tour to Louvre</span>
                         <div class="delimiter"></div>
                     </div>
@@ -211,7 +211,7 @@
                         <input class="booking__input booking__input_large" type="text" placeholder="E-mail" name="booking__input_email" id="booking__input_email">
                         <input class="booking__input booking__input_large" type="text" placeholder="Phone" name="booking__input_phone" id="booking__input_phone">
                         <select class="booking__input booking__input_large" name="booking__ticket-type" id="booking__ticket-type">
-                            <option>Ticket Type</option>
+                            <option value="">Ticket Type</option>
                             <option value="permanent" data-type="permanent">Permanent exhibition</option>
                             <option value="temporary" data-type="temporary">Temporary exhibition</option>
                             <option value="combined" data-type="combined">Combined exhibition</option>
@@ -309,6 +309,7 @@
                     <button class="payment__button" id="payment__button" type="button">Book</button>
                 </div>
             </div>
+            <button type="button" class="modal__close" id="modal__close_booking-tickets"></button>
         </div>
         <section class="parallax">
         </section>

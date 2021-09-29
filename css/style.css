@@ -67,6 +67,7 @@ body {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
+  margin: 0;
   font-size: 80px;
   line-height: 90px;
   color: #FFFFFF;
@@ -79,6 +80,7 @@ body {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
+  margin: 0;
   font-size: 80px;
   line-height: 90px;
   color: #9D8665;
@@ -384,11 +386,10 @@ button {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
-  font-size: 80px;
-  line-height: 90px;
-  color: #000000;
+  margin: 0;
   font-size: 32px;
   line-height: 35px;
+  color: #000000;
   letter-spacing: 5px;
   margin: 0;
 }
@@ -639,7 +640,6 @@ button {
   font-size: 28px;
   line-height: 33px;
   color: #000000;
-  margin-bottom: 60px;
 }
 
 .tickets__total-amount > span {
@@ -662,10 +662,12 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  font-weight: 300;
   background-color: #000000;
+  text-align: center;
   color: #FFFFFF;
   height: 50px;
-  padding: 0 50px;
+  width: 175px;
   margin-left: auto;
 }
 
@@ -678,6 +680,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-bottom: 60px;
 }
 
 .tickets .ticket-type__block-title {
@@ -813,23 +816,57 @@ button {
   right: -1px;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow-y: auto;
+  background-color: #FFFFFF;
+}
+
 .modal_booking-tickets {
   width: 100%;
   margin: 0 auto;
 }
 
 .modal__container {
-  padding: 90px 0;
   max-width: 1440px;
+  padding: 90px;
   margin: 0 auto;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: 400px 530px;
+  grid-template-rows: 1fr;
+  overflow-y: auto;
+}
+
+.modal__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 25px;
+  height: 25px;
+  background-image: url(../assets/icons/Close.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.modal_open {
   display: flex;
-  justify-content: center;
 }
 
 .booking {
-  max-width: 400px;
   width: 100%;
-  margin-right: 40px;
 }
 
 .booking__logo {
@@ -853,11 +890,10 @@ button {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
-  font-size: 80px;
-  line-height: 90px;
-  color: #9D8665;
+  margin: 0;
   font-size: 50px;
   line-height: 75px;
+  color: #9D8665;
   line-height: 55px;
   margin-bottom: 15px;
 }
@@ -924,11 +960,10 @@ button {
   font-family: Forum;
   font-style: normal;
   font-weight: normal;
-  font-size: 80px;
-  line-height: 90px;
-  color: #9D8665;
+  margin: 0;
   font-size: 18px;
   line-height: 20px;
+  color: #9D8665;
   margin-bottom: 5px;
 }
 
@@ -1017,7 +1052,6 @@ button {
 .payment {
   background-color: #FFFFFF;
   border: 1px solid #030303;
-  max-width: 530px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1192,11 +1226,13 @@ button {
 
 .payment__card {
   position: relative;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .payment__card > div {
   width: 360px;
-  height: 211px;
+  height: 210px;
   padding: 15px 20px;
   border-radius: 3px;
 }
@@ -1207,7 +1243,7 @@ button {
   flex-direction: column;
   position: relative;
   z-index: 1;
-  margin-bottom: 29px;
+  margin-bottom: 30px;
 }
 
 .payment__card .card__field {
@@ -1259,7 +1295,7 @@ button {
 
 .payment__card .card_back {
   position: absolute;
-  top: 29px;
+  top: 30px;
   right: 0;
   z-index: 0;
   display: flex;
@@ -1604,22 +1640,20 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #FFFFFF;
+    margin: 0;
     font-size: 50px;
     line-height: 75px;
+    color: #FFFFFF;
     margin-bottom: 20px;
   }
   .section-title_hover {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #9D8665;
+    margin: 0;
     font-size: 50px;
     line-height: 75px;
+    color: #9D8665;
   }
   .section-title-wrapper {
     margin-bottom: 60px;
@@ -1660,11 +1694,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #FFFFFF;
+    margin: 0;
     font-size: 50px;
     line-height: 75px;
+    color: #FFFFFF;
   }
   .welcome__section-subtitle {
     font-family: Roboto;
@@ -1697,11 +1730,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #000000;
+    margin: 0;
     font-size: 28px;
     line-height: 40px;
+    color: #000000;
   }
   .visiting .content .card .title-delimiter {
     width: 150px;
@@ -1742,19 +1774,29 @@ input[type=number]::-webkit-outer-spin-button {
   .gallery .wrapper {
     height: 1265px;
   }
-  .tickets .wrapper {
+  .tickets__wrapper {
     justify-content: space-between;
   }
-  .tickets .image {
+  .tickets__image {
     margin-right: 80px;
     width: 700px;
     height: 440px;
   }
-  .tickets .ticket-type {
+  .tickets__ticket-type {
     display: none;
   }
-  .tickets .ticket-amount {
-    margin-left: auto;
+  .tickets__ticket-amount {
+    align-items: flex-start;
+  }
+  .tickets__button {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .tickets .ticket-amount__input-number {
+    width: 175px;
+  }
+  .modal__container {
+    padding: 75px 30px 30px;
   }
   .contacts .description-title {
     font-family: Roboto;
@@ -1784,10 +1826,6 @@ input[type=number]::-webkit-outer-spin-button {
   .footer__logo {
     margin-right: 45px;
   }
-  .modal_booking-tickets .modal__container {
-    padding: 30px;
-    padding-top: 75px;
-  }
 }
 
 @media (max-width: 1023px) {
@@ -1798,21 +1836,19 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #FFFFFF;
+    margin: 0;
     font-size: 40px;
     line-height: 60px;
+    color: #FFFFFF;
   }
   .section-title_hover {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #9D8665;
+    margin: 0;
     font-size: 40px;
     line-height: 40px;
+    color: #9D8665;
   }
   .section-title-wrapper {
     margin-bottom: 40px;
@@ -1891,11 +1927,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #000000;
+    margin: 0;
     font-size: 22px;
     line-height: 24px;
+    color: #000000;
     letter-spacing: 3px;
   }
   .visiting .content .card .subtitle {
@@ -1933,10 +1968,27 @@ input[type=number]::-webkit-outer-spin-button {
   .parallax {
     height: 300px;
   }
-  .tickets .image {
+  .tickets__image {
     width: 444px;
     height: 340px;
     margin-right: 60px;
+  }
+  .tickets__ticket-amount {
+    margin-bottom: 40px;
+  }
+  .modal__container {
+    position: absolute;
+    top: 0;
+    padding-top: 80px;
+    grid-gap: 50px;
+    grid-template-columns: minmax(100%, 530px);
+    grid-template-rows: repeat(2, min-content);
+  }
+  .modal .payment {
+    padding: 25px 15px;
+  }
+  .modal .payment__image {
+    right: 15px;
   }
   .contacts__content {
     flex-direction: column;
@@ -1945,11 +1997,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #9D8665;
+    margin: 0;
     font-size: 40px;
     line-height: 40px;
+    color: #9D8665;
   }
   .contacts .description {
     margin-bottom: 30px;
@@ -2003,20 +2054,6 @@ input[type=number]::-webkit-outer-spin-button {
   .nav__item {
     font-size: 18px;
   }
-  .modal_booking-tickets .modal__container {
-    padding: 80px 30px 40px;
-    flex-direction: column;
-  }
-  .modal_booking-tickets .modal__container .booking {
-    max-width: none;
-    margin-right: 0;
-    margin-bottom: 50px;
-  }
-  .modal_booking-tickets .modal__container .payment {
-    padding: 25px 15px;
-    max-width: none;
-    width: 100%;
-  }
 }
 
 @media (max-width: 767px) {
@@ -2029,21 +2066,19 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #FFFFFF;
+    margin: 0;
     font-size: 28px;
     line-height: 40px;
+    color: #FFFFFF;
   }
   .section-title_hover {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #9D8665;
+    margin: 0;
     font-size: 28px;
     line-height: 40px;
+    color: #9D8665;
   }
   .section-title-wrapper {
     margin-bottom: 40px;
@@ -2103,11 +2138,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #000000;
+    margin: 0;
     font-size: 18px;
     line-height: 20px;
+    color: #000000;
     letter-spacing: 5px;
   }
   .visiting .content .card .subtitle {
@@ -2129,27 +2163,30 @@ input[type=number]::-webkit-outer-spin-button {
   .gallery .wrapper {
     height: 640px;
   }
-  .tickets .wrapper {
+  .tickets__wrapper {
     flex-direction: column;
   }
-  .tickets .image {
+  .tickets__image {
     width: 100%;
     height: 160px;
     margin-right: 0;
     margin-bottom: 40px;
   }
-  .tickets .ticket-amount {
+  .tickets__ticket-amount {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tickets__button {
     margin: 0 auto;
   }
   .contacts__section-title {
     font-family: Forum;
     font-style: normal;
     font-weight: normal;
-    font-size: 80px;
-    line-height: 90px;
-    color: #9D8665;
+    margin: 0;
     font-size: 28px;
     line-height: 40px;
+    color: #9D8665;
   }
   .contacts .description-title {
     font-family: Roboto;
