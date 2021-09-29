@@ -211,17 +211,73 @@ const tickets = () => {
         closeModal();
         clearInfo();
     }
+    const validationForm = () => {
+        const form = modal.querySelector('#booking-form');
+
+        const dateValidation = () => {
+            const inputDate = form.querySelector('#booking__input_date');
+            if (inputDate.value) {
+                inputDate.nextElementSibling.style.display = 'none';
+            } else {
+                inputDate.nextElementSibling.style.display = '';
+            }
+
+            let currentDate = new Date();
+            let minYear = currentDate.getFullYear(),
+                minMonth = '',
+                minDate = '';
+
+            if ((currentDate.getMonth() + 1) < 10) {
+                minMonth = `0${currentDate.getMonth() + 1}`;
+            } else {
+                minMonth = currentDate.getMonth() + 1;
+            }
+            if ((currentDate.getDate() + 1) < 10) {
+                minDate = `0${currentDate.getDate()}`;
+            } else {
+                minDate = currentDate.getDate();
+            }
+
+            inputDate.min = `${minYear}-${minMonth}-${minDate}`;
+        }
+        dateValidation();
+
+        const timeValidation = () => {
+            const inputTime = form.querySelector('#booking__input_time');
+            if (inputTime.value) {
+                inputTime.nextElementSibling.style.display = 'none';
+            } else {
+                inputTime.nextElementSibling.style.display = '';
+            }
+        }
+        timeValidation();
+
+    }
+    validationForm();
+    
+    const formateDate = (date) => {
+        let fullDate = new Date(date);
+        const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augest', 'September', 'October', 'November', 'December'];
+        
+        return `${weekDays[fullDate.getDay()]}, ${months[fullDate.getMonth()]} ${fullDate.getDate()}`;
+    }
+    const formateTime = (time) => {
+        return `${time.slice(0, 2)} : ${time.slice(3, 5)}`
+    }
 
     document.addEventListener('change', (e) => {
         let target = e.target;
         if (target.matches('.ticket-type__input')) {
             ticketType = target.dataset.type;
         } else if (target.matches('#booking__input_date')) {
+            validationForm();
             ticketDate = target.value;
-            paymentTicketDate.textContent = target.value;
+            paymentTicketDate.textContent = formateDate(target.value);
         } else if (target.matches('#booking__input_time')) {
+            validationForm();
             ticketTime = target.value;
-            paymentTicketTime.textContent = target.value;
+            paymentTicketTime.textContent = formateTime(target.value);
         } else if (target.matches('#booking__input_name')) {
             ticketName = target.value;
         } else if (target.matches('#booking__input_email')) {

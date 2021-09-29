@@ -53,11 +53,34 @@
             align-items: center
             &:not(:last-child)
                 margin-bottom: 25px
-            input
+            .checkmark
+                position: relative
+                cursor: pointer
+                height: 17px
+                width: 17px
+                border: 2px solid $dark
+                border-radius: 50%
                 margin-right: 25px
+            input
+                display: none
+            input:checked + .checkmark
+                &::after
+                    position: absolute
+                    content: ''
+                    width: 7px
+                    height: 7px
+                    display: block
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    background-color: $dark
+                    border-radius: 50%                    
             label
                 @include roboto_22_dark
                 font-weight: 300
+                cursor: pointer
+                &:hover
+                    color: $gold
     .ticket-amount
         &__block-title
             @include roboto_28_dark
@@ -89,6 +112,7 @@
                 left: 0
                 right: 0
                 width: 100%
+                height: 100%
                 padding: 0 38px
                 @include roboto_22_dark
                 font-weight: 300
@@ -151,320 +175,421 @@
         outline: none
     &_open
         display: flex
-.booking
-    width: 100%
-    &__logo
-        width: 85px
-        height: 40px
-        background-color: $gold
-        -webkit-mask-image: url(../assets/icons/logo-image.svg)
-        -webkit-mask-position: center
-        -webkit-mask-size: auto
-        -webkit-mask-repeat: no-repeat
-        & > a
-            height: inherit
-            width: inherit
-            display: block
-            cursor: pointer
-    &__section-title
-        @include forum_50_hover
-        line-height: 55px
-        margin-bottom: 15px
-    &__section-subtitle
-        @include roboto_18_light
-        color: $dark-red
-        margin-bottom: 10px
-        display: block
-    &__title-wrapper
-        margin-bottom: 60px
-    &__form
-        display: flex
-        flex-direction: column
-        & > *:not(:last-child)
-            margin-bottom: 20px
-    &__inputs_date
-        display: flex
-    &__input
-        border: 1px solid $bg-dark
-        outline: none
-        height: 45px
-        display: flex
-        align-items: center
-        &_small
-            width: calc( (100% - 20px) / 2 )
-            &:not(:last-child)
-                margin-right: 20px
-        &_large
-            width: 100%
-        option
-            width: inherit
-    &__ticket-amount
-        border: 1px solid $bg-dark
-        padding: 10px 15px 15px
-    .ticket-amount
+    .booking
+        width: 100%
+        &__logo
+            width: 85px
+            height: 40px
+            background-color: $gold
+            -webkit-mask-image: url(../assets/icons/logo-image.svg)
+            -webkit-mask-position: center
+            -webkit-mask-size: auto
+            -webkit-mask-repeat: no-repeat
+            & > a
+                height: inherit
+                width: inherit
+                display: block
+                cursor: pointer
         &__section-title
-            @include forum_18_hover
-            margin-bottom: 5px
-            &-wrapper
-                margin-bottom: 15px
-        &__items
+            @include forum_50_hover
+            line-height: 55px
+            margin-bottom: 15px
+        &__section-subtitle
+            @include roboto_18_light
+            color: $dark-red
+            margin-bottom: 10px
+            display: block
+        &__title-wrapper
+            margin-bottom: 60px
+        &__form
             display: flex
             flex-direction: column
-        &__item
-            display: flex
-            align-items: center
-            justify-content: space-between
-            &:not(:last-child)
-                margin-bottom: 18px
-            & > span
-                @include roboto_18_dark
-        &__input-number
-            width: 105px
-            height: 25px
-            border: 1px solid $bg-dark
-            position: relative
-            input
-                @include roboto_18_dark
-                padding: 0 35px
-                position: absolute
-                top: 0
-                bottom: 0
-                left: 0
-                right: 0
-                width: 100%
-                border: none
-                outline: none
-                text-align: center
-            .operation
-                display: flex
-                align-items: center
-                justify-content: center
-                position: absolute
-                top: 0
-                bottom: 0
-                width: 35px
-                background-color: $bg-dark
-                @include roboto_32_light
-                z-index: 10
-                border: none
-                outline: none
-                &_minus
-                    left: 0
-                &_plus
-                    right: 0
-.payment
-    background-color: #FFFFFF
-    border: 1px solid #030303 
-    width: 100%
-    display: flex
-    flex-direction: column
-    padding: 25px 30px 30px
-    position: relative
-    &__title
-        @include roboto_32_dark
-        font-weight: 500
-        margin: 0
-    &__subtitle
-        @include roboto
-        font-weight: 500
-        font-size: 22px
-        line-height: 26px
-        color: $dark-red
-        margin: 0
-        margin-bottom: 10px
-    &__image
-        position: absolute
-        top: 25px
-        right: 30px
-        width: 150px
-        height: 120px
-    &__ticket-info
-        max-width: 300px
-        width: 100%
-        display: flex
-        flex-direction: column
-        margin-bottom: 20px
-        span
-            height: 22px
-            display: flex
-            align-items: center
-            @include roboto_18_dark
-            font-weight: 300
-            &:not(:last-child)
-                margin-bottom: 5px
-            &::before
-                width: 15px
-                height: 15px
-                margin-right: 15px
-                display: flex
-                align-items: center
-                justify-content: center
-        .payment__ticket-date
-            &::before
-                content: url('../assets/icons/date.svg')
-        .payment__ticket-time
-            &::before
-                content: url('../assets/icons/Time.svg')
-        .payment__ticket-type
-            &::before
-                content: url('../assets/icons/exhibition.svg')
-    &__ticket-amount-items
-        display: flex
-        flex-direction: column
-        margin-bottom: 10px
-        .payment
-            &__ticket-amount-item 
-                display: flex
-                align-items: center
-                &:not(:last-child)
-                    margin-bottom: 5px
-            &__ticket-amount-count
-                display: flex
-                align-items: center
-                justify-content: center
-                width: 32px
-                height: 20px
-                border-radius: 4px
-                background-color: $bg-dark
-                margin-right: 10px
-                @include roboto_18_dark
-                color: #A4A4A3
-            &__ticket-amount-title
-                @include roboto_22_dark
-            &__ticket-amount-wrapper
-                @include roboto_22_dark
-                margin-left: auto
-                span
-                    @include roboto_22_dark
-    &__delimiter
-        margin-bottom: 10px
-    &__total-amount
-        @include roboto_32_dark
-        display: flex
-        align-items: center
-        margin-bottom: 10px
-        span
-            display: inline-block
-            margin-left: auto
-            @include roboto_32_dark
-    &__card
-        position: relative
-        margin-bottom: 30px
-        width: 100%
-        & > div
-            width: 360px
-            height: 210px
-            padding: 15px 20px
-            border-radius: 3px
-        .card
-            &_front
-                background-color: $light-grey
-                display: flex
-                flex-direction: column
+            & > *:not(:last-child)
+                margin-bottom: 20px
+        &__input-wrapper
                 position: relative
-                z-index: 1
-                margin-bottom: 30px
-            &__field
+                width: 100%
+                background-color: $light
+                &_small
+                    width: calc( (100% - 20px) / 2 )
+                    &:not(:last-child)
+                        margin-right: 20px
+        &__input-mark
+            position: absolute
+            width: 15px
+            height: 100%
+            top: 0
+            bottom: 0
+            left: 15px
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: contain
+            &_date
+                background-image: url(../assets/icons/date.svg)
+            &_time
+                background-image: url(../assets/icons/Time.svg) 
+            &_name
+                background-image: url(../assets/icons/name.svg)
+            &_email
+                background-image: url(../assets/icons/email.svg)
+            &_phone
+                background-image: url(../assets/icons/tel.svg)
+            &_type
+                background-image: url(../assets/icons/type.svg)
+        &__input-arrow
+            position: absolute
+            top: 0
+            right: 15px
+            width: 15px
+            height: 100%
+            border-radius: 50%
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: contain
+            background-image: url(../assets/icons/arrow.svg)
+        &__input-placeholder
+            @include roboto_18_dark
+            position: absolute
+            top: 1px
+            bottom: 1px
+            left: 45px
+            right: 35px
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            background-color: $light
+            z-index: 5
+        &__inputs_date
+            display: flex
+        input::placeholder
+            @include roboto_18_dark
+            opacity: 1
+        input::-moz-placeholder
+            @include roboto_18_dark
+            opacity: 1
+        input:-ms-input-placeholder
+            @include roboto_18_dark
+            opacity: 1
+        input::-webkit-input-placeholder
+            @include roboto_18_dark
+            opacity: 1
+        input[type=date]
+            cursor: pointer
+            position: relative
+            z-index: 5
+            padding-right: 0
+            &::-webkit-inner-spin-button
+                display: none
+            &::-webkit-clear-button
+                display: none
+            &::-ms-clear
+                display: none
+            &::-webkit-calendar-picker-indicator
+                margin-right: 7px
+                margin-left: 0
+                z-index: 5
+                opacity: 0
+                cursor: pointer
+            &:focus + .booking__input-placeholder
+                display: none 
+        input[type=time]
+            cursor: pointer
+            position: relative
+            z-index: 5
+            padding-right: 0
+            &::-webkit-inner-spin-button
+                display: none
+            &::-webkit-clear-button
+                display: none
+            &::-ms-clear
+                display: none
+            &::-webkit-calendar-picker-indicator
+                margin-right: 9px
+                margin-left: 0
+                z-index: 5
+                opacity: 0
+                cursor: pointer
+            &:focus + .booking__input-placeholder
+                display: none
+        &__input
+            @include roboto_18_dark
+            border: 1px solid $bg-dark
+            background-color: transparent
+            outline: none
+            height: 45px
+            display: flex
+            align-items: center                
+            width: 100%
+            padding: 0 35px 0 45px
+            option
+                width: inherit                  
+        &__ticket-amount
+            border: 1px solid $bg-dark
+            padding: 10px 15px 15px
+        .ticket-amount
+            &__section-title
+                @include forum_18_hover
+                margin-bottom: 5px
+                &-wrapper
+                    margin-bottom: 15px
+            &__items
                 display: flex
                 flex-direction: column
-                width: 215px
-                margin-bottom: 10px
-                &_last
+            &__item
+                display: flex
+                align-items: center
+                justify-content: space-between
+                &:not(:last-child)
+                    margin-bottom: 18px
+                & > span
+                    @include roboto_18_dark
+            &__input-number
+                width: 105px
+                height: 25px
+                border: 1px solid $bg-dark
+                position: relative
+                input
+                    @include roboto_18_dark
+                    padding: 0 35px
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    left: 0
+                    right: 0
                     width: 100%
-                    margin-bottom: 0
-                & input
-                    height: 35px
-                    background-color: $light
-                    border: 0.5px solid #A4A4A3
+                    border: none
                     outline: none
                     text-align: center
-                    @include roboto
-                    font-size: 12px
-                    line-height: 14px
-                    color: #161615
-                .expiration-date
+                .operation
                     display: flex
                     align-items: center
-                    justify-content: space-between
-                    input
-                        width: calc( (100% - 15px) / 2 )
-                .field__title
-                    @include roboto
-                    display: inline-block
-                    margin-bottom: 5px
-                    font-size: 12px
-                    line-height: 14px
-                    color: #161615
-            &_back
-                position: absolute
-                top: 30px
-                right: 0
-                z-index: 0
-                display: flex
-                flex-direction: column
-                background-color: #939393
-                justify-content: flex-end
-                align-items: flex-end
-                .card
-                    &__tape
-                        position: absolute
-                        top: 25px
+                    justify-content: center
+                    position: absolute
+                    top: 0
+                    bottom: 0
+                    width: 35px
+                    background-color: $bg-dark
+                    @include roboto_32_light
+                    z-index: 10
+                    border: none
+                    outline: none
+                    &_minus
                         left: 0
+                    &_plus
                         right: 0
+    .payment
+        background-color: #FFFFFF
+        border: 1px solid #030303 
+        width: 100%
+        display: flex
+        flex-direction: column
+        padding: 25px 30px 30px
+        position: relative
+        &__title
+            @include roboto_32_dark
+            font-weight: 500
+            margin: 0
+        &__subtitle
+            @include roboto
+            font-weight: 500
+            font-size: 22px
+            line-height: 26px
+            color: $dark-red
+            margin: 0
+            margin-bottom: 10px
+        &__image
+            position: absolute
+            top: 25px
+            right: 30px
+            width: 150px
+            height: 120px
+        &__ticket-info
+            max-width: 300px
+            width: 100%
+            display: flex
+            flex-direction: column
+            margin-bottom: 20px
+            span
+                height: 22px
+                display: flex
+                align-items: center
+                @include roboto_18_dark
+                font-weight: 300
+                &:not(:last-child)
+                    margin-bottom: 5px
+                &::before
+                    width: 15px
+                    height: 15px
+                    margin-right: 15px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+            .payment__ticket-date
+                &::before
+                    content: url('../assets/icons/date.svg')
+            .payment__ticket-time
+                &::before
+                    content: url('../assets/icons/Time.svg')
+            .payment__ticket-type
+                &::before
+                    content: url('../assets/icons/exhibition.svg')
+        &__ticket-amount-items
+            display: flex
+            flex-direction: column
+            margin-bottom: 10px
+            .payment
+                &__ticket-amount-item 
+                    display: flex
+                    align-items: center
+                    &:not(:last-child)
+                        margin-bottom: 5px
+                &__ticket-amount-count
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    width: 32px
+                    height: 20px
+                    border-radius: 4px
+                    background-color: $bg-dark
+                    margin-right: 10px
+                    @include roboto_18_dark
+                    color: #A4A4A3
+                &__ticket-amount-title
+                    @include roboto_22_dark
+                &__ticket-amount-wrapper
+                    @include roboto_22_dark
+                    margin-left: auto
+                    span
+                        @include roboto_22_dark
+        &__delimiter
+            margin-bottom: 10px
+        &__total-amount
+            @include roboto_32_dark
+            display: flex
+            align-items: center
+            margin-bottom: 10px
+            span
+                display: inline-block
+                margin-left: auto
+                @include roboto_32_dark
+        &__card
+            position: relative
+            margin-bottom: 30px
+            width: 100%
+            & > div
+                width: 360px
+                height: 210px
+                padding: 15px 20px
+                border-radius: 3px
+            .card
+                &_front
+                    background-color: $light-grey
+                    display: flex
+                    flex-direction: column
+                    position: relative
+                    z-index: 1
+                    margin-bottom: 30px
+                &__field
+                    display: flex
+                    flex-direction: column
+                    width: 215px
+                    margin-bottom: 10px
+                    &_last
                         width: 100%
-                        height: 45px
-                        background-color: #161615
-                    &__field
-                        max-width: 75px
-                        width: 100%
+                        margin-bottom: 0
+                    & input
+                        height: 35px
+                        background-color: $light
+                        border: 0.5px solid #A4A4A3
+                        outline: none
+                        text-align: center
+                        @include roboto
+                        font-size: 12px
+                        line-height: 14px
+                        color: #161615
+                    .expiration-date
                         display: flex
-                        flex-direction: column
                         align-items: center
-                        .field
-                            &__description
-                                @include roboto
-                                font-size: 10px
-                                line-height: 12px
-                                color: #161615
-                            &__title
-                                text-transform: uppercase
+                        justify-content: space-between
+                        input
+                            width: calc( (100% - 15px) / 2 )
+                    .field__title
+                        @include roboto
+                        display: inline-block
+                        margin-bottom: 5px
+                        font-size: 12px
+                        line-height: 14px
+                        color: #161615
+                &_back
+                    position: absolute
+                    top: 30px
+                    right: 0
+                    z-index: 0
+                    display: flex
+                    flex-direction: column
+                    background-color: #939393
+                    justify-content: flex-end
+                    align-items: flex-end
+                    .card
+                        &__tape
+                            position: absolute
+                            top: 25px
+                            left: 0
+                            right: 0
+                            width: 100%
+                            height: 45px
+                            background-color: #161615
+                        &__field
+                            max-width: 75px
+                            width: 100%
+                            display: flex
+                            flex-direction: column
+                            align-items: center
+                            .field
+                                &__description
+                                    @include roboto
+                                    font-size: 10px
+                                    line-height: 12px
+                                    color: #161615
+                                &__title
+                                    text-transform: uppercase
+                                    margin-bottom: 5px
+                                    @include roboto
+                                    font-size: 12px
+                                    line-height: 14px
+                                    color: #161615
+                            input
+                                width: 100%
                                 margin-bottom: 5px
+                                text-align: center
                                 @include roboto
                                 font-size: 12px
                                 line-height: 14px
                                 color: #161615
-                        input
-                            width: 100%
-                            margin-bottom: 5px
-                            text-align: center
-                            @include roboto
-                            font-size: 12px
-                            line-height: 14px
-                            color: #161615
-                            outline: none
-            &__icons
-                position: absolute
-                top: 34px
-                right: 20px
-                display: flex
-                flex-direction: column
-                justify-content: center
-                img:not(:last-child)
-                    margin-bottom: 15px
-                .icon_visa
-                    width: 55px
-                    height: 16px
-                .icon_mastercard
-                    width: 53px
-                    height: 32px
-    &__button
-        @include button
-        width: 220px
-        height: 45px
-        background-color: $dark-red
-        @include roboto_22_light
-        opacity: .9
-        margin-left: auto
+                                outline: none
+                &__icons
+                    position: absolute
+                    top: 34px
+                    right: 20px
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    img:not(:last-child)
+                        margin-bottom: 15px
+                    .icon_visa
+                        width: 55px
+                        height: 16px
+                    .icon_mastercard
+                        width: 53px
+                        height: 32px
+        &__button
+            @include button
+            width: 220px
+            height: 45px
+            background-color: $dark-red
+            @include roboto_22_light
+            opacity: .9
+            margin-left: auto
             
             
 .input-number
@@ -496,10 +621,3 @@
         width: 100%
         text-align: center
 
-input[type=number]
-                &::-webkit-textfield-decoration-container
-                    -webkit-appearance: none
-                &::-webkit-inner-spin-button 
-                    -webkit-appearance: none
-                &::-webkit-outer-spin-button 
-                    -webkit-appearance: none
