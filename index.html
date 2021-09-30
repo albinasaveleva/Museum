@@ -194,7 +194,7 @@
                 </div>
             </div>
         </section>
-        <div class="modal modal_open modal_booking-tickets" id="modal_booking-tickets">
+        <div class="modal modal_booking-tickets" id="modal_booking-tickets">
             <div class="modal__container">
                 <div class="booking">
                     <div class="booking__title-wrapper title-wrapper">
@@ -207,15 +207,17 @@
                     </div>
                     <form class="booking__form form" name="booking-form" id="booking-form">
                         <div class="booking__inputs_date">
-                            <div class="booking__input-wrapper booking__input-wrapper_small input-wrapper_date">
+                            <div class="booking__input-wrapper booking__input-wrapper_small">
                                 <input required class="booking__input booking__input_date" type="date" name="booking__input_date" id="booking__input_date">
                                 <span class="booking__input-placeholder booking__input-placeholder_date">Date</span>
                                 <div class="booking__input-mark booking__input-mark_date"></div>
                                 <div class="booking__input-arrow"></div>
                             </div>
-                            <div class="booking__input-wrapper booking__input-wrapper_small input-wrapper_time">
-                                <input required class="booking__input booking__input_time" type="time" placeholder="Time" name="booking__input_time" id="booking__input_time">
-                                <span class="booking__input-placeholder booking__input-placeholder_time">Time</span>
+                            <div class="booking__input-wrapper booking__input-wrapper_small">
+                                <select class="booking__input booking__input_time" name="booking__input_time" id="booking__input_time">
+                                    <option value="">Time</option>
+                                </select>
+                                <span class="booking__input-placeholder booking__input-placeholder_time"></span>
                                 <div class="booking__input-mark booking__input-mark_time"></div>
                                 <div class="booking__input-arrow"></div>
                             </div>
@@ -233,18 +235,16 @@
                             <div class="booking__input-mark booking__input-mark_phone"></div>
                         </div>
                         <div class="booking__input-wrapper input-wrapper_type">
-                            <select class="booking__input" name="booking__ticket-type" id="booking__ticket-type">
+                            <select class="booking__input booking__input_type" name="booking__ticket_type" id="booking__ticket-type">
                                 <option value="">Ticket Type</option>
                                 <option value="permanent" data-type="permanent">Permanent exhibition</option>
                                 <option value="temporary" data-type="temporary">Temporary exhibition</option>
                                 <option value="combined" data-type="combined">Combined exhibition</option>
                             </select>
+                            <span class="booking__input-placeholder booking__input-placeholder_type"></span>
                             <div class="booking__input-mark booking__input-mark_type"></div>
+                            <div class="booking__input-arrow"></div>
                         </div>
-                        
-                        
-                        
-                        
                         <div class="booking__ticket-amount">
                             <div class="ticket-amount__section-title-wrapper">
                                 <h3 class="ticket-amount__section-title section-title section-title_hover">Entry ticket</h3>

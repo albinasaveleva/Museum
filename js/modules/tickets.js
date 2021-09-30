@@ -104,15 +104,146 @@ const tickets = () => {
     }
 
     const getBookingInfo = () => {
-        bookingInputTicketAmountList.forEach(item => {
-            if (item.dataset.type === 'basic') {
-                item.value = ticketAmount.basic;
-                item.textContent = ticketAmount.basic;
-            } else if ( item.dataset.type === 'senior') {
-                item.value = ticketAmount.senior;
-                item.textContent = ticketAmount.senior;
+        let currentDate = new Date(),
+            currentHours = currentDate.getHours(),
+            currentMinutes = currentDate.getMinutes();
+
+        const addMinDateValue = () => {
+            let minYear = currentDate.getFullYear(),
+            minMonth = currentDate.getMonth(),
+            minDate = currentDate.getDate();
+        
+        const checkLastDay = () => {
+            if (new Date(Date.now()).getMonth() === new Date(Date.now() + 86400000).getMonth()) {
+                return true;
+            } else {
+                return false;
             }
-        })
+        }
+        const formateDate = () => {
+            if (currentHours >= 18 || 
+                (currentHours === 17 && currentMinutes >= 30)) {
+                if (checkLastDay()) {
+                    minDate++; 
+                } else {
+                    minDate = 1;
+                    minMonth++;
+                }
+            }
+            if ((minMonth + 1) < 10) {
+                minMonth = `0${minMonth + 1}`;
+            }
+            if ((minDate) < 10) {
+                minDate = `0${minDate}`;
+            }
+        }
+        formateDate();
+        
+        bookingInputDate.min = `${minYear}-${minMonth}-${minDate}`;
+        }
+        
+        addMinDateValue();
+        const addTimePoints = () => {
+            if (currentHours >= 18 || 
+            (currentHours === 17 && currentMinutes >= 30)) {
+                for (let i = 9; i <= 18; i += 0.5) {
+                    let value = i;
+                    if (i < 10) {
+                        value = `0${i}`;
+                    } else {
+                        value = value.toString();
+                    }
+                    if (value.length > 2) {
+                        value = `${value.slice(0, 2)}:30`;
+                    } else {
+                        value = `${value.slice(0, 2)}:00`;
+                    }
+
+                    let option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    bookingInputTime.append(option);
+                }
+            } else if (currentHours === 17 && currentMinutes < 30) {
+                let value = '17:30';
+                let option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    bookingInputTime.append(option);
+            } else if (currentHours < 9) {
+                for (let i = 9; i <= 18; i += 0.5) {
+                    let value = i;
+                    if (i < 10) {
+                        value = `0${i}`;
+                    } else {
+                        value = value.toString();
+                    }
+                    if (value.length > 2) {
+                        value = `${value.slice(0, 2)}:30`;
+                    } else {
+                        value = `${value.slice(0, 2)}:00`;
+                    }
+
+                    let option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    bookingInputTime.append(option);
+                }
+            }else{
+                if (currentMinutes < 30) {
+                    for (let i = currentHours + 0.5; i <= 17; i += 0.5) {
+                        let value = i;
+                    if (i < 10) {
+                        value = `0${i}`;
+                    } else {
+                        value = value.toString();
+                    }
+                    if (value.length > 2) {
+                        value = `${value.slice(0, 2)}:30`;
+                    } else {
+                        value = `${value.slice(0, 2)}:00`;
+                    }
+
+                    let option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    bookingInputTime.append(option);
+                    }
+                } else {
+                    for (let i = currentHours + 1; i <= 17; i += 0.5) {
+                        let value = i;
+                    if (i < 10) {
+                        value = `0${i}`;
+                    } else {
+                        value = value.toString();
+                    }
+                    if (value.length > 2) {
+                        value = `${value.slice(0, 2)}:30`;
+                    } else {
+                        value = `${value.slice(0, 2)}:00`;
+                    }
+
+                    let option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    bookingInputTime.append(option);
+                }
+            }
+        }   
+        }     
+        addTimePoints();
+
+        if (ticketAmount) {
+            bookingInputTicketAmountList.forEach(item => {
+                if (item.dataset.type === 'basic') {
+                    item.value = ticketAmount.basic;
+                    item.textContent = ticketAmount.basic;
+                } else if ( item.dataset.type === 'senior') {
+                    item.value = ticketAmount.senior;
+                    item.textContent = ticketAmount.senior;
+                }
+            })
+        }
     }
     const clearBookingInfo = () => {
         bookingInputDate.value = '';
@@ -175,10 +306,10 @@ const tickets = () => {
             });
             paymentTicketType.textContent = `${ticketType.slice(0, 1).toUpperCase()}${ticketType.slice(1)} exhibition`;
         }
-        if (totalAmount) {
+        // if (totalAmount) {
             getBookingInfo();
             getPaymentInfo();
-        }
+        // }
         modal.classList.add('modal_open');
         document.body.style.overflowY = 'hidden';
     }
@@ -212,46 +343,14 @@ const tickets = () => {
         clearInfo();
     }
     const validationForm = () => {
-        const form = modal.querySelector('#booking-form');
-
         const dateValidation = () => {
-            const inputDate = form.querySelector('#booking__input_date');
-            if (inputDate.value) {
-                inputDate.nextElementSibling.style.display = 'none';
+            if (bookingInputDate.value) {
+                bookingInputDate.nextElementSibling.style.display = 'none';
             } else {
-                inputDate.nextElementSibling.style.display = '';
-            }
-
-            let currentDate = new Date();
-            let minYear = currentDate.getFullYear(),
-                minMonth = '',
-                minDate = '';
-
-            if ((currentDate.getMonth() + 1) < 10) {
-                minMonth = `0${currentDate.getMonth() + 1}`;
-            } else {
-                minMonth = currentDate.getMonth() + 1;
-            }
-            if ((currentDate.getDate() + 1) < 10) {
-                minDate = `0${currentDate.getDate()}`;
-            } else {
-                minDate = currentDate.getDate();
-            }
-
-            inputDate.min = `${minYear}-${minMonth}-${minDate}`;
+                bookingInputDate.nextElementSibling.style.display = '';
+            } 
         }
         dateValidation();
-
-        const timeValidation = () => {
-            const inputTime = form.querySelector('#booking__input_time');
-            if (inputTime.value) {
-                inputTime.nextElementSibling.style.display = 'none';
-            } else {
-                inputTime.nextElementSibling.style.display = '';
-            }
-        }
-        timeValidation();
-
     }
     validationForm();
     
@@ -275,7 +374,6 @@ const tickets = () => {
             ticketDate = target.value;
             paymentTicketDate.textContent = formateDate(target.value);
         } else if (target.matches('#booking__input_time')) {
-            validationForm();
             ticketTime = target.value;
             paymentTicketTime.textContent = formateTime(target.value);
         } else if (target.matches('#booking__input_name')) {

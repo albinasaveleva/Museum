@@ -1033,6 +1033,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-position: center center;
   background-size: contain;
   background-image: url(../assets/icons/arrow.svg);
+  cursor: pointer;
+  transition: none;
 }
 
 .modal .booking__input-placeholder {
@@ -1054,8 +1056,37 @@ input[type=number]::-webkit-outer-spin-button {
   z-index: 5;
 }
 
+.modal .booking__input-placeholder_time {
+  background-color: transparent;
+}
+
+.modal .booking__input-placeholder_type {
+  background-color: transparent;
+}
+
 .modal .booking__inputs_date {
   display: flex;
+}
+
+.modal .booking__input {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  border: 1px solid #030303;
+  background-color: transparent;
+  outline: none;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 35px 0 45px;
+}
+
+.modal .booking__input option {
+  width: inherit;
 }
 
 .modal .booking input::placeholder {
@@ -1129,56 +1160,32 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
-.modal .booking input[type=time] {
-  cursor: pointer;
+.modal .booking input[type=date]:focus ~ .booking__input-arrow {
+  transform: rotate(180deg);
+}
+
+.modal .booking__input_time {
+  padding-right: 10px;
   position: relative;
-  z-index: 5;
-  padding-right: 0;
-}
-
-.modal .booking input[type=time]::-webkit-inner-spin-button {
-  display: none;
-}
-
-.modal .booking input[type=time]::-webkit-clear-button {
-  display: none;
-}
-
-.modal .booking input[type=time]::-ms-clear {
-  display: none;
-}
-
-.modal .booking input[type=time]::-webkit-calendar-picker-indicator {
-  margin-right: 9px;
-  margin-left: 0;
-  z-index: 5;
-  opacity: 0;
   cursor: pointer;
+  z-index: 5;
+  appearance: none;
 }
 
-.modal .booking input[type=time]:focus + .booking__input-placeholder {
-  display: none;
+.modal .booking__input_time:focus ~ .booking__input-arrow {
+  transform: rotate(180deg);
 }
 
-.modal .booking__input {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  color: #000000;
-  border: 1px solid #030303;
-  background-color: transparent;
-  outline: none;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 0 35px 0 45px;
+.modal .booking__input_type {
+  padding-right: 10px;
+  position: relative;
+  cursor: pointer;
+  z-index: 5;
+  appearance: none;
 }
 
-.modal .booking__input option {
-  width: inherit;
+.modal .booking__input_type:focus ~ .booking__input-arrow {
+  transform: rotate(180deg);
 }
 
 .modal .booking__ticket-amount {
@@ -1256,8 +1263,8 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: -1px;
+  bottom: -1px;
   width: 35px;
   background-color: #030303;
   font-family: Roboto;
@@ -1272,11 +1279,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .modal .booking .ticket-amount__input-number .operation_minus {
-  left: 0;
+  left: -1px;
 }
 
 .modal .booking .ticket-amount__input-number .operation_plus {
-  right: 0;
+  right: -1px;
 }
 
 .modal .payment {

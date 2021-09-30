@@ -247,6 +247,8 @@
             background-position: center center
             background-size: contain
             background-image: url(../assets/icons/arrow.svg)
+            cursor: pointer
+            transition: none
         &__input-placeholder
             @include roboto_18_dark
             position: absolute
@@ -259,8 +261,24 @@
             justify-content: flex-start
             background-color: $light
             z-index: 5
+            &_time
+                background-color: transparent
+            &_type
+                background-color: transparent
         &__inputs_date
             display: flex
+        &__input
+            @include roboto_18_dark
+            border: 1px solid $bg-dark
+            background-color: transparent
+            outline: none
+            height: 45px
+            display: flex
+            align-items: center                
+            width: 100%
+            padding: 0 35px 0 45px
+            option
+                width: inherit   
         input::placeholder
             @include roboto_18_dark
             opacity: 1
@@ -291,38 +309,29 @@
                 opacity: 0
                 cursor: pointer
             &:focus + .booking__input-placeholder
-                display: none 
-        input[type=time]
-            cursor: pointer
+                display: none  
+            &:focus ~ .booking__input-arrow
+                transform: rotate(180deg) 
+        &__input_time 
+            padding-right: 10px
             position: relative
-            z-index: 5
-            padding-right: 0
-            &::-webkit-inner-spin-button
-                display: none
-            &::-webkit-clear-button
-                display: none
-            &::-ms-clear
-                display: none
-            &::-webkit-calendar-picker-indicator
-                margin-right: 9px
-                margin-left: 0
-                z-index: 5
-                opacity: 0
-                cursor: pointer
-            &:focus + .booking__input-placeholder
-                display: none
-        &__input
-            @include roboto_18_dark
-            border: 1px solid $bg-dark
-            background-color: transparent
-            outline: none
-            height: 45px
-            display: flex
-            align-items: center                
-            width: 100%
-            padding: 0 35px 0 45px
-            option
-                width: inherit                  
+            cursor: pointer
+            z-index: 5 
+            -webkit-appearance: none
+            -moz-appearance: none
+            appearance: none  
+            &:focus ~ .booking__input-arrow
+                transform: rotate(180deg)
+        &__input_type
+            padding-right: 10px
+            position: relative
+            cursor: pointer
+            z-index: 5 
+            -webkit-appearance: none
+            -moz-appearance: none
+            appearance: none  
+            &:focus ~ .booking__input-arrow
+                transform: rotate(180deg)      
         &__ticket-amount
             border: 1px solid $bg-dark
             padding: 10px 15px 15px
@@ -365,8 +374,8 @@
                     align-items: center
                     justify-content: center
                     position: absolute
-                    top: 0
-                    bottom: 0
+                    top: -1px
+                    bottom: -1px
                     width: 35px
                     background-color: $bg-dark
                     @include roboto_32_light
@@ -374,9 +383,9 @@
                     border: none
                     outline: none
                     &_minus
-                        left: 0
+                        left: -1px
                     &_plus
-                        right: 0
+                        right: -1px
     .payment
         background-color: #FFFFFF
         border: 1px solid #030303 
