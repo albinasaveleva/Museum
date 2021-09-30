@@ -59,11 +59,14 @@ const gallery = () => {
             div.innerHTML = `
                 <img class="gallery__image" src="gallery/images/${item.link}" alt="${item.link}">
                 <div class="gallery__image-description">
-                    <span class="gallery__image-description-item">${item.description.name}</span>
-                    <span class="gallery__image-description-item">${item.description.author}</span>
+                    <span class="gallery__image-description-item">${item.description ? item.description.name : ''}</span>
+                    <span class="gallery__image-description-item">${item.description ? item.description.author : ''}</span>
                 </div>
             `;
             fragment.append(div);
+            if (item.description) {
+                item.description;
+            }
         })
         galleryContent.append(fragment);
         setTimeout(galleryAnimation, 50)
