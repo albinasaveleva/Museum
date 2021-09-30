@@ -1,0 +1,38 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "MultiPoint",
+        "place_name": "Louvre"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            2.3364,
+            48.86091
+          ],
+          [
+            2.3333,
+            48.8602
+          ],
+          [
+            2.3397,
+            48.8607
+          ],
+          [
+            2.333,
+            48.8619
+          ],
+          [
+            2.3365,
+            48.8625
+          ]
+        ],
+        "type": "MultiPoint"
+      },
+      "id": "address.8163103661394796"
+    }
+  ],
+  "type": "FeatureCollection"
+}

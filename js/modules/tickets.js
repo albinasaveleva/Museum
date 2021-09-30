@@ -6,7 +6,6 @@ const tickets = () => {
         ticketsTotalAmount = tickets.querySelector("#tickets__total-amount"),
 
         modal = document.querySelector('#modal_booking-tickets'),
-        modalClose = modal.querySelector("#modal__close_booking-tickets"),
 
         //booking
         booking = modal.querySelector('.booking'),
@@ -141,95 +140,54 @@ const tickets = () => {
         
         bookingInputDate.min = `${minYear}-${minMonth}-${minDate}`;
         }
-        
+
         addMinDateValue();
         const addTimePoints = () => {
+            const addOption = (value) => {
+                if (value < 10) {
+                    value = `0${value}`;
+                } else {
+                    value = value.toString();
+                }
+                if (value.length > 2) {
+                    value = `${value.slice(0, 2)}:30`;
+                } else {
+                    value = `${value.slice(0, 2)}:00`;
+                }
+
+                let option = document.createElement('option');
+                option.value = value;
+                option.textContent = value;
+                bookingInputTime.append(option);
+            }
+
             if (currentHours >= 18 || 
             (currentHours === 17 && currentMinutes >= 30)) {
                 for (let i = 9; i <= 18; i += 0.5) {
                     let value = i;
-                    if (i < 10) {
-                        value = `0${i}`;
-                    } else {
-                        value = value.toString();
-                    }
-                    if (value.length > 2) {
-                        value = `${value.slice(0, 2)}:30`;
-                    } else {
-                        value = `${value.slice(0, 2)}:00`;
-                    }
-
-                    let option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    bookingInputTime.append(option);
+                    addOption(value);
                 }
             } else if (currentHours === 17 && currentMinutes < 30) {
                 let value = '17:30';
-                let option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    bookingInputTime.append(option);
+                addOption(value);
             } else if (currentHours < 9) {
                 for (let i = 9; i <= 18; i += 0.5) {
                     let value = i;
-                    if (i < 10) {
-                        value = `0${i}`;
-                    } else {
-                        value = value.toString();
-                    }
-                    if (value.length > 2) {
-                        value = `${value.slice(0, 2)}:30`;
-                    } else {
-                        value = `${value.slice(0, 2)}:00`;
-                    }
-
-                    let option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    bookingInputTime.append(option);
+                    addOption(value);
                 }
             }else{
                 if (currentMinutes < 30) {
                     for (let i = currentHours + 0.5; i <= 17; i += 0.5) {
                         let value = i;
-                    if (i < 10) {
-                        value = `0${i}`;
-                    } else {
-                        value = value.toString();
-                    }
-                    if (value.length > 2) {
-                        value = `${value.slice(0, 2)}:30`;
-                    } else {
-                        value = `${value.slice(0, 2)}:00`;
-                    }
-
-                    let option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    bookingInputTime.append(option);
+                        addOption(value);
                     }
                 } else {
                     for (let i = currentHours + 1; i <= 17; i += 0.5) {
                         let value = i;
-                    if (i < 10) {
-                        value = `0${i}`;
-                    } else {
-                        value = value.toString();
+                        addOption(value);
                     }
-                    if (value.length > 2) {
-                        value = `${value.slice(0, 2)}:30`;
-                    } else {
-                        value = `${value.slice(0, 2)}:00`;
-                    }
-
-                    let option = document.createElement('option');
-                    option.value = value;
-                    option.textContent = value;
-                    bookingInputTime.append(option);
                 }
-            }
-        }   
+            }   
         }     
         addTimePoints();
 
