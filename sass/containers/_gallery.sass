@@ -12,10 +12,10 @@
             right: 0
             height: 360px                
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)
-    & .wrapper
+    &__wrapper
         height: 1960px
         overflow: hidden
-    & .content
+    &__content
         display: grid
         grid-row-gap: 24px
         row-gap: 24px
@@ -26,22 +26,47 @@
         grid-auto-flow: dense
         grid-auto-rows: 1fr
         contain: layout paint
-        & > img
-            width: 100%
-            height: 100%
-            object-fit: cover
-            opacity: 0
-            transition: all .3s linear .1s
-            transform: translateY(30px) scale(.8)
-            &:nth-child(odd)
-                grid-column-start: 1
-                margin-top: 50px
-            &:nth-child(2n+2)
-                grid-column-start: 2
-
-        & .image_vertical
+    &__image-wrapper
+        position: relative
+        width: 100%
+        height: 100%
+        object-fit: cover
+        opacity: 0
+        transition: all .3s linear .1s
+        transform: translateY(30px) scale(.8)
+        &:nth-child(odd)
+            grid-column-start: 1
+            margin-top: 50px
+        &:nth-child(2n+2)
+            grid-column-start: 2
+        &_vertical
             grid-row-end: span 5
-        & .image_horizontal
+        &_horizontal
             grid-row-end: span 3
-        & .image_square
+        &_square
             grid-row-end: span 4
+        & > img
+            height: 100%
+            width: 100%
+            object-fit: cover
+    &__image-description
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        align-items: center
+        justify-content: center
+        background-color: #00000080
+        display: none
+        flex-direction: column
+        padding: 50px
+        span
+            text-align: center
+            @include forum_28_light
+            &:not(:last-child)
+                margin-bottom: 15px
+            &:last-child
+                text-transform: uppercase
+            
+        

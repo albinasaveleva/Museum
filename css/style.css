@@ -576,12 +576,12 @@ input[type=number]::-webkit-outer-spin-button {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
 
-.gallery .wrapper {
+.gallery__wrapper {
   height: 1960px;
   overflow: hidden;
 }
 
-.gallery .content {
+.gallery__content {
   display: grid;
   grid-row-gap: 24px;
   row-gap: 24px;
@@ -594,7 +594,8 @@ input[type=number]::-webkit-outer-spin-button {
   contain: layout paint;
 }
 
-.gallery .content > img {
+.gallery__image-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -603,25 +604,64 @@ input[type=number]::-webkit-outer-spin-button {
   transform: translateY(30px) scale(0.8);
 }
 
-.gallery .content > img:nth-child(odd) {
+.gallery__image-wrapper:nth-child(odd) {
   grid-column-start: 1;
   margin-top: 50px;
 }
 
-.gallery .content > img:nth-child(2n+2) {
+.gallery__image-wrapper:nth-child(2n+2) {
   grid-column-start: 2;
 }
 
-.gallery .content .image_vertical {
+.gallery__image-wrapper_vertical {
   grid-row-end: span 5;
 }
 
-.gallery .content .image_horizontal {
+.gallery__image-wrapper_horizontal {
   grid-row-end: span 3;
 }
 
-.gallery .content .image_square {
+.gallery__image-wrapper_square {
   grid-row-end: span 4;
+}
+
+.gallery__image-wrapper > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery__image-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000080;
+  display: none;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.gallery__image-description span {
+  text-align: center;
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  font-size: 28px;
+  line-height: 40px;
+  color: #FFFFFF;
+}
+
+.gallery__image-description span:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.gallery__image-description span:last-child {
+  text-transform: uppercase;
 }
 
 .tickets__wrapper {
@@ -1996,7 +2036,7 @@ input[type=number]::-webkit-outer-spin-button {
   .gallery__container {
     padding-bottom: 0;
   }
-  .gallery .wrapper {
+  .gallery__wrapper {
     height: 1265px;
   }
   .tickets__wrapper {
@@ -2187,7 +2227,7 @@ input[type=number]::-webkit-outer-spin-button {
   .gallery__container {
     padding-bottom: 0;
   }
-  .gallery .wrapper {
+  .gallery__wrapper {
     height: 1080px;
   }
   .parallax {
@@ -2385,7 +2425,7 @@ input[type=number]::-webkit-outer-spin-button {
   .gallery__container {
     padding-bottom: 0;
   }
-  .gallery .wrapper {
+  .gallery__wrapper {
     height: 640px;
   }
   .tickets__wrapper {
@@ -2474,24 +2514,24 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (min-width: 1024px) {
-  .gallery .content {
+  .gallery__content {
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 36px;
     row-gap: 36px;
     grid-column-gap: 24px;
     column-gap: 24px;
   }
-  .gallery .content > img:nth-child(odd) {
+  .gallery__image-wrapper:nth-child(odd) {
     margin-top: 0;
   }
-  .gallery .content > img:nth-child(3n+3) {
+  .gallery__image-wrapper:nth-child(3n+3) {
     grid-column-start: 3;
     margin-top: 50px;
   }
-  .gallery .content > img:nth-child(3n+2) {
+  .gallery__image-wrapper:nth-child(3n+2) {
     grid-column-start: 2;
   }
-  .gallery .content > img:nth-child(3n+1) {
+  .gallery__image-wrapper:nth-child(3n+1) {
     margin-top: 50px;
     grid-column-start: 1;
   }

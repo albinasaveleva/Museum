@@ -1,13 +1,13 @@
 const gallery = () => {
     const gallery = document.querySelector('#gallery'),
-        galleryContent = gallery.querySelector('.content'),
-        galleryContentWrapper = gallery.querySelector('.wrapper');
+        galleryContent = gallery.querySelector('.gallery__content'),
+        galleryContentWrapper = gallery.querySelector('.gallery__wrapper');
 
     let images = [],
         shuffleImages = [];
     
     const galleryAnimation = () => {
-            const images = gallery.querySelectorAll('img');
+            const images = gallery.querySelectorAll('.gallery__image-wrapper');
             [...images].forEach(item => {
                 item.style.opacity = 1;
                 item.style.transform = 'none'; 
@@ -52,15 +52,32 @@ const gallery = () => {
         shuffle();
         let fragment = new DocumentFragment();
         shuffleImages.forEach(item => {
-            let img = document.createElement('img');
-            img.classList.add(`image_${item.position}`)
-            img.src = `gallery/images/${item.link}`;
-            img.alt = item.link;
-            fragment.append(img);
+            let div = document.createElement('div');
+            div.classList.add('gallery__image-wrapper');
+            div.classList.add(`gallery__image-wrapper_${item.position}`);
+
+            div.innerHTML = `
+                <img class="gallery__image" src="gallery/images/${item.link}" alt="${item.link}">
+                <div class="gallery__image-description">
+                    <span class="gallery__image-description-item">${item.description.name}</span>
+                    <span class="gallery__image-description-item">${item.description.author}</span>
+                </div>
+            `;
+            fragment.append(div);
         })
         galleryContent.append(fragment);
         setTimeout(galleryAnimation, 50)
     };
+    const addHoverDescription = () => {
+        gallery.querySelectorAll('.gallery__image-wrapper').forEach(item => {
+            item.addEventListener('mouseover', (e) => {
+                item.lastElementChild.style.display = 'flex';
+            })
+            item.addEventListener('mouseout', (e) => {
+                item.lastElementChild.style.display = 'none';
+            })
+        })
+    }
     const getImages = (url) => {
         fetch(url)
             .then(response => response.json())
@@ -68,8 +85,12 @@ const gallery = () => {
             .then(() => {
                 addImages();
             })
+            .then(() => {
+                addHoverDescription();
+            })
     };
     getImages('../gallery/gallery.json');
+
     const gallerySlider = () => {
         let moveCount = 0;
 
@@ -114,6 +135,10 @@ const gallery = () => {
                     moveContent();
                 } 
         })
+    }
+
+    if (window.innerWidth >= 768) {
+        
     }
 
 };

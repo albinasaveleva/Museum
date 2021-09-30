@@ -74,7 +74,7 @@
     .gallery
         &__container
             padding-bottom: 0
-        & .wrapper
+        &__wrapper
             height: 1265px
     .tickets
         &__wrapper
@@ -191,7 +191,7 @@
     .gallery
         &__container
             padding-bottom: 0
-        & .wrapper
+        &__wrapper
             height: 1080px
     .parallax
         height: 300px
@@ -308,7 +308,7 @@
     .gallery
         &__container
             padding-bottom: 0
-        & .wrapper
+        &__wrapper
             height: 640px
     .tickets
         &__wrapper
@@ -368,20 +368,20 @@
     .header
         &__mobile-menu
     .gallery
-        & .content
+        &__content
             grid-template-columns: repeat(3, 1fr)
             grid-row-gap: 36px
             row-gap: 36px
             grid-column-gap: 24px
             column-gap: 24px
-            & > img
-                &:nth-child(odd)
-                    margin-top: 0
-                &:nth-child(3n+3)
-                    grid-column-start: 3  
-                    margin-top: 50px              
-                &:nth-child(3n+2)
-                    grid-column-start: 2
-                &:nth-child(3n+1)
-                    margin-top: 50px
-                    grid-column-start: 1
+        &__image-wrapper
+            &:nth-child(odd)
+                margin-top: 0
+            &:nth-child(3n+3)
+                grid-column-start: 3  
+                margin-top: 50px              
+            &:nth-child(3n+2)
+                grid-column-start: 2
+            &:nth-child(3n+1)
+                margin-top: 50px
+                grid-column-start: 1
