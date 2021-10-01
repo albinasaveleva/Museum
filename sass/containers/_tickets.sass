@@ -10,9 +10,15 @@
         height: 550px
         margin-right: 60px
         img
+            display: none
             width: inherit
             height: inherit
             object-fit: cover
+            // transition: opacity 1s linear .2s
+            opacity: 0
+            &:first-child
+                display: block
+                // opacity: 1
     &__blocks
         display: flex
         justify-content: space-between

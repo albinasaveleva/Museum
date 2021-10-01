@@ -322,6 +322,41 @@ const tickets = () => {
     const formateTime = (time) => {
         return `${time.slice(0, 2)} : ${time.slice(3, 5)}`
     }
+    const slider = () => {
+        const ticketsImage = tickets.querySelector('.tickets__image');
+
+        const addSlides = (images) => {
+            images.forEach(item => {
+                let img = document.createElement('img');
+                img.src = `assets/image/tickets/${item}`;
+                img.alt = item;
+                ticketsImage.append(img);
+            })
+        }
+
+        const autoSlider = () => {
+            let opacityCount = 0;
+
+            ticketsImage.prepend(ticketsImage.children[ticketsImage.children.length - 1]);
+            const animateVisible = () => {
+                requestAnimationFrame(animateVisible);
+                if (opacityCount < 1) {
+                    opacityCount += 0.005;
+                    ticketsImage.children[0].style.opacity = opacityCount;
+                }
+            };
+            animateVisible()
+        }
+        
+        fetch("js/json/tickets.json")
+            .then(response => response.json())
+            .then(result => addSlides(result))
+            .then(() => {
+                autoSlider();
+                setInterval(autoSlider, 15000);
+            })
+    }
+    slider();
 
     document.addEventListener('change', (e) => {
         let target = e.target;
@@ -372,6 +407,5 @@ const tickets = () => {
             }
         }
     })
-
 }
 export default tickets;

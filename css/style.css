@@ -681,9 +681,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .tickets__image img {
+  display: none;
   width: inherit;
   height: inherit;
   object-fit: cover;
+  opacity: 0;
+}
+
+.tickets__image img:first-child {
+  display: block;
 }
 
 .tickets__blocks {
