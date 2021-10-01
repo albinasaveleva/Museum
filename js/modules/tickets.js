@@ -347,13 +347,13 @@ const tickets = () => {
             };
             animateVisible()
         }
-        
+
         fetch("js/json/tickets.json")
             .then(response => response.json())
             .then(result => addSlides(result))
             .then(() => {
                 autoSlider();
-                setInterval(autoSlider, 15000);
+                setInterval(autoSlider, 30000);
             })
     }
     slider();

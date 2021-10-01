@@ -2434,6 +2434,18 @@ input[type=number]::-webkit-outer-spin-button {
   .gallery__wrapper {
     height: 640px;
   }
+  .gallery__image-description {
+    padding: 25px;
+  }
+  .gallery__image-description span {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFFFFF;
+  }
   .tickets__wrapper {
     flex-direction: column;
   }
