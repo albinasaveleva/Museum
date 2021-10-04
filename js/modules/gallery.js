@@ -57,7 +57,7 @@ const gallery = () => {
             div.classList.add(`gallery__image-wrapper_${item.position}`);
 
             div.innerHTML = `
-                <img class="gallery__image" src="gallery/images/${item.link}" alt="${item.link}">
+                <img class="gallery__image" src="assets/image/gallery/${item.link}" alt="${item.link}">
                 <div class="gallery__image-description">
                     <span class="gallery__image-description-item">${item.description ? item.description.name : ''}</span>
                     <span class="gallery__image-description-item">${item.description ? item.description.author : ''}</span>
@@ -92,7 +92,7 @@ const gallery = () => {
                 addHoverDescription();
             })
     };
-    getImages('../gallery/gallery.json');
+    getImages('js/json/gallery.json');
 
     const gallerySlider = () => {
         let moveCount = 0;

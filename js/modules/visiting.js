@@ -8,7 +8,7 @@ const visiting = () => {
         tours.forEach(item => {
             let block = document.createElement('a');
             block.classList.add('visiting__card');
-            block.href = `tours/pages/${item.link}`;
+            block.href = `assets/tours/pages/${item.link}`;
             block.target = '_blank';
 
             block.innerHTML = `
