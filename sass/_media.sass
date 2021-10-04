@@ -1,11 +1,12 @@
 @media (max-width: 1919px)
     .section-title
         @include forum_50_light
-        margin-bottom: 20px
         &_hover
             @include forum_50_hover
         &-wrapper
             margin-bottom: 60px
+    .delimiter
+        margin-top: 20px
     .container
         padding: 60px 20px
     .header
@@ -16,6 +17,9 @@
             display: none
         &__burger-menu
             display: flex
+        .mobile-menu
+            &_active
+                display: flex
     .welcome
         padding-top: 130px
         padding-bottom: 120px
@@ -23,7 +27,7 @@
             padding-top: 0
             padding-bottom: 0
         &__slider
-            height: 585px
+            height: 465px
             & .slider-footer
                 left: 0
                 bottom: -120px
@@ -32,44 +36,50 @@
             left: 20px
         &__section-title
             @include forum_50_light
+            line-height: 90px
+            margin-bottom: 25px
         &__section-subtitle
             @include roboto_24_light
             margin-bottom: 50px
+        &__button
+            width: 300px
+            height: 60px
+            margin-right: 0
     .visiting
-        & .content
+        &__content
             grid-gap: 60px 110px
             justify-content: center
             margin: 0 auto
-            & .card
-                flex-basis: calc((100% - 110px) / 2)
-                justify-content: flex-end
-                &:nth-child(2n)
-                    justify-content: flex-start
-                & .inner
-                    width: 330px
-                & .image
-                    height: 215px
-                & .title
-                    @include forum_28_dark
-                    &-delimiter
-                        width: 150px
-                & .subtitle
-                    @include roboto_20_dark
-                    font-weight: 200
-                    &_small
+        &__card
+            width: 330px
+            justify-content: flex-end
+            &:nth-child(2n)
+                justify-content: flex-start
+            &-image
+                height: 215px
+            &-title
+                @include forum_28_dark
+            &-delimiter
+                width: 150px
+            &-subtitle
+                @include roboto_20_dark
+                font-weight: 200
+                &_small
                     @include roboto_16_dark
                     font-weight: 200
     .explore
         &__container
             flex-direction: column
-        & .wrapper
+        &__wrapper
             width: 100%
             margin-right: 0
-            margin-bottom: 60px
-        & .content
+            margin-bottom: 55px
+        &__content
+            & > p:not(:last-child)
+                margin-bottom: 0
             & > p:nth-child(n+3)
                 display: none
-        & .slider
+        &__slider
             margin: 0 auto
     .gallery
         &__container
@@ -87,10 +97,20 @@
             display: none
         &__ticket-amount
             align-items: flex-start
+            margin-bottom: 65px
         &__button
             margin-right: auto
             margin-left: 0
         .ticket-amount
+            &__block-title
+                margin-bottom: 30px
+            &__items
+                margin-bottom: 25px
+            &__item 
+                &:not(:last-child)
+                    margin-bottom: 30px
+                span
+                    margin-bottom: 10px
             &__input-number
                 width: 175px
     .modal
@@ -98,14 +118,14 @@
             padding: 75px 30px 30px
     .contacts
         &__content
-        & .description
+        .description
             &-title 
                 @include roboto_24_dark
-                margin-bottom: 30px
+                margin-bottom: 35px
             &-item
                 @include roboto_20_dark
                 margin-bottom: 15px
-        & .map
+        &__map
             width: 695px
             height: 455px 
     .footer
@@ -115,18 +135,37 @@
             margin-right: 45px
 @media (max-width: 1023px)
     .container
-        padding: 40px 20px
+        padding: 50px 20px
     .section-title
         @include forum_40_light
         &_hover
             @include forum_40_hover
         &-wrapper
             margin-bottom: 40px
+    .delimiter
+        margin-top: 30px
     .nav
         &__item > a
             @include roboto_18_light
             font-weight: 200
             line-height: 50px
+    .mobile-menu
+        top: 110px
+        padding: 35px 55px
+        width: 100%
+        height: auto
+        flex-direction: column
+        background-color: $bg-dark
+        .nav__list
+            margin-bottom: 35px
+        &_active
+            display: flex
+            .mobile-menu__content
+                display: flex
+            .mobile-menu__delimiter
+                display: flex
+            .mobile-menu__social-links
+                display: flex
     .welcome
         padding-top: 110px
         padding-bottom: 100px
@@ -137,14 +176,16 @@
             flex-direction: column
         &__content
             position: relative
+            left: 0
             transform: translate(0, 0)
             display: flex
             flex-direction: column
             align-items: center
             justify-content: flex-start
-            margin-bottom: 50px
+            margin-bottom: 45px
         &__section-title
             text-align: center
+            margin-bottom: 25px
         &__section-subtitle
             @include roboto_20_light
             margin-bottom: 0
@@ -152,7 +193,7 @@
             display: none
         &__slider
             width: 100%
-            height: 645px
+            height: 550px
             & .slider-footer
                 left: 50%
                 transform: translateX(-50%)
@@ -161,31 +202,32 @@
                 height: 40px
         & .slide
             background: url(../assets/image/welcome-slider.png)
+            background-position: center center
+            background-repeat: no-repeat
+            background-size: cover
     .visiting
-        & .content
+        &__content
             grid-gap: 40px 55px
-            & .card
-                flex-basis: calc((100% - 55px) / 2)
-                & .inner
-                    width: 280px
-                & .image
-                    height: 180px
-                & .title
-                    @include forum_22_dark
-                    letter-spacing: 3px
-                & .subtitle
-                    @include roboto_18_dark
-                    font-weight: 200
-                    &_small
+        &__card
+            width: 280px
+            &-image
+                height: 180px
+            &-title
+                @include forum_22_dark
+                letter-spacing: 3px
+            &-subtitle
+                @include roboto_18_dark
+                font-weight: 200
+                &_small
                     @include roboto_16_dark
                     font-weight: 200        
     .explore
-        & .wrapper
+        &__wrapper
             margin-bottom: 0
-        & .content
+        &__content
             & > p
                 display: none
-        & .slider
+        &__slider
             width: 728px
             height: 705px
     .gallery
@@ -202,6 +244,13 @@
             margin-right: 60px
         &__ticket-amount
             margin-bottom: 40px
+        .ticket-amount
+            &__block-title
+                margin-bottom: 40px
+            &__items
+                margin-bottom: 40px
+            &__item:not(:last-child)
+                margin-bottom: 25px
     .modal
         &__container
             position: absolute
@@ -219,17 +268,18 @@
             flex-direction: column
         &__section-title
             @include forum_40_hover
-        & .description
-            margin-bottom: 30px
+        &__map
+            width: 100%
+            height: 475px
+        &__description
+            margin-bottom: 25px
+        .description
             &-title 
                 @include roboto_20_dark
                 margin-bottom: 40px
             &-item
                 @include roboto_18_dark
-                margin-bottom: 15px
-        & .map
-            width: 100%
-            height: auto
+                margin-bottom: 15px     
     .footer
         &__logo
             margin-right: 80px
@@ -252,6 +302,8 @@
         &__item
             font-size: 18px
 @media ( max-width:  767px)
+    .container
+        padding: 40px 20px
     .logo
         -webkit-mask-image: url(../assets/icons/logo_mini.svg)
         width: 130px
@@ -260,51 +312,92 @@
         @include forum_28_light
         &_hover
             @include forum_28_hover
-        &-wrapper
-            margin-bottom: 40px
-    .header
-        &__container
-            padding-top: 35px
-            padding-bottom: 35px
+    .delimiter
+        margin-top: 20px
     .nav
         &__item > a
             @include roboto_16_light
             font-weight: 200
             line-height: 50px
+    .header
+        &__container
+            padding-top: 35px
+            padding-bottom: 35px
+    .mobile-menu
+        top: 90px
+        .nav__list
+            margin-bottom: 35px
+        &_active
+            display: flex
+            .mobile-menu__content
+                align-self: center
+                display: flex
+                flex-wrap: nowrap
+                grid-gap: 12px
+                & > img
+                    width: 95px
+                    height: 95px
+                    &:first-child
+                        width: 95px
+            .mobile-menu__delimiter
+                display: flex
+                margin: 20px 0
+            .mobile-menu__social-links
+                display: flex
+
     .welcome
         padding-top: 90px
         padding-bottom: 80px
+        &__container
+            padding-top: 0
+            padding-bottom: 0
+        &__content
+            margin-bottom: 50px
+        &__section-title
+            margin-bottom: 25px
         &__section-subtitle
             @include roboto_16_light
         &__slider
-            height: 365px
+            height: 285px
             & .slider-footer
                 bottom: -60px
                 width: 230px
     .visiting
-        & .content
+        &__content
             grid-gap: 40px
             padding-left: 50px
             padding-right: 50px
-            & .card
-                flex-basis: 100%
+        &__card
+            flex-basis: 100%
+            justify-content: center
+            &:nth-child(2n)
                 justify-content: center
-                &:nth-child(2n)
-                    justify-content: center
-                & .inner
-                    width: 280px
-                & .image
-                    height: 180px
-                & .title
-                    @include forum_18_dark
-                    letter-spacing: 5px
-                & .subtitle
-                    @include roboto_16_dark
-                    font-weight: 200
+            &-inner
+                width: 280px
+            &-image
+                height: 180px
+            &-title
+                @include forum_18_dark
+                letter-spacing: 5px
+            &-subtitle
+                @include roboto_16_dark
+                font-weight: 200
     .explore
-        & .slider
+        &__slider
             width: 100%
             height: 370px
+        .slider
+            & .pseudo-range
+                border: 2px solid #ffffff
+                height: 20px
+                width: 20px
+                & > div
+                    height: 200px
+                    width: 2px
+                & .pseudo-range_before
+                    bottom: 17px
+                & .pseudo-range_after
+                    top: 17px
     .gallery
         &__container
             padding-bottom: 0
@@ -327,11 +420,37 @@
             margin-right: auto
         &__button
             margin: 0 auto
-
+        &__ticket-amount
+            align-items: center
+        &__total-amount
+            @include roboto_16_dark
+            font-weight: 700
+            span
+                @include roboto_16_dark
+                font-weight: 700
+        &__button
+            @include roboto_16_light
+            font-weight: 300
+            letter-spacing: 2px
+        .ticket-amount
+            &__block-title
+                @include roboto_16_dark
+                font-weight: 700
+                margin-bottom: 20px
+            &__items
+            &__item
+                &:not(:last-child)
+                    margin-bottom: 20px
+                span
+                    @include roboto_16_dark
+                    font-weight: 300
+                    margin-bottom: 15px
     .contacts
         &__section-title
             @include forum_28_hover
-        & .description
+        &__map
+            height: 250px
+        .description
             &-title
                 @include roboto_16_dark
             &-item
@@ -365,19 +484,19 @@
                         order: 5
         &__social-links
             align-self: center
-            & .social-link
-                &:not(:last-child)
-                    margin-right: 5px
+.social-link
+    &:not(:last-child)
+        margin-right: 5px
 @media (min-width: 1024px)
     .header
         &__mobile-menu
     .gallery
         &__content
             grid-template-columns: repeat(3, 1fr)
-            grid-row-gap: 36px
-            row-gap: 36px
-            grid-column-gap: 24px
-            column-gap: 24px
+            grid-row-gap: 25px
+            row-gap: 25px
+            grid-column-gap: 35px
+            column-gap: 35px
         &__image-wrapper
             &:nth-child(odd)
                 margin-top: 0

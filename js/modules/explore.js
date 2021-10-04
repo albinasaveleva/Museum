@@ -11,7 +11,5 @@ const explore = () => {
     sliderRange.addEventListener('change', moveImage);
     sliderRange.addEventListener('mousemove', moveImage);
     sliderRange.addEventListener('touchmove', moveImage);
-
-    
 };
 export default explore;

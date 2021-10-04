@@ -21,24 +21,54 @@
                 <ol class="nav__list">
                     <li class="nav__item"><a href="#visiting">Visiting</a></li>
                     <li class="nav__item"><a href="#explore">Explore</a></li>
-                    <li class="nav__item"><a href="#video">Video</a></li>
+                    <li class="nav__item"><a href="#">Video</a></li>
                     <li class="nav__item"><a href="#gallery">Gallery</a></li>
                     <li class="nav__item"><a href="#tickets">Tickets</a></li>
                     <li class="nav__item"><a href="#contacts">Contacts</a></li>
                 </ol>
             </nav>
             <div class="header__burger-menu burger-menu">
-                <button type="button" class="burger-menu__icon"></button>
+                <button type="button" class="burger-menu__icon" id="burger-menu__button"></button>
             </div>
-            <div class="header__mobile-menu">
+            <div class="header__mobile-menu mobile-menu">
                 <ol class="nav__list">
                     <li class="nav__item"><a href="#visiting">Visiting</a></li>
                     <li class="nav__item"><a href="#explore">Explore</a></li>
-                    <li class="nav__item"><a href="#video">Video</a></li>
+                    <li class="nav__item"><a href="#">Video</a></li>
                     <li class="nav__item"><a href="#gallery">Gallery</a></li>
                     <li class="nav__item"><a href="#tickets">Tickets</a></li>
                     <li class="nav__item"><a href="#contacts">Contacts</a></li>
                 </ol>
+                <div class="mobile-menu__content">
+                    <img src="assets/image/mobile-menu_1.png" alt="">
+                    <img src="assets/image/mobile-menu_2.png" alt="">
+                    <img src="assets/image/mobile-menu_3.png" alt="">
+                </div>
+                <div class="mobile-menu__delimiter"></div>
+                <div class="mobile-menu__social-links">
+                    <ol class="social-links__list">
+                        <li class="social-link social-link">
+                            <div class="social-link-inner social-link-inner_youtube"></div>
+                            <a href="https://www.youtube.com/user/louvre"></a>
+                        </li>
+                        <li class="social-link social-link_insta">
+                            <div class="social-link-inner_insta social-link-inner"></div>
+                            <a href="https://www.instagram.com/museelouvre/"></a>
+                        </li>
+                        <li class="social-link social-link_facebook">
+                            <div class="social-link-inner_facebook social-link-inner"></div>
+                            <a href="https://www.facebook.com/museedulouvre"></a>
+                        </li>
+                        <li class="social-link social-link_twitter">
+                            <div class="social-link-inner_twitter social-link-inner"></div>
+                            <a href="http://twitter.com/museelouvre"></a>
+                        </li>
+                        <li class="social-link social-link_pinterest">
+                            <div class="social-link-inner_pinterest social-link-inner"></div>
+                            <a href="https://www.pinterest.fr/museedulouvre/"></a>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </div>
     </header>
@@ -50,15 +80,11 @@
                     <p class="welcome__section-subtitle section-subtitle">From the castle to the museum</p>
                     <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcome__button" target="_blank">Discover the Louvre</a>
                 </div>
-                <div class="welcome__slider">
+                <div class="welcome__slider slider">
                     <div class="slides">
                         <div class="slide"></div>
-                        <div class="slide"></div>
-                        <div class="slide"></div>
-                        <div class="slide"></div>
-                        <div class="slide"></div>
                     </div>
-                    <div class="slider-footer">
+                    <!-- <div class="slider-footer">
                         <div class="slider-counts">
                             <span class="current-count">00</span>
                             <div class="count-delimiter"></div>
@@ -70,7 +96,7 @@
                             <button type="button" class="slider-arrow slider-arrow_left" id="slider-arrow_left"></button>
                             <button type="button" class="slider-arrow slider-arrow_right" id="slider-arrow_right""></button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -80,24 +106,24 @@
                     <h2 class="section-title section-title_hover">Virtual tour</h2>
                     <div class="delimiter"></div>
                 </div>
-                <div class="content">
+                <div class="visiting__content">
                 </div>
             </div>
         </section>
         <section class="explore" id="explore">
             <div class="explore__container container">
-                <div class="wrapper">
+                <div class="explore__wrapper">
                     <div class="section-title-wrapper">
                         <h2 class="section-title">Picture explore</h2>
                         <div class="delimiter"></div>
                     </div>
-                    <div class="content">
+                    <div class="explore__content">
                         <p>Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
                         <p>It was cleaned in 1984 to remove a <span class="mark_yellow">"yellow veil"</span>  of dust that had gathered since the previous restoration in the 19th century.</p>
                         <p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                     </div>
                 </div>
-                <div class="slider">
+                <div class="explore__slider slider">
                     <div class="slider-image"></div>
                     <div class="slider-image slider-image_after"></div>
                     <div class="slider-range-wrapper">
@@ -348,13 +374,13 @@
                     <div class="delimiter"></div>
                 </div>
                 <div class="contacts__content">
-                    <div class="description">
+                    <div class="contacts__description description">
                         <span class="description-title">Palais Royal<br>Musee du Louvre</span>
                         <span class="description-item">address: 75001 Paris, France</span>
                         <span class="description-item">phone: +33(0) 1 40 20 50 50</span>
                         <span class="description-item">mail: info@louvre.fr</span>
                     </div>
-                    <div class="map">
+                    <div class="contacts__map">
                         <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/albinasaveleva/cku6vb0sj0u0h17o48xcqi3o7.html?title=false&access_token=pk.eyJ1IjoiYWxiaW5hc2F2ZWxldmEiLCJhIjoiY2t1NnY0a25hMmtnbjMwcGNtamh5eHltaSJ9.3kucExNoI6yQQz_D4Wh5rg&zoomwheel=false#15.52/48.86072/2.336424" title="Monochrome" style="border:none;"></iframe>                    </div>
                 </div>
             </div>
@@ -370,7 +396,7 @@
                     <ol class="nav__list">
                         <li class="nav__item"><a href="#visiting">Visiting</a></li>
                         <li class="nav__item"><a href="#explore">Explore</a></li>
-                        <li class="nav__item"><a href="#video">Video</a></li>
+                        <li class="nav__item"><a href="#">Video</a></li>
                         <li class="nav__item"><a href="#gallery">Gallery</a></li>
                         <li class="nav__item"><a href="#tickets">Tickets</a></li>
                         <li class="nav__item"><a href="#contacts">Contacts</a></li>
@@ -406,4 +432,3 @@
     <script type="module" src='js/index.js'></script>
 </body>
 </html>
-<!-- albinasaveleva.cku6wr5fn1xxy29pfb75q9h95-2b5bc -->

@@ -29,20 +29,21 @@ body
         display: flex
         margin: 0
         padding: 0
-    &__item > a
+    &__item 
         list-style: none
-        @include roboto_22_light
-        text-align: center
-        font-weight: 200
-        letter-spacing: 2px
-        text-decoration: none
-        &:hover
-            color: $gold
+        a
+            @include roboto_22_light
+            text-align: center
+            font-weight: 200
+            letter-spacing: 2px
+            text-decoration: none
+            &:hover
+                color: $gold
 .section-title
     @include forum_80_light
     text-transform: uppercase
+    letter-spacing: 5px
     margin: 0
-    margin-bottom: 25px
     &_hover
         @include forum_80_hover
     &-wrapper
@@ -54,12 +55,12 @@ body
     height: 3px
     background-color: #710707
     border-radius: 0px
+    margin-top: 25px
     &_small
         height: 2px
 .section-subtitle
     margin: 0
     @include roboto_28_light
-    letter-spacing: 2px
 iframe
     width: 100vw
     height: 100vh

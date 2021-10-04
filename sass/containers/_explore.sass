@@ -3,11 +3,11 @@
     &__container
         display: flex
         align-items: flex-start
-    & .wrapper
+    &__wrapper
         display: flex
         flex-direction: column
         margin-right: 60px
-    & .content
+    &__content
         & > p
             @include roboto_22_light
             font-weight: 300
@@ -15,12 +15,14 @@
             margin: 0
             &:not(:last-child)
                 margin-bottom: 25px
-    & .slider
+    &__slider
+        margin-top: 15px
         width: 720px
         height: 700px
         position: relative
         overflow: hidden
         flex-shrink: 0
+    .slider
         &-image
             width: inherit
             height: inherit

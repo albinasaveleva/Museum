@@ -6,6 +6,7 @@
         align-items: flex-start
         flex-wrap: wrap
     &__logo
+        margin-top: 10px
         margin-right: 145px
     &__content-wrapper
         display: flex
@@ -15,6 +16,7 @@
         & .nav__list  
             flex-wrap: wrap
             & li
+                line-height: 50px
                 flex-basis: 50%
                 &:nth-child(1)
                     order: 0
@@ -33,35 +35,35 @@
         padding: 0
         flex-shrink: 0
         align-self: flex-end
-        & .social-links__list
-            display: flex
-            margin: 0
-            padding: 0
-            margin-bottom: 13px
-        & .social-link
-            position: relative
-            background-color: transparent
-            list-style: none
-            width: 48px
-            height: 48px
-            border-radius: 50%
-            border: 1px solid $light
-            display: flex
-            align-items: center
-            justify-content: center
-            &:hover
-                border: 1px solid $gold
-            &:hover > div
-                background-color: $gold
+.social-links__list
+    display: flex
+    margin: 0
+    padding: 0
+    margin-bottom: 13px
+.social-link
+    position: relative
+    background-color: transparent
+    list-style: none
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    border: 1px solid $light
+    display: flex
+    align-items: center
+    justify-content: center
+    &:hover
+        border: 1px solid $gold
+    &:hover > div
+        background-color: $gold
 
-            &:not(:last-child)
-                margin-right: 24px
-            & > a
-                position: absolute
-                top: 0
-                right: 0
-                bottom: 0
-                left: 0
+    &:not(:last-child)
+        margin-right: 24px
+    & > a
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
 .social-link-inner
     background-color: $light
     -webkit-mask-position: center

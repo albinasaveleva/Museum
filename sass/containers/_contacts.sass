@@ -4,16 +4,10 @@
     &__content
         display: flex
         justify-content: space-between
-        & .description
-            display: flex
-            flex-direction: column
-        & .map
-            width: 960px
-            height: 620px
-            & > iframe
-                width: inherit
-                height: inherit
-    & .description
+    &__description
+        display: flex
+        flex-direction: column
+    .description
         &-title
             @include roboto_28_dark
             font-weight: 500
@@ -22,3 +16,9 @@
             @include roboto_22_dark
             font-weight: 300
             margin-bottom: 25px
+    &__map
+        width: 960px
+        height: 620px
+        & > iframe
+            width: inherit
+            height: inherit        
