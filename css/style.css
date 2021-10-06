@@ -1730,7 +1730,7 @@ body {
 }
 
 .modal .payment__ticket-info {
-  max-width: 300px;
+  max-width: calc( 100% - 160px);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -2193,6 +2193,9 @@ body {
   .gallery__container {
     padding-bottom: 0;
   }
+  .gallery__container::after {
+    height: 240px;
+  }
   .gallery__wrapper {
     height: 1265px;
   }
@@ -2427,6 +2430,9 @@ body {
   .gallery__container {
     padding-bottom: 0;
   }
+  .gallery__container::after {
+    height: 190px;
+  }
   .gallery__wrapper {
     height: 1080px;
   }
@@ -2451,7 +2457,7 @@ body {
     margin-bottom: 25px;
   }
   .modal {
-    padding: 0;
+    padding: 0 30px;
   }
   .modal__container {
     position: absolute;
@@ -2694,6 +2700,9 @@ body {
   .gallery__container {
     padding-bottom: 0;
   }
+  .gallery__container::after {
+    height: 115px;
+  }
   .gallery__wrapper {
     height: 640px;
   }
@@ -2779,6 +2788,15 @@ body {
     font-weight: 300;
     margin-bottom: 15px;
   }
+  .modal .payment__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal .payment__card .card_back {
+    position: relative;
+    top: 0;
+  }
   .contacts__section-title {
     font-family: Forum;
     font-style: normal;
@@ -2848,6 +2866,27 @@ body {
   }
   .social-link:not(:last-child) {
     margin-right: 5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .modal .payment__ticket-info {
+    max-width: 100%;
+  }
+  .modal .payment__image {
+    display: none;
+  }
+  .modal .payment__card .card_front {
+    width: 100%;
+  }
+  .modal .payment__card .card__icons {
+    display: none;
+  }
+  .modal .payment__card .card__field {
+    width: 100%;
+  }
+  .modal .payment__card .card_back {
+    width: 100%;
   }
 }
 
