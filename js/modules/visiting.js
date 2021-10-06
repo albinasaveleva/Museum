@@ -10,7 +10,6 @@ const visiting = () => {
             block.classList.add('visiting__card');
             block.href = `assets/tours/pages/${item.link}`;
             block.target = '_blank';
-
             block.innerHTML = `
                 <div class="visiting__card-inner">
                     <img src="assets/image/tours/${item.image}" alt="${item.title}" class="visiting__card-image">
@@ -25,8 +24,8 @@ const visiting = () => {
             fragment.append(block);
         })
         visitingContent.append(fragment)
-
     }
+
     const getTours = (url) => {
         fetch(url)
         .then(response => response.json())
@@ -37,6 +36,6 @@ const visiting = () => {
             addTours();
         })
     };
-    getTours('js/json/tours.json');
+    getTours('assets/json/tours.json');
 };
 export default visiting;

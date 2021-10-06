@@ -264,10 +264,8 @@ const tickets = () => {
             });
             paymentTicketType.textContent = `${ticketType.slice(0, 1).toUpperCase()}${ticketType.slice(1)} exhibition`;
         }
-        // if (totalAmount) {
-            getBookingInfo();
-            getPaymentInfo();
-        // }
+        getBookingInfo();
+        getPaymentInfo();
         modal.classList.add('modal_open');
         document.body.style.overflowY = 'hidden';
     }
@@ -348,7 +346,7 @@ const tickets = () => {
             animateVisible()
         }
 
-        fetch("js/json/tickets.json")
+        fetch("assets/json/tickets.json")
             .then(response => response.json())
             .then(result => addSlides(result))
             .then(() => {

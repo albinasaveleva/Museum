@@ -4,17 +4,17 @@ const mobileMenu = () =>  {
         welcomeContent = document.querySelector('.welcome__content');
 
     const openMenu = () => {
+        if (window.innerWidth >= 1024) {
+            welcomeContent.style.opacity = 0;
+        }
         mobileMenu.classList.add('mobile-menu_active');
         burgerMenu.style.backgroundImage = "url('../assets/icons/burger-menu_close.svg')";
-        if (window.innerWidth >= 1024) {
-            welcomeContent.style.display = 'none';
-        }
     }
     const closeMenu = () => {
         mobileMenu.classList.remove('mobile-menu_active');
         burgerMenu.style.backgroundImage = '';
         if (window.innerWidth >= 1024) {
-            welcomeContent.style.display = '';
+            welcomeContent.style.opacity = '';
         }
     }
 

@@ -59,14 +59,11 @@ const gallery = () => {
             div.innerHTML = `
                 <img class="gallery__image" src="assets/image/gallery/${item.link}" alt="${item.link}">
                 <div class="gallery__image-description">
-                    <span class="gallery__image-description-item">${item.description ? item.description.name : ''}</span>
-                    <span class="gallery__image-description-item">${item.description ? item.description.author : ''}</span>
+                    <span class="gallery__image-description-item">${item.description && item.description.name}</span>
+                    <span class="gallery__image-description-item">${item.description && item.description.author}</span>
                 </div>
             `;
             fragment.append(div);
-            if (item.description) {
-                item.description;
-            }
         })
         galleryContent.append(fragment);
         setTimeout(galleryAnimation, 50)
@@ -92,57 +89,52 @@ const gallery = () => {
                 addHoverDescription();
             })
     };
-    getImages('js/json/gallery.json');
+    getImages('assets/json/gallery.json');
 
-    const gallerySlider = () => {
-        let moveCount = 0;
+    // const gallerySlider = () => {
+    //     let moveCount = 0;
 
-        document.addEventListener('mousemove', (e) => {
-            let coursorPosition = {
-                x: e.pageX,
-                y: e.pageY
-                },
-                galleryContentPosition = {
-                    top: window.pageYOffset + galleryContentWrapper.getBoundingClientRect().top,
-                    bottom: window.pageYOffset + galleryContentWrapper.getBoundingClientRect().bottom,
-                    left: window.pageXOffset + galleryContentWrapper.getBoundingClientRect().left,
-                    right: window.pageXOffset + galleryContentWrapper.getBoundingClientRect().right
-                };
-            let maxMoveCount = window.getComputedStyle(galleryContent).height.slice(0, -2) - 
-                window.getComputedStyle(galleryContent.parentNode).height.slice(0, -2);   
-            const moveCounter = (value) => {
-                return moveCount += value;
-            }
-            const moveContent = () => {
-                if ( e.clientY < window.innerHeight / 2) {
-                    moveCounter(10);
-                    if (moveCount > 0) {
-                        moveCount = 0;
-                    }
-                    galleryContent.style.transition = `transform 2s linear`;
-                    galleryContent.style.transform = `translateY(${moveCount}px)`;
-                } else if (e.clientY > window.innerHeight / 2) {
-                    moveCounter(-10);
-                    if (Math.abs(moveCount) > maxMoveCount) {
-                        moveCount = -maxMoveCount;
-                    }
-                    galleryContent.style.transition = `transform 2s linear`;
-                    galleryContent.style.transform = `translateY(${moveCount}px)`;
-                }
-            }
-            if ((coursorPosition.x > galleryContentPosition.left && 
-                coursorPosition.x < galleryContentPosition.right) && (
-                coursorPosition.y > galleryContentPosition.top &&
-                coursorPosition.y < galleryContentPosition.bottom)
-                ) {
-                    moveContent();
-                } 
-        })
-    }
-
-    if (window.innerWidth >= 768) {
-        
-    }
-
+    //     document.addEventListener('mousemove', (e) => {
+    //         let coursorPosition = {
+    //             x: e.pageX,
+    //             y: e.pageY
+    //             },
+    //             galleryContentPosition = {
+    //                 top: window.pageYOffset + galleryContentWrapper.getBoundingClientRect().top,
+    //                 bottom: window.pageYOffset + galleryContentWrapper.getBoundingClientRect().bottom,
+    //                 left: window.pageXOffset + galleryContentWrapper.getBoundingClientRect().left,
+    //                 right: window.pageXOffset + galleryContentWrapper.getBoundingClientRect().right
+    //             };
+    //         let maxMoveCount = window.getComputedStyle(galleryContent).height.slice(0, -2) - 
+    //             window.getComputedStyle(galleryContent.parentNode).height.slice(0, -2);   
+    //         const moveCounter = (value) => {
+    //             return moveCount += value;
+    //         }
+    //         const moveContent = () => {
+    //             if ( e.clientY < window.innerHeight / 2) {
+    //                 moveCounter(10);
+    //                 if (moveCount > 0) {
+    //                     moveCount = 0;
+    //                 }
+    //                 galleryContent.style.transition = `transform 2s linear`;
+    //                 galleryContent.style.transform = `translateY(${moveCount}px)`;
+    //             } else if (e.clientY > window.innerHeight / 2) {
+    //                 moveCounter(-10);
+    //                 if (Math.abs(moveCount) > maxMoveCount) {
+    //                     moveCount = -maxMoveCount;
+    //                 }
+    //                 galleryContent.style.transition = `transform 2s linear`;
+    //                 galleryContent.style.transform = `translateY(${moveCount}px)`;
+    //             }
+    //         }
+    //         if ((coursorPosition.x > galleryContentPosition.left && 
+    //             coursorPosition.x < galleryContentPosition.right) && (
+    //             coursorPosition.y > galleryContentPosition.top &&
+    //             coursorPosition.y < galleryContentPosition.bottom)
+    //             ) {
+    //                 moveContent();
+    //             } 
+    //     })
+    // }
 };
 export default gallery;

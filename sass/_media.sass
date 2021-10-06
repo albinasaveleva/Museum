@@ -17,9 +17,11 @@
             display: none
         &__burger-menu
             display: flex
-        .mobile-menu
-            &_active
-                display: flex
+    .mobile-menu
+        transform: translate(0, -200%)
+        &_active
+            display: flex
+            transform: translate(0, 0)
     .welcome
         padding-top: 130px
         padding-bottom: 120px
@@ -45,6 +47,10 @@
             width: 300px
             height: 60px
             margin-right: 0
+            &:hover
+                width: 300px
+                height: 60px
+
     .visiting
         &__content
             grid-gap: 60px 110px
@@ -114,8 +120,7 @@
             &__input-number
                 width: 175px
     .modal
-        &__container
-            padding: 75px 30px 30px
+        padding: 75px 30px 30px
     .contacts
         &__content
         .description
@@ -252,10 +257,11 @@
             &__item:not(:last-child)
                 margin-bottom: 25px
     .modal
+        padding: 0
         &__container
             position: absolute
             top: 0
-            padding-top: 80px
+            padding: 80px 30px 30px
             grid-gap: 50px
             grid-template-columns: minmax(100%, 530px)
             grid-template-rows: repeat(2, min-content)
@@ -344,7 +350,6 @@
                 margin: 20px 0
             .mobile-menu__social-links
                 display: flex
-
     .welcome
         padding-top: 90px
         padding-bottom: 80px
@@ -484,9 +489,9 @@
                         order: 5
         &__social-links
             align-self: center
-.social-link
-    &:not(:last-child)
-        margin-right: 5px
+    .social-link
+        &:not(:last-child)
+            margin-right: 5px
 @media (min-width: 1024px)
     .header
         &__mobile-menu
